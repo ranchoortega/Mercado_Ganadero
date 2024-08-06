@@ -76,6 +76,22 @@ a {
   -webkit-transition: 0.2s color;
   transition: 0.2s color;
 }
+/* Estilo por defecto para el menú de navegación */
+.main-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Media query para pantallas de 990px o menos */
+@media (max-width: 990px) {
+  .main-nav {
+      display: block; /* Cambia a display block para apilar los elementos en lugar de en fila */
+  }
+
+  .main-nav li {
+      margin-bottom: 10px; /* Opcional: añade un margen inferior para los elementos de lista en vista móvil */
+  }
+}
 
 a:hover, a:focus {
   color: #D10024;
