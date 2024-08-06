@@ -84,32 +84,10 @@
     }
 </style>
 <div class="page-body">
+ 
     <header>
         <!-- TOP HEADER -->
-        <div id="top-header">
-            <div class="container">
-                <ul class="header-links pull-left">
-                    <li>
-                        <a href="#" class="logo">
-                            <img src="<?php echo base_url('template/recursos/img/logo.png'); ?>" alt=""
-                                style="width: 75px;" class="white-filter">
-                        </a>
-                    </li>
-                    <li><a href="https://web.whatsapp.com/send?phone=2214350830&text=sd"><i
-                                class="fa fa-phone"></i>Whatsapp</a></li>
-                    <li><a href="mailto:ranchoortega77@gmail.com?Subject=Mas%20informacion"><i
-                                class="fa fa-envelope-o"></i>Gmail</a></li>
-                    <li>
-                        <div class="menu-toggle">
-                            <a href="#">
-                                <i class="fa fa-bars"></i>
-                                <span>Menu</span>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+
         <!-- /TOP HEADER -->
 
         <!-- MAIN HEADER -->
@@ -121,7 +99,9 @@
                     <!-- SEARCH BAR -->
                     <div class="col-md-12">
                         <div style=" display: flex; justify-content: space-evenly;">
-                            <h1 dir="auto" style="color: #ffffff; --lineHeightDesktop: 1.3; --fontSizeDesktop: 80px;position: relative;   z-index: 3;">Granja Ortega</h1>
+                            <h1 dir="auto"
+                                style="color: #ffffff; --lineHeightDesktop: 1.3; --fontSizeDesktop: 80px;position: relative;   z-index: 3;">
+                                Granja Ortega</h1>
                         </div>
 
                         <div class="header-search text-center">
@@ -158,13 +138,12 @@
             <!-- responsive-nav -->
             <div id="responsive-nav">
                 <!-- NAV -->
-                <ul class="main-nav nav navbar-nav" >
+                <ul class="main-nav nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="file:///C:/Users/ramir/OneDrive/Documents/ranchoortega/electro-master/index.html#Bovinos"
-                            id="Bovino">Bovinos</a></li>
-                    <li><a href="#">Caprinos</a></li>
-                    <li><a href="#">Porcinos</a></li>
-                    <li><a href="#"><i class='bx bx-add-to-queue'></i></a></li>
+                    <li><a href="<?php echo base_url() ?>Cliente/Contacto">Provedores</a></li>
+                    <li><a href="<?php echo base_url() ?>Cliente/Contacto">Contacto</a></li>
+                    <li><a href="#">Nosotros</a></li>
+
 
 
                 </ul>
@@ -228,7 +207,7 @@
                                 <img src=" <?php echo base_url('template/recursos/img/porcino.jpg'); ?>" alt="">
                             </div>
                             <div class="shop-body">
-                                <h3>Aves</h3>
+                                <h3>Cerdos</h3>
                                 <a href="#" class="cta-btn">Ver ahora <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -469,17 +448,7 @@
 
     <!-- HOT DEAL SECTION -->
     <div id="hot-deal" class="section">
-        <!-- container -->
-        <div class="container">
-            <!-- row -->
-            <div class="row">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d945.8556197270532!2d-98.6135523305064!3d18.50980097064036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cefb5f42ad5a47%3A0x19b5f80403ae4aa3!2sRancho%20Ortega!5e0!3m2!1ses!2smx!4v1722860485979!5m2!1ses!2smx"
-                    width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-        <!-- /row -->
+       
     </div>
     <!-- /container -->
 
@@ -783,38 +752,7 @@
     <!-- /SECTION -->
 
     <!-- NEWSLETTER -->
-    <div id="newsletter" class="section">
-        <!-- container -->
-        <div class="container">
-            <!-- row -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="newsletter">
-
-
-                        <ul class="newsletter-follow">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-tiktok"></i></a>
-
-
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-facebook-messenger"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- /row -->
-        </div>
-        <!-- /container -->
-    </div>
+ 
     <!-- /NEWSLETTER -->
 
 

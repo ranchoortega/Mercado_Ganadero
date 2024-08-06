@@ -23,6 +23,7 @@
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
 
 
 	<?php foreach ($estiloscss as $estilo) : ?>
@@ -85,7 +86,7 @@
 }
 	</style>
 
-<link rel="icon" href="template/recursos/logos/logo.svg" type="image/x-icon" >
+<link rel="icon" href="<?php echo base_url('template/recursos/logos/logo.svg'); ?>" type="image/x-icon" >
 
 </head>
 
@@ -101,3 +102,27 @@
 	
 	<!-- Loader ends-->
 	<div class="page-wrapper compact-wrapper" id="pageWrapper">
+	<div id="top-header">
+        <div class="container">
+            <ul class="header-links pull-left">
+                <li>
+                    <a href="#" class="logo">
+                        <img src="<?php echo base_url('template/recursos/img/logo.png'); ?>" alt="" style="width: 75px;"
+                            class="white-filter">
+                    </a>
+                </li>
+                <li><a href="https://web.whatsapp.com/send?phone=2214350830&text=sd"><i
+                            class="fa fa-phone"></i>Whatsapp</a></li>
+                <li><a href="mailto:ranchoortega77@gmail.com?Subject=Mas%20informacion"><i
+                            class="fa fa-envelope-o"></i>Gmail</a></li>
+                <li>
+                    <div class="menu-toggle">
+                        <a href="#">
+                            <i class="fa fa-bars"></i>
+                            <span>Menu</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
