@@ -7,10 +7,8 @@ class Login extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if ($this->session->userdata('rol') == "admin") {
+        if ($this->session->userdata()) {
             header('Location: ' . base_url() . 'BienvenidoAdmin');
-        } elseif ($this->session->userdata('rol') == "user") {
-            header('Location: ' . base_url() . 'Bienvenido');
         }
     }
 

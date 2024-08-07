@@ -23,7 +23,7 @@
 	<!-- /NAVIGATION -->
 
 	<!-- BREADCRUMB -->
-	<div id="breadcrumb" class="section" style=" padding-top: 88px;  /* position: absolute; */ /* top: 100px; */">
+	<div id="breadcrumb" class="section">
 		<!-- container -->
 		<div class="container">
 			<!-- row -->

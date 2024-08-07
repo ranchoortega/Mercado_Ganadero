@@ -6,6 +6,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 /* USUARIO COMUN */
 $route['Inicio'] = 'Welcome/iniciarSesion';
+$route['BienvenidoAdmin'] = 'administrador/Views';
 
 
 
@@ -14,7 +15,7 @@ $route['ActividadDetalle'] = 'ActividadesController/insertActividadDetalle';
 $route['Actividades'] = 'ActividadesController/getActividades';
 
 /* ADMINISTRADOR */
-$route['BienvenidoAdmin'] = 'InicioController/bienvenidoAdministrador';
+
 
 /* ADMINISTRADOR PROGRAMA */
 $route['Municipios'] = 'MunicipioController/getMunicipios';

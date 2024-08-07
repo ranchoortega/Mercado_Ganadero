@@ -4,14 +4,15 @@
   <!-- container -->
   <div class="container">
     <!-- row -->
-    
+
     <!-- /row -->
   </div>
   <!-- /container -->
 </div>
 <script>
   var base_url = "<?php echo base_url(); ?>";
-  const urlServer = 'http://localhost/backend-sipro-1/api/';
+  const urlServer = 'http://localhost/backend_granja/api/';
+
 
 </script>
 <?php foreach ($estilosjs as $estilo): ?>
