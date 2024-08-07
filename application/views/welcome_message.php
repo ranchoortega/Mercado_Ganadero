@@ -140,7 +140,7 @@
                 <!-- NAV -->
                 <ul class="main-nav nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="<?php echo base_url() ?>Cliente/Contacto">Provedores</a></li>
+                    <li><a href="<?php echo base_url() ?>Cliente/Provedores">Provedores</a></li>
                     <li><a href="<?php echo base_url() ?>Cliente/Contacto">Contacto</a></li>
                     <li><a href="#">Nosotros</a></li>
 

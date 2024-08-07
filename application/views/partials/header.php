@@ -112,13 +112,13 @@
                     </a>
                 </li>
                 <li><a href="https://web.whatsapp.com/send?phone=2214350830&text=sd"><i
-                            class="fa fa-phone"></i>Whatsapp</a></li>
+                            class="fa fa-phone bx-sm"></i>Whatsapp</a></li>
                 <li><a href="mailto:ranchoortega77@gmail.com?Subject=Mas%20informacion"><i
-                            class="fa fa-envelope-o"></i>Gmail</a></li>
+                            class="fa fa-envelope-o bx-sm"></i>Gmail</a></li>
                 <li>
                     <div class="menu-toggle">
                         <a href="#">
-                            <i class="fa fa-bars"></i>
+                            <i class="fa fa-bars bx-sm"></i>
                             <span>Menu</span>
                         </a>
                     </div>

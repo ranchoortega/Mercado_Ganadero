@@ -2170,6 +2170,34 @@ hot-deal
 /*=========================================================
 	13 -> RESPONSIVE
 ===========================================================*/
+/* Padding por defecto (para pantallas mayores a 990px) */
+#breadcrumb {
+  padding-top: 11px;
+}
+.menu-toggle{
+  display: none;
+}
+.viewCliente {
+  padding-top: 66px;
+}
+
+/* Estilo para pantallas con ancho menor o igual a 990px */
+@media (max-width: 990px) {
+  #breadcrumb {
+      padding-top: 88px;
+  }
+}
+@media (max-width: 990px) {
+  .viewCliente {
+      padding-top: 0px;
+  }
+}
+@media (max-width: 990px) {
+  .menu-toggle {
+      display: block;
+  }
+}
+
 
 @media only screen and (max-width: 1201px) {}
 

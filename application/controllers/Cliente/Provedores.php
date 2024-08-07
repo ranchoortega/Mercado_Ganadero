@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Contacto extends CI_Controller
+class Provedores extends CI_Controller
 {
     public function __construct()
 	{
@@ -38,7 +38,7 @@ class Contacto extends CI_Controller
 
 
 		$this->load->view('partials/header', $datos);
-		$this->load->view('menu/contacto');
+		$this->load->view('menu/provedores');
 		$this->load->view('partials/footer');
 	}
 

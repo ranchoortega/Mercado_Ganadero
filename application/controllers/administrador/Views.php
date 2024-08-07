@@ -21,10 +21,10 @@ class Views extends CI_Controller
 			)
 		);
 		$datos['municipio'] = $this->session->userdata('municipio');
-		$this->load->view('partials/header', $datos);
-		$this->load->view('partials/navbar');
-		$this->load->view('cliente/tesoreria/egresos');
-		$this->load->view('partials/footer');
+		$this->load->view('administradorView/header', $datos);
+		$this->load->view('administradorView/navbar');
+		$this->load->view('administracionGranja/contactos');
+		$this->load->view('administradorView/footer');
 	}
 
 	public function saveNuevoEgreso()
