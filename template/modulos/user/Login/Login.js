@@ -1,5 +1,9 @@
 class Login {
-    constructor(){}
+    constructor(){
+        this.idusuario = $('.user').val();
+        console.log(this.idusuario);
+        
+    }
 
     async iniciarSesion(usuario, password) {
         try {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="loading" lang="es">
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,9 @@
 	<meta name="keywords" content="">
 	<meta name="author" content="G&G">
 	<title>
-		<?php if (isset($titulo)) : ?>
+		<?php if (isset($titulo)): ?>
 			<?php echo $titulo ?>
-		<?php else : ?>
+		<?php else: ?>
 			GRANJA ORTEGA
 		<?php endif ?>
 	</title>
@@ -18,8 +19,9 @@
 	<meta name="apple-touch-fullscreen" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
 	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-	<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
-	<?php foreach ($estiloscss as $estilo) : ?>
+	<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700"
+		rel="stylesheet">
+	<?php foreach ($estiloscss as $estilo): ?>
 		<link rel="stylesheet" href="<?php echo base_url() . $estilo; ?>">
 	<?php endforeach ?>
 	<style>
@@ -34,13 +36,28 @@
 			background: #999;
 		}
 	</style>
-		<link rel="icon" href="template/recursos/logos/logo.svg" type="image/x-icon" >
+	<link rel="icon" href="template/recursos/logos/logo.svg" type="image/x-icon">
 
 </head>
+
 <body>
 	<div class="loader-wrapper">
 		<div class="theme-loader">
 			<div class="loader-p"></div>
+		</div>
+
+	</div>
+
+	<div hidden>
+		<div class="main-header-right row m-0" style="border-bottom: 0.4px #EBEBEB solid;">
+
+			<div class="nav-right col pull-right right-menu p-0">
+				<ul class="nav-menus">
+					<input type="hidden" class="jwt" value="<?= $this->session->userdata('token') ?>">
+					<input type="hidden" class="user" value="<?= $this->session->userdata('usuario') ?>">
+				</ul>
+			</div>
+
 		</div>
 	</div>
 	<div class="page-wrapper compact-wrapper" id="pageWrapper">

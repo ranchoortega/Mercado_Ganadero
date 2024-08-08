@@ -40,14 +40,14 @@ $config['cache_path'] = '';
 $config['cache_query_string'] = FALSE;
 $config['encryption_key'] = '';
 
+$config['sess_driver'] = 'files'; // Asegúrate de que el controlador de sesión sea 'files'
+$config['sess_cookie_name'] = 'ci_session'; // El nombre de la cookie de sesión
+$config['sess_expiration'] = 7200; // Tiempo de expiración de la sesión (en segundos)
+$config['sess_save_path'] = NULL; // La ruta de almacenamiento de sesiones, por defecto es la carpeta temporal
+$config['sess_match_ip'] = FALSE; // No es necesario que la IP coincida
+$config['sess_time_to_update'] = 300; // Intervalo para actualizar el tiempo de la sesión
+$config['sess_regenerate_destroy'] = FALSE; // No destruir la sesión antigua al regenerar el ID de sesión
 
-$config['sess_driver'] = 'files';
-$config['sess_cookie_name'] = 'ci_session';
-$config['sess_expiration'] = 7200;
-$config['sess_save_path'] = NULL;
-$config['sess_match_ip'] = FALSE;
-$config['sess_time_to_update'] = 300;
-$config['sess_regenerate_destroy'] = FALSE;
 
 
 $config['cookie_prefix']	= '';

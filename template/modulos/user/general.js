@@ -153,7 +153,7 @@ $(document).on('click', '#btn-cerrar-sesion', function () {
 		confirmButtonText: 'Aceptar'
 	}).then(async (result) => {
 		if (result.isConfirmed) {
-			window.location = base_url + "Welcome/destruir";
+			window.location = base_url + "Login/destruir";
 		}
 	})
 });

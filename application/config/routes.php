@@ -5,8 +5,9 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 /* USUARIO COMUN */
-$route['Inicio'] = 'Welcome/iniciarSesion';
+
 $route['BienvenidoAdmin'] = 'administrador/Views';
+$route['Inicio'] = 'administrador/Login';
 
 
 

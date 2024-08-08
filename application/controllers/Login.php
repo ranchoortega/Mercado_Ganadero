@@ -7,6 +7,7 @@ class Login extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->library('session');
     }
 
     public function SaveSesion()
@@ -22,6 +23,8 @@ class Login extends CI_Controller
                 "token" => $token,
             ];
             $this->session->set_userdata($data);
+            $usuario = $this->session->userdata();
+         
             echo json_encode(true);
         }
     }
@@ -29,6 +32,7 @@ class Login extends CI_Controller
     public function destruir()
     {
         $this->session->sess_destroy();
-        header('Location: ' . base_url());
+      
+        header('Location: ' . base_url() . 'Inicio');
     }
 }
