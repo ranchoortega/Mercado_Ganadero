@@ -93,6 +93,7 @@
 </head>
 
 <body>
+    
     <div class="loader-wrapper" id="spinnergeneral">
         <div class="theme-loader">
             <div class="loader-p"></div>

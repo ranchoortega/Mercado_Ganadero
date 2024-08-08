@@ -20,16 +20,17 @@
                     <div class="card-body">
                         <!--tabla-->
                         <button class="btn btn-primary mb-3" type="button" data-bs-toggle="modal"
-                            data-original-title="test" data-bs-target="#exampleModal" hidden>Agregar informacion</button>
+                            data-original-title="test" data-bs-target="#exampleModal" hidden>Agregar
+                            informacion</button>
 
                         <div class="dt-ext table-responsive">
                             <table class="table table-striped tablaContactos">
                                 <thead>
                                     <tr>
-                                        <th class="text-center">NAME</th>
+                                        <th class="text-center">NOMBRE</th>
                                         <th class="text-center">OPCIONES</th>
-                                        
-                                       
+
+
                                     </tr>
                                 </thead>
                             </table>
@@ -47,31 +48,47 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Informacion general</h5>
+                <h5 class="modal-title" id="exampleModalLabel">CONTACTOS</h5>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
-                 
+                <div class="row">
+                    
                     <div class="mb-3">
-                        <label class="form-label">Facebook</label>
-                        <input class="form-control" type="text" id="numero_poliza">
+                        <label class="form-label">NOMBRE</label>
+                        <input class="form-control" type="text" id="name">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Telefono</label>
-                        <input class="form-control" type="text" id="numero_poliza">
+                        <input class="form-control" type="text" id="phone">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Ubicaiones referentes</label>
-                        <input class="form-control" type="text" id="numero_poliza">
+                        <div class="mb-6">
+                            <label class="form-label">COMENTARIO</label>
+                            <textarea class="form-control" id="comment" rows="3"></textarea>
+
+                        </div>
+                       
+
                     </div>
-                  
-                   
-                </form>
+                    <div class="col-sm-12" style=" display: flex;">
+                            <div class="mb-3">
+                                <label for="ubicacion_no_hombres" class="form-label">FECHA </label>
+                                <input class="form-control" type="date" id="fecha">
+                            </div>
+                            <div class="mb-3">
+                                <label for="ubicacion_no_mujeres" class="form-label">HORA</label>
+                                <input class="form-control" type="time" id="hora">
+                            </div>
+                        </div>
+                        
+
+                </div>
+
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Cerrar</button>
-                <button class="btn btn-secondary btnSaveEgreso" type="button">Guardar</button>
+               
             </div>
         </div>
     </div>

@@ -16,8 +16,18 @@ class Contactos{
         return sendData(form, "C_Contactos/setContacto")
        
     }
+    
     validarCampo(valorCampo,idMensaje,mensaje){
         if(valorCampo === ''){
+            $(`.${idMensaje}`).html(mensaje);
+            return false;
+        }else{
+            $(`.${idMensaje}`).html('');
+            return true;
+        }
+    }
+    lengthCampo(valorCampo,idMensaje,mensaje){
+        if(valorCampo != 10){
             $(`.${idMensaje}`).html(mensaje);
             return false;
         }else{
