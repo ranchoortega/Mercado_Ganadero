@@ -13,22 +13,22 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="col-sm-12">
-                            <h3 class="text-center">CONTACTOS</h3>
+                            <h3 class="text-center">CAPTURA LA GRANJA</h3>
                             <input type="text" class="form-control" id="idMunicipio" value="<?= $municipio ?>" hidden>
                         </div>
                     </div>
                     <div class="card-body">
                         <!--tabla-->
                         <button class="btn btn-primary mb-3" type="button" data-bs-toggle="modal"
-                            data-original-title="test" data-bs-target="#exampleModal" hidden>Agregar informacion</button>
+                            data-original-title="test" data-bs-target="#exampleModal">Agregar informacion</button>
 
                         <div class="dt-ext table-responsive">
-                            <table class="table table-striped tablaContactos">
+                            <table class="table table-striped egresos">
                                 <thead>
                                     <tr>
-                                        <th class="text-center">NAME</th>
-                                        <th class="text-center">OPCIONES</th>
-                                        
+                                        <th class="text-center">Facebook</th>
+                                        <th class="text-center">Telefono</th>
+                                        <th class="text-center">Referencias</th>
                                        
                                     </tr>
                                 </thead>

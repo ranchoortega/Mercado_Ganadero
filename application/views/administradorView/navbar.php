@@ -70,10 +70,10 @@
 
                             <li><a class="nav-link menu-title link-nav"
                                     href="<?php echo base_url() ?>Funcionario/Tesoreria/Ingresos"><i
-                                        data-feather="dollar-sign"></i><span>Ocultar y Mostrar</span></a></li>
+                                        data-feather="eye"></i><span>Ocultar y Mostrar</span></a></li>
                             <li><a class="nav-link menu-title link-nav"
-                                    href="<?php echo base_url() ?>Funcionario/Tesoreria/Egresos"><i
-                                        data-feather="trending-down"></i><span>Informacion General</span></a></li>
+                                    href="<?php echo base_url() ?>administrador/Contactos"><i
+                                        data-feather="user"></i><span>Contactos</span></a></li>
                             <li><a class="nav-link menu-title link-nav"
                                     href="<?php echo base_url() ?>Funcionario/Tesoreria/Egresos/polizassiregistro"><i
                                         data-feather="trending-down"></i><span>EGRESOS SIN REGISTRO</span></a></li>
