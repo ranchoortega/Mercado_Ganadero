@@ -31,8 +31,9 @@ class Contacto extends CI_Controller
 				"template/assets/js2/nouislider.min.js",
 				"template/assets/js2/jquery.zoom.min.js",
 				"template/assets/js2/main.js",
+				"template/modulos/user/cliente/Contactos/Contactos.js",
+				"template/modulos/user/cliente/Contactos/contactosMain.js"
 				
-
 			)
 		);
 

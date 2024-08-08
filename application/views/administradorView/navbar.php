@@ -7,16 +7,6 @@
             <ul class="nav-menus">
                 <input type="hidden" class="jwt" value="<?= $this->session->userdata('token') ?>">
                 <input type="hidden" class="user" value="<?= $this->session->userdata('usuario') ?>">
-                <input type="hidden" class="idadministracion" value="<?= $this->session->userdata('administracion') ?>">
-                <input type="hidden" class="idunidadresponsable"
-                    value="<?= $this->session->userdata('unidadResponsable') ?>">
-                <input type="hidden" class="idusuarioobras" value="<?= $this->session->userdata('obras') ?>">
-                <li><a class="text-dark" href="#" onclick="javascript:toggleFullScreen()"><i
-                            data-feather="maximize"></i></a></li>
-                <li class="onhover-dropdown p-0">
-                    <button class="btn btn-primary-light" type="button" id="btn-cerrar-sesion"><a
-                            href="<?php echo base_url() ?>Login/destruir">Cerrar sesión</a></button>
-                </li>
             </ul>
         </div>
 

@@ -56,22 +56,24 @@
 							<h3 class="title">Contáctanos</h3>
 						</div>
 						<div class="form-group">
-							<input class="input" type="text" name="first-name" placeholder="Nombre">
-						</div>
+							<input class="input" type="text" name="first-name" placeholder="Nombre" id="name">
+							<p class="text-danger msgname"></p>
 
-						<div class="form-group">
-							<input class="input" type="email" name="email" placeholder="Email">
 						</div>
 
 
 						<div class="form-group">
-							<input class="input" type="tel" name="tel" placeholder="Teléfono">
+							<input class="input" type="tel" name="tel" placeholder="Teléfono" id="phone">
+							<p class="text-danger msgphone"></p>
+
 						</div>
 						<div class="form-group order-notes">
-							<textarea class="input" placeholder="Comentario"></textarea>
+							<textarea class="input" placeholder="Comentario" id="comment"></textarea>
+							<p class="text-danger msgcomment"></p>
+
 						</div>
 						<div class="form-group">
-							<a href="#" class="primary-btn order-submit">Enviar</a>
+							<a href="#" class="primary-btn order-submit btnSaveContacto">Enviar</a>
 						</div>
 
 					</div>
