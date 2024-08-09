@@ -1,14 +1,14 @@
 
 const proveedores = new Proveedores();
 $(document).ready(() => {
-    console.log("gggggggggggg");
-    let user = $('#puto').val();
-    console.log(user);
-    
-    
+
+    $('#liproveedores').hide();
+
+
+
     console.log(proveedores.id_usuario);
     if (proveedores.id_usuario != "") {
-      
+
         $('.divLoginAndCreate').hide();
 
 
@@ -19,16 +19,75 @@ $(document).ready(() => {
 
 
 
+
+
 });
 $('#btnFile').on('click', async () => {
+    if (proveedores.id_usuario) {
 
-    var fileInput = $("#newfile")[0];
-    if (fileInput.files.length > 0) {
-        var file = fileInput.files[0]; // Obtén el primer archivo seleccionado
-        const { res, data } = await proveedores.upload(file);
-        console.log(data);
+        let raza = $('#raza').val();
+        let edad = $('#edad').val();
+        let genero = $('#genero').val();
+        let descripcion = $('#descripcion').val();
+        let precio = $('#precio').val();
 
-        console.log(file); // Imprime el archivo en la consola
+        validarRaza = proveedores.validarCampo(raza, 'msgpraza', 'Ingrese la raza.');
+        validarEdad = proveedores.validarCampo(edad, 'msgpedad', 'Ingrese la edad');
+        validarGenero = proveedores.validarCampo(genero, 'msgpgenero', 'Selecciona un genero');
+        validarDescipcion = proveedores.validarCampo(descripcion, 'msgpdescripcion', 'Ingresa una descipcion.');
+        validarPrecio = proveedores.validarCampo(precio, 'msgpprecio', 'Ingresa el precio');
+        if (validarRaza && validarEdad && validarGenero && validarDescipcion && validarPrecio) {
+
+            var fileInput = $("#newfile")[0];
+            let fileVali = fileInput.files.length > 0 ? "si" : "";
+            validarFile = proveedores.validarCampo(fileVali, 'msgfile', 'Ingresa una imagen');
+
+            
+            let archivoInput = document.getElementById('newfile');
+            if (archivoInput.files.length > 0) {
+                let archivo = archivoInput.files[0];
+                let extension = archivo.name.split('.').pop().toLowerCase();
+                let permitidas = ['png', 'jpg'];
+                if (permitidas.indexOf(extension) === -1) {
+                    MensajeAlerta('warning', '', 'Seleccione una imagen válida (png o jpg)', 'btn btn-primary');
+                    return false;
+                }
+                else {
+                    var file = fileInput.files[0]; // Obtén el primer archivo seleccionado
+                    const { res:resFile, data:dataFile } = await proveedores.upload(file);
+                    if (resFile.ok) {
+                        if (dataFile.res) {
+                            const {res:resAnimal, data:dataAnimal} = await proveedores.setAnimal(raza, edad, genero, descripcion, precio, dataFile.res);
+                            if (resAnimal.ok) {
+                                if (dataAnimal.res) {
+                                    mensaje(dataAnimal.icon, 'CORRECTO', dataAnimal.mensaje);
+                                    limpiarElementos();
+                                } else {
+                                    mensaje(dataAnimal.icon, 'ERROR', dataAnimal.mensaje);
+                                    
+                                }
+                                
+                            }
+                          
+                        }
+                        else{
+                            mensaje(dataFile.icon, 'ERROR', dataFile.mensaje);
+                        }
+                    }
+                }
+
+
+            } else {
+                MensajeAlerta('warning', '', 'Por favor, suba un archivo (PDF)', 'btn btn-primary');
+            }
+
+        } else {
+
+        }
+
+    }
+    else {
+        MensajeAlerta('error', '', 'Inicia sesion por favor', 'btn btn-primary');
     }
 
 });
@@ -80,17 +139,17 @@ $('#create').on('click', async () => {
                     $('#password').val('');
                     $('#name').val('');
                     $('#phone').val('');
-    
+
                     mensaje(data.icon, 'CORRECTO', data.mensaje);
                     await proveedores.guardarSesion(data);
                     location.reload();
                     return false;
                 }
-                else{
+                else {
                     mensaje(data.icon, 'Usuario', data.mensaje);
                     return false;
                 }
-               
+
             }
             MensajeAlerta('error', '', 'Error al guardar la informacion, intentelo mas tarde', 'btn btn-primary');
 
@@ -111,14 +170,3 @@ $('#create').on('click', async () => {
 
 });
 
-var userLink = document.getElementById('userLink');
-    var logoutButton = document.getElementById('logoutButton');
-    
-    userLink.addEventListener('click', function(event) {
-        event.preventDefault(); // Previene el comportamiento predeterminado del enlace
-        if (logoutButton.style.display === 'none') {
-            logoutButton.style.display = 'block';
-        } else {
-            logoutButton.style.display = 'none';
-        }
-    });

@@ -149,11 +149,12 @@
                     <input id="puto" type="text" value="<?php echo base_url() ?>" hidden>
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
-                        <li class="active"><a href="#">Inicio</a></li>
-                        <li><a href="<?php echo base_url() ?>Cliente/Contacto">Contacto</a></li>
-                        <li><a href="#">Nosotros</a></li>
-                        <li id="loginCreate" hidden><a href="#">Login</a></li>
-                        <li id="loginUser">
+                        <li><a href="<?php echo base_url() ?>Welcome">Inicio</a></li>
+                        <li id="liContactos"><a href="<?php echo base_url() ?>Cliente/Contacto">Contacto</a></li>
+                        <li id="liproveedores"><a href="<?php echo base_url() ?>Cliente/Provedores">Proveedores</a></li>
+                        <li id="liNosotros"><a href="#">Nosotros</a></li>
+                        <li id="liLogin"><a href="<?php echo base_url() ?>Login">Login</a></li>
+                        <li id="liUser" style="display: none;">
                             <a href="#" id="userLink">Usuario</a>
                             <ul id="logoutButton" style="display: none;">
                                 <li><a href="#" id="btn-cerrar-sesion">Cerrar Sesión</a></li>
@@ -172,3 +173,41 @@
             </div>
             <!-- /container -->
         </nav>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var userInput = document.querySelector('.user');
+                var liLogin = document.getElementById('liLogin');
+                var liUser = document.getElementById('liUser');
+
+                // Función para actualizar la visibilidad de los elementos
+                function updateVisibility() {
+                    if (userInput.value.trim() !== "") {
+                        liLogin.style.display = 'none';
+                        liUser.style.display = 'block';
+                    } else {
+                        liUser.style.display = 'none';
+                        liLogin.style.display = 'block';
+                    }
+                }
+
+                // Inicializa el estado al cargar la página
+                updateVisibility();
+
+                // Actualiza el estado cuando el valor del input cambie
+                userInput.addEventListener('input', updateVisibility);
+            });
+
+            var userLink = document.getElementById('userLink');
+    var logoutButton = document.getElementById('logoutButton');
+    
+    userLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Previene el comportamiento predeterminado del enlace
+        if (logoutButton.style.display === 'none') {
+            logoutButton.style.display = 'block';
+        } else {
+            logoutButton.style.display = 'none';
+        }
+    });
+
+        </script>

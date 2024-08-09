@@ -1,5 +1,10 @@
 const contactos = new Contactos();
+$(document).ready(() => {
+    
+    $('#liContactos').hide();
+  
 
+});
 $('.btnSaveContacto').on('click', async () => {
 
     let name = $('#name').val();

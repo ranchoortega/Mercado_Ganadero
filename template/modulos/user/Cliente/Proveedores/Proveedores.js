@@ -119,6 +119,18 @@ class Proveedores {
 
         data ? window.location.href = `${base_url}administrador/Views` : window.location.href = `${base_url}`;
     }
+    async setAnimal(raza, edad, genero, descripcion, precio, id_file) {
+        const form = new FormData();
+        form.append("raza", raza);
+        form.append("edad", edad);
+        form.append("genero", genero);
+        form.append("descripcion", descripcion);
+        form.append("precio", precio);
+        form.append("id_file", id_file);
+
+
+        return sendData(form, "C_Animales/setAnimales")
+    }
 
 
 }

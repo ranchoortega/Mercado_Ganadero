@@ -1,36 +1,6 @@
 <div class="page-body">
 
-	<nav id="navigation">
-		<!-- container -->
-		<div class="container viewCliente">
-			<!-- responsive-nav -->
-			<div id="responsive-nav">
-				<input id="puto"type="text" value="<?php echo base_url() ?>" hidden>
-				<!-- NAV -->
-				<ul class="main-nav nav navbar-nav">
-					<li class="active"><a href="#">Inicio</a></li>
-					<li><a href="<?php echo base_url() ?>Cliente/Contacto">Contacto</a></li>
-					<li><a href="#">Nosotros</a></li>
-					<li id="loginCreate" hidden><a href="#">Login</a></li>
-					<li id="loginUser">
-						<a href="#" id="userLink">Usuario</a>
-						<ul id="logoutButton" style="display: none;">
-							<li><a href="#" id="btn-cerrar-sesion">Cerrar Sesión</a></li>
-						</ul>
-
-					</li>
-
-
-
-
-
-				</ul>
-				<!-- /NAV -->
-			</div>
-			<!-- /responsive-nav -->
-		</div>
-		<!-- /container -->
-	</nav>
+	
 	<!-- /NAVIGATION -->
 
 	<!-- BREADCRUMB -->
@@ -43,7 +13,7 @@
 
 					<ul class="breadcrumb-tree">
 						<li><a href="<?php echo base_url() ?>Welcome">Inicio</a></li>
-						<li class="active">Provedores</li>
+						<li class="active">Proveedores</li>
 					</ul>
 				</div>
 			</div>
@@ -190,33 +160,40 @@
 
 
 						<div class="form-group">
-							<input class="input" type="text" name="first-name" placeholder="Raza">
+							<input class="input" type="text" name="first-name" placeholder="Raza" id="raza"  maxlength="30">
 						</div>
-						<div class="form-group">
-							<input class="input" type="text" name="first-name" placeholder="Edad del Animal">
-						</div>
+						<p class="text-danger msgpraza"></p>
 
 						<div class="form-group">
-							<select class="form-select" aria-label="Default select example">
-								<option selected>Genero del Animal</option>
-								<option value="1">Macho</option>
-								<option value="2">Hembra</option>
+							<input class="input" type="text" name="first-name" placeholder="Edad del Animal" id="edad"  maxlength="3">
+						</div>
+						<p class="text-danger msgpedad"></p>
+
+
+						<div class="form-group">
+							<select class="form-select input" aria-label="Default select example" id="genero"  >
+								<option value=""selected>Genero del Animal</option>
+								<option value="Macho">Macho</option>
+								<option value="Hembra">Hembra</option>
 							</select>
 						</div>
-						<div class="form-group">
-							<input class="form-control" type="file" id="newfile">
-						</div>
+						<p class="text-danger msgpgenero"></p>
+						
 						<div class="form-group order-notes">
-							<textarea class="input" placeholder="Descripcion general del animal"></textarea>
+							<textarea class="input" placeholder="Descripcion general del animal" id="descripcion"  maxlength="100"></textarea>
+						<p class="text-danger msgpdescripcion"></p>
 						</div>
 						<div class="input-group flex-nowrap form-group">
 
 							<span class="input-group-text bx bx-dollar bx-sm" id="addon-wrapping"></span>
 							<input type="number" class="input" placeholder="Precio" aria-label="Username"
-								aria-describedby="addon-wrapping">
+								aria-describedby="addon-wrapping" id="precio"  maxlength="11">
 						</div>
-
-
+						<p class="text-danger msgpprecio"></p>
+						<div class="form-group">
+							<input class="form-control input" type="file" id="newfile">
+						</div>
+						<p class="text-danger msgfile"></p>
 					</div>
 
 

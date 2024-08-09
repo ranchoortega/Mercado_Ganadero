@@ -1,25 +1,6 @@
 <div class="page-body">
 
-	<nav id="navigation">
-		<!-- container -->
-		<div class="container viewCliente">
-			<!-- responsive-nav -->
-			<div id="responsive-nav">
-				<!-- NAV -->
-				<ul class="main-nav nav navbar-nav">
-					<li><a href="<?php echo base_url() ?>Welcome">Inicio</a></li>
-					<li><a href="<?php echo base_url() ?>Cliente/Provedores">Provedores</a></li>
-					<li><a href="#">Nosotros</a></li>
 
-
-
-				</ul>
-				<!-- /NAV -->
-			</div>
-			<!-- /responsive-nav -->
-		</div>
-		<!-- /container -->
-	</nav>
 	<!-- /NAVIGATION -->
 
 	<!-- BREADCRUMB -->

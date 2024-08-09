@@ -261,3 +261,19 @@ var mensajeAccion = function (icon, titulo, texto) {
 		confirmButtonText: 'Aceptar'
 	});
 }
+
+var limpiarElementos = function clearSpecificElements() {
+    // Selecciona todos los elementos con la clase 'clearable'
+    const elements = document.querySelectorAll('.input');
+    elements.forEach(element => {
+        if (element.tagName === 'INPUT') {
+			element.value = '';
+        } else if (element.tagName === 'TEXTAREA') {
+            // Limpia el valor de textareas
+            element.value = '';
+        } else if (element.tagName === 'SELECT') {
+            // Restaura el select al primer valor
+            element.selectedIndex = "";
+        }
+    });
+}
