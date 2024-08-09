@@ -12,35 +12,44 @@ class Login extends CI_Controller
 
     public function SaveSesion()
     {
-        if($this->input->post()){
-          
+        if ($this->input->post()) {
+
             $idUsuario = $this->input->post('idUsuario');
-           
+
             $token = $this->input->post('token');
-          
-            $data = [
-                "usuario" => $idUsuario,
-                "token" => $token,
-            ];
-            $this->session->set_userdata($data);
-            $usuario = $this->session->userdata();
-         
+            if ($token !== null || !empty($token)) {
+
+                $data = [
+                    "usuario" => $idUsuario,
+                    "token" => $token,
+                ];
+                $this->session->set_userdata($data);
+            } else {
+                $data = [
+                    "usuario" => $idUsuario,
+
+                ];
+                $this->session->set_userdata($data);
+
+            }
+
+
             echo json_encode(true);
         }
     }
 
     public function SaveSesionUser()
     {
-        if($this->input->post()){
-          
+        if ($this->input->post()) {
+
             $idUsuario = $this->input->post('idUsuario');
-          
+
             $data = [
                 "usuario" => $idUsuario
             ];
             $this->session->set_userdata($data);
             $usuario = $this->session->userdata();
-         
+
             echo json_encode(true);
         }
     }
@@ -48,7 +57,7 @@ class Login extends CI_Controller
     public function destruir()
     {
         $this->session->sess_destroy();
-      
-        header('Location: ' . base_url() . 'Inicio');
+
+        header('Location: ' . base_url() );
     }
 }

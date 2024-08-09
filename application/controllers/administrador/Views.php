@@ -8,6 +8,7 @@ class Views extends CI_Controller
 	{
 		parent::__construct();
 		
+		
 		if (!$this->session->userdata('usuario')) {
 			header('Location: ' . base_url());
 		}

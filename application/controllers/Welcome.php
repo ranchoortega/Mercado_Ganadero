@@ -37,9 +37,9 @@ class Welcome extends CI_Controller
 		);
 
 
-		$this->load->view('partials/header', $datos);
+		$this->load->view('partialsInicio/header', $datos);
 		$this->load->view('welcome_message');
-		$this->load->view('partials/footer');
+		$this->load->view('partialsInicio/footer');
 	}
 
 

@@ -141,34 +141,4 @@
 
             </div>
         </div>
-        <nav id="navigation">
-            <!-- container -->
-            <div class="container viewCliente">
-                <!-- responsive-nav -->
-                <div id="responsive-nav">
-                    <input id="puto" type="text" value="<?php echo base_url() ?>" hidden>
-                    <!-- NAV -->
-                    <ul class="main-nav nav navbar-nav">
-                        <li class="active"><a href="#">Inicio</a></li>
-                        <li><a href="<?php echo base_url() ?>Cliente/Contacto">Contacto</a></li>
-                        <li><a href="#">Nosotros</a></li>
-                        <li id="loginCreate" hidden><a href="#">Login</a></li>
-                        <li id="loginUser">
-                            <a href="#" id="userLink">Usuario</a>
-                            <ul id="logoutButton" style="display: none;">
-                                <li><a href="#" id="btn-cerrar-sesion">Cerrar Sesión</a></li>
-                            </ul>
-
-                        </li>
-
-
-
-
-
-                    </ul>
-                    <!-- /NAV -->
-                </div>
-                <!-- /responsive-nav -->
-            </div>
-            <!-- /container -->
-        </nav>
+        

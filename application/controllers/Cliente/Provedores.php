@@ -3,14 +3,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Provedores extends CI_Controller
 {
-    public function __construct()
+	public function __construct()
 	{
-		parent::__construct();	
+		parent::__construct();
 	}
 
 	public function index()
 	{
-	
+
 		$datos = array();
 		$datos['estiloscss'] = plantilla_head(
 			array(
@@ -30,8 +30,10 @@ class Provedores extends CI_Controller
 				"template/assets/js2/nouislider.min.js",
 				"template/assets/js2/jquery.zoom.min.js",
 				"template/assets/js2/main.js",
+				"template/modulos/user/Login/Login.js",
+				"template/modulos/user/Login/LoginMain.js",
 				"template/modulos/user/cliente/Proveedores/Proveedores.js",
-				"template/modulos/user/cliente/Proveedores/proveedoresMain.js"
+				"template/modulos/user/cliente/Proveedores/proveedoresMain.js",
 				
 
 			)
@@ -44,5 +46,5 @@ class Provedores extends CI_Controller
 	}
 
 
-   
+
 }

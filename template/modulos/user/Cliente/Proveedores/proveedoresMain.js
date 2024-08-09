@@ -1,6 +1,11 @@
 
 const proveedores = new Proveedores();
 $(document).ready(() => {
+    console.log("gggggggggggg");
+    let user = $('#puto').val();
+    console.log(user);
+    
+    
     console.log(proveedores.id_usuario);
     if (proveedores.id_usuario != "") {
       

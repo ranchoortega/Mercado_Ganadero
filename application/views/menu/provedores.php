@@ -5,6 +5,7 @@
 		<div class="container viewCliente">
 			<!-- responsive-nav -->
 			<div id="responsive-nav">
+				<input id="puto"type="text" value="<?php echo base_url() ?>" hidden>
 				<!-- NAV -->
 				<ul class="main-nav nav navbar-nav">
 					<li class="active"><a href="#">Inicio</a></li>
@@ -147,19 +148,19 @@
 
 							<span class="input-group-text bx bxs-user bx-sm" id="addon-wrapping"></span>
 							<input type="text" class="input" placeholder="Usuario" aria-describedby="addon-wrapping"
-								id="loginUser">
+								id="usuario">
 						</div>
 						<p class="text-danger msgploginname"></p>
 						<div class="input-group flex-nowrap ">
 
 							<span class="input-group-text bx bxs-user bx-sm" id="addon-wrapping"></span>
 							<input type="password" class="input" placeholder="Contraseña"
-								aria-describedby="addon-wrapping" id="loginPassword" minlength="4" maxlength="8">
+								aria-describedby="addon-wrapping" id="contrasena" minlength="4" maxlength="8">
 						</div>
 						<p class="text-danger msgploginpassword"></p>
 						<div class="form-group"
 							style=" margin-top: -12PX; display: flex;    justify-content: space-around;">
-							<a id="login" class="primary-btn order-submit">Iniciar sesion</a>
+							<a id="btnLogin" class="primary-btn order-submit">Iniciar sesion</a>
 
 
 						</div>
