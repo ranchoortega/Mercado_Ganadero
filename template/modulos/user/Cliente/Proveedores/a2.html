@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocalización</title>
+</head>
+
+<body>
+    <h1>Geolocalización</h1>
+    <button id="getLocation">Obtener Ubicación</button>
+    <div id="result"></div>
+    <div id="address">Dirección: <span id="addressText"></span></div>
+
+
+    <script>
+        document.getElementById('getLocation').addEventListener('click', function () {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+                        document.getElementById('result').innerHTML = `Latitud: ${latitude}, Longitud: ${longitude}`;
+                        reverseGeocode(latitude, longitude, function (address) {
+                            if (address) {
+                                const addressText = `${address.road || ''}, ${address.city || ''}, ${address.state || ''}, ${address.country || ''}`;
+                                document.getElementById('addressText').textContent = addressText;
+                            } else {
+                                document.getElementById('addressText').textContent = 'No se pudo obtener la dirección';
+                            }
+                        });
+
+
+
+
+
+                    },
+                    function (error) {
+                        document.getElementById('result').innerHTML = `Error: ${error.message}`;
+                    }
+                );
+            } else {
+                document.getElementById('result').innerHTML = "Geolocalización no soportada por el navegador.";
+            }
+        });
+
+        function reverseGeocode(lat, lng, callback) {
+            const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&addressdetails=1`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.address) {
+                        callback(data.address);
+                    } else {
+                        callback(null);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error en la geocodificación inversa:', error);
+                    callback(null);
+                });
+        }
+
+    </script>
+</body>
+
+</html>

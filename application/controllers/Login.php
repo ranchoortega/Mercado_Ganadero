@@ -29,6 +29,22 @@ class Login extends CI_Controller
         }
     }
 
+    public function SaveSesionUser()
+    {
+        if($this->input->post()){
+          
+            $idUsuario = $this->input->post('idUsuario');
+          
+            $data = [
+                "usuario" => $idUsuario
+            ];
+            $this->session->set_userdata($data);
+            $usuario = $this->session->userdata();
+         
+            echo json_encode(true);
+        }
+    }
+
     public function destruir()
     {
         $this->session->sess_destroy();

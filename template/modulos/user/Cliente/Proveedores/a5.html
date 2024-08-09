@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa con Leaflet y Geocodificación Inversa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+        #address {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ubicación en el Mapa</h1>
+    <div id="map"></div>
+    <div id="address">Dirección: <span id="addressText">Cargando...</span></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Función para obtener la dirección usando Nominatim
+        function reverseGeocode(lat, lng, callback) {
+            const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&addressdetails=1`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.address) {
+                        callback(data.address);
+                    } else {
+                        callback(null);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error en la geocodificación inversa:', error);
+                    callback(null);
+                });
+        }
+
+        // Inicializa el mapa
+        const map = L.map('map').setView([19.045631976278223, -98.223490110166], 15);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Crea un marcador inicial
+        const marker = L.marker([19.045631976278223, -98.223490110166]).addTo(map)
+            .bindPopup('Ubicación actual')
+            .openPopup();
+
+        // Actualiza la dirección cuando se recibe la ubicación
+        reverseGeocode(19.045631976278223, -98.223490110166, function(address) {
+            if (address) {
+                const addressText = `${address.road || ''}, ${address.city || ''}, ${address.state || ''}, ${address.country || ''}`;
+                document.getElementById('addressText').textContent = addressText;
+            } else {
+                document.getElementById('addressText').textContent = 'No se pudo obtener la dirección';
+            }
+        });
+
+        // Opcional: Seguimiento en tiempo real
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(
+                function(position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    
+                    marker.setLatLng([latitude, longitude]);
+                    map.setView([latitude, longitude], 15);
+                    
+                    reverseGeocode(latitude, longitude, function(address) {
+                        if (address) {
+                            const addressText = `${address.road || ''}, ${address.city || ''}, ${address.state || ''}, ${address.country || ''}`;
+                            document.getElementById('addressText').textContent = addressText;
+                        } else {
+                            document.getElementById('addressText').textContent = 'No se pudo obtener la dirección';
+                        }
+                    });
+                },
+                function(error) {
+                    console.error('Error de geolocalización:', error);
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 0
+                }
+            );
+        } else {
+            document.getElementById('addressText').textContent = 'Geolocalización no soportada por este navegador.';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa con Seguimiento en Tiempo Real</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ubicación en Tiempo Real</h1>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Crea el mapa y configura el centro inicial y el nivel de zoom
+        const map = L.map('map').setView([0, 0], 15);
+
+        // Añade un layer de tiles usando OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Crea un marcador vacío
+        const marker = L.marker([0, 0]).addTo(map);
+
+        // Función de éxito para la geolocalización
+        function onSuccess(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // Actualiza la posición del marcador y centra el mapa en la nueva ubicación
+            marker.setLatLng([latitude, longitude]);
+            map.setView([latitude, longitude], 15);
+        }
+
+        // Función de error para la geolocalización
+        function onError(error) {
+            console.error(`Código de error: ${error.code}, Mensaje: ${error.message}`);
+        }
+
+        // Inicia el seguimiento de la ubicación
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(onSuccess, onError, {
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 0
+            });
+        } else {
+            alert("Geolocalización no soportada por este navegador.");
+        }
+    </script>
+</body>
+</html>

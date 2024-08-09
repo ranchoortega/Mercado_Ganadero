@@ -93,7 +93,7 @@
 </head>
 
 <body>
-    
+
     <div class="loader-wrapper" id="spinnergeneral">
         <div class="theme-loader">
             <div class="loader-p"></div>
@@ -130,14 +130,15 @@
             </div>
         </div>
         <div hidden>
-		<div class="main-header-right row m-0" style="border-bottom: 0.4px #EBEBEB solid;">
+            <div class="main-header-right row m-0" style="border-bottom: 0.4px #EBEBEB solid;">
 
-			<div class="nav-right col pull-right right-menu p-0">
-				<ul class="nav-menus">
-					<input type="hidden" class="jwt" value="<?= $this->session->userdata('token') ?>">
-					<input type="hidden" class="user" value="<?= $this->session->userdata('usuario') ?>">
-				</ul>
-			</div>
+                <div class="nav-right col pull-right right-menu p-0">
+                    <ul class="nav-menus">
+                        <input type="hidden" class="jwt" value="<?= $this->session->userdata('token') ?>">
+                        <input type="hidden" class="user" value="<?= $this->session->userdata('usuario') ?>">
+                    </ul>
+                </div>
 
-		</div>
-	</div>
+            </div>
+        </div>
+        
