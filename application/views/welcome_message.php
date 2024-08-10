@@ -109,8 +109,10 @@
                                 <select class="input"
                                     style="background-color: rgba(255, 255, 255, 0);color: #efefef;font-weight: 900;">
                                     <option value="0">Categoria</option>
-                                    <option value="0">Torros y vacas</option>
-                                    <option value="0">Chivos y chivas</option>
+                                    <option id="viewOptionReses">Reses</option>
+                                    <option id="viewOptionChivos">Chivos</option>
+                                    <option id="viewOptionAves">Aves</option>
+                                    <option id="viewOptionCerdos">Cerdos</option>
                                 </select>
 
                             </form>
@@ -139,7 +141,7 @@
             <div id="responsive-nav">
                 <!-- NAV -->
                 <ul class="main-nav nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="#">Inicio</a></li>
                     <li><a href="<?php echo base_url() ?>Cliente/Provedores">Provedores</a></li>
                     <li><a href="<?php echo base_url() ?>Cliente/Contacto">Contacto</a></li>
                     <li><a href="#">Nosotros</a></li>
@@ -165,13 +167,13 @@
                 <!-- row -->
                 <div class="row">
                     <!-- shop -->
-                    <div class="col-md-4 col-xs-6" id="sectionBovinos">
+                    <div class="col-md-4 col-xs-6" id="viewDivReses">
                         <div class="shop">
                             <div class="shop-img">
                                 <img src=" <?php echo base_url('template/recursos/img/bovinosImg.jpeg'); ?>" alt="">
                             </div>
                             <div class="shop-body">
-                                <h3>Torros y <br>Vacas</h3>
+                                <h3>Reses</h3>
                                 <a href="#" class="cta-btn">Ver ahora <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -179,7 +181,7 @@
                     <!-- /shop -->
 
                     <!-- shop -->
-                    <div class="col-md-4 col-xs-6" id="sectionCaprinos">
+                    <div class="col-md-4 col-xs-6" id="viewDivChivos">
                         <div class="shop">
                             <div class="shop-img">
                                 <img src=" <?php echo base_url('template/recursos/img/caprinosImg.jpg'); ?>" alt="">
@@ -190,7 +192,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-xs-6" id="sectionAves">
+                    <div class="col-md-4 col-xs-6" id="viewDivAves">
                         <div class="shop">
                             <div class="shop-img">
                                 <img src=" <?php echo base_url('template/recursos/img/aves.jpg'); ?>" alt="">
@@ -201,7 +203,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-xs-6" id="sectionPorcinos">
+                    <div class="col-md-4 col-xs-6" id="viewDivCerdos">
                         <div class="shop">
                             <div class="shop-img">
                                 <img src=" <?php echo base_url('template/recursos/img/porcino.jpg'); ?>" alt="">

@@ -69,7 +69,7 @@
                             </li>
 
                             <li><a class="nav-link menu-title link-nav"
-                                    href="<?php echo base_url() ?>Funcionario/Tesoreria/Ingresos"><i
+                                    href="<?php echo base_url() ?>administrador/Pages"><i
                                         data-feather="eye"></i><span>OCULTAR Y MOSTRAR</span></a></li>
                             <li><a class="nav-link menu-title link-nav"
                                     href="<?php echo base_url() ?>administrador/Contactos"><i
