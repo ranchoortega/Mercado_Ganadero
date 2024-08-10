@@ -59,10 +59,11 @@ class Proveedores {
             });
     }
 
-    async upload(file) {
+    async upload(file, id_descripcion) {
         const form = new FormData();
 
         form.append("file", file);
+        form.append("id_descripcion", id_descripcion);
         return sendData(form, "upload/Upload/saveImage")
 
     }
@@ -119,17 +120,17 @@ class Proveedores {
 
         data ? window.location.href = `${base_url}administrador/Views` : window.location.href = `${base_url}`;
     }
-    async setAnimal(raza, edad, genero, descripcion, precio, id_file) {
+    async setAnimal(raza, edad, genero, descripcion, precio) {
         const form = new FormData();
+        form.append("id_usuario",  this.id_usuario);
         form.append("raza", raza);
         form.append("edad", edad);
         form.append("genero", genero);
         form.append("descripcion", descripcion);
         form.append("precio", precio);
-        form.append("id_file", id_file);
 
 
-        return sendData(form, "C_Animales/setAnimales")
+        return sendData(form, "C_Animales/setDescripcio")
     }
 
 

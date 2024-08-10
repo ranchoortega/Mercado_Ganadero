@@ -70,13 +70,13 @@
 
                             <li><a class="nav-link menu-title link-nav"
                                     href="<?php echo base_url() ?>Funcionario/Tesoreria/Ingresos"><i
-                                        data-feather="eye"></i><span>Ocultar y Mostrar</span></a></li>
+                                        data-feather="eye"></i><span>OCULTAR Y MOSTRAR</span></a></li>
                             <li><a class="nav-link menu-title link-nav"
                                     href="<?php echo base_url() ?>administrador/Contactos"><i
-                                        data-feather="user"></i><span>Contactos</span></a></li>
+                                        data-feather="user"></i><span>CONTACTOS</span></a></li>
                             <li><a class="nav-link menu-title link-nav"
-                                    href="<?php echo base_url() ?>Funcionario/Tesoreria/Egresos/polizassiregistro"><i
-                                        data-feather="trending-down"></i><span>EGRESOS SIN REGISTRO</span></a></li>
+                                    href="<?php echo base_url() ?>administrador/Proveedores"><i
+                                        data-feather="shopping-bag"></i><span>PROVEEDORES</span></a></li>
                             <li><a class="nav-link menu-title link-nav"
                                     href="<?php echo base_url() ?>Funcionario/Tesoreria/Presupuesto/Egresos/ver/<?= $this->session->userdata('municipio') ?>"><i
                                         data-feather="list"></i><span>PRESUPUESTO EGRESOS</span></a></li>

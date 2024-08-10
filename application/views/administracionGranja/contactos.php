@@ -53,7 +53,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    
+
                     <div class="mb-3">
                         <label class="form-label">NOMBRE</label>
                         <input class="form-control" type="text" id="name">
@@ -68,27 +68,27 @@
                             <textarea class="form-control" id="comment" rows="3"></textarea>
 
                         </div>
-                       
+
 
                     </div>
                     <div class="col-sm-12" style=" display: flex;">
-                            <div class="mb-3">
-                                <label for="ubicacion_no_hombres" class="form-label">FECHA </label>
-                                <input class="form-control" type="date" id="fecha">
-                            </div>
-                            <div class="mb-3">
-                                <label for="ubicacion_no_mujeres" class="form-label">HORA</label>
-                                <input class="form-control" type="time" id="hora">
-                            </div>
+                        <div class="mb-3">
+                            <label for="ubicacion_no_hombres" class="form-label">FECHA </label>
+                            <input class="form-control" type="date" id="fecha">
                         </div>
-                        
+                        <div class="mb-3">
+                            <label for="ubicacion_no_mujeres" class="form-label">HORA</label>
+                            <input class="form-control" type="time" id="hora">
+                        </div>
+                    </div>
+
 
                 </div>
 
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Cerrar</button>
-               
+
             </div>
         </div>
     </div>

@@ -54,10 +54,10 @@ $('#btnFile').on('click', async () => {
                 }
                 else {
                     var file = fileInput.files[0]; // Obtén el primer archivo seleccionado
-                    const { res:resFile, data:dataFile } = await proveedores.upload(file);
+                    const { res:resFile, data:dataFile } = await proveedores.setAnimal(raza, edad, genero, descripcion, precio);
                     if (resFile.ok) {
                         if (dataFile.res) {
-                            const {res:resAnimal, data:dataAnimal} = await proveedores.setAnimal(raza, edad, genero, descripcion, precio, dataFile.res);
+                            const {res:resAnimal, data:dataAnimal} = await proveedores.upload(file, dataFile.res);
                             if (resAnimal.ok) {
                                 if (dataAnimal.res) {
                                     mensaje(dataAnimal.icon, 'CORRECTO', dataAnimal.mensaje);
