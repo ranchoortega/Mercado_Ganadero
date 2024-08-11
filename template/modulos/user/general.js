@@ -1,5 +1,8 @@
  let token = $('.jwt').val();
 
+
+ 
+
 var setGeneral = async (datos, ruta) => {
 	try {
 		const response = await fetch(base_url + ruta, {
@@ -262,9 +265,9 @@ var mensajeAccion = function (icon, titulo, texto) {
 	});
 }
 
-var limpiarElementos = function clearSpecificElements() {
+var limpiarElementos = function clearSpecificElements(elemento) {
     // Selecciona todos los elementos con la clase 'clearable'
-    const elements = document.querySelectorAll('.input');
+    const elements = document.querySelectorAll(elemento);
     elements.forEach(element => {
         if (element.tagName === 'INPUT') {
 			element.value = '';

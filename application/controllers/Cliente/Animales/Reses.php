@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Welcome extends CI_Controller
+class Reses extends CI_Controller
 {
     public function __construct()
 	{
@@ -25,25 +25,21 @@ class Welcome extends CI_Controller
 		);
 		$datos['estilosjs'] = plantilla_footer(
 			array(
-				"template/modulos/user/Welcome.js",
-				"template/modulos/user/welcomeMain.js",
 				"template/assets/js2/jquery.min.js",
 				"template/assets/js2/bootstrap.min.js",
 				"template/assets/js2/slick.min.js",
 				"template/assets/js2/nouislider.min.js",
 				"template/assets/js2/jquery.zoom.min.js",
 				"template/assets/js2/main.js",
+			
 				
-
-				
-
 			)
 		);
 
 
-		$this->load->view('partialsInicio/header', $datos);
-		$this->load->view('welcome_message');
-		$this->load->view('partialsInicio/footer');
+		$this->load->view('partials/header', $datos);
+		$this->load->view('cliente/reses');
+		$this->load->view('partials/footer');
 	}
 
 

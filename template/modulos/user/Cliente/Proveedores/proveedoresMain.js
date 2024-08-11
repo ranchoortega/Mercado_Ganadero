@@ -61,7 +61,7 @@ $('#btnFile').on('click', async () => {
                             if (resAnimal.ok) {
                                 if (dataAnimal.res) {
                                     mensaje(dataAnimal.icon, 'CORRECTO', dataAnimal.mensaje);
-                                    limpiarElementos();
+                                    limpiarElementos('.input');
                                 } else {
                                     mensaje(dataAnimal.icon, 'ERROR', dataAnimal.mensaje);
                                     
@@ -78,7 +78,7 @@ $('#btnFile').on('click', async () => {
 
 
             } else {
-                MensajeAlerta('warning', '', 'Por favor, suba un archivo (PDF)', 'btn btn-primary');
+                MensajeAlerta('warning', '', 'Por favor, suba un archivo (imagen)', 'btn btn-primary');
             }
 
         } else {

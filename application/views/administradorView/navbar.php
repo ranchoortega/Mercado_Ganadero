@@ -77,9 +77,7 @@
                             <li><a class="nav-link menu-title link-nav"
                                     href="<?php echo base_url() ?>administrador/Proveedores"><i
                                         data-feather="shopping-bag"></i><span>PROVEEDORES</span></a></li>
-                            <li><a class="nav-link menu-title link-nav"
-                                    href="<?php echo base_url() ?>Funcionario/Tesoreria/Presupuesto/Egresos/ver/<?= $this->session->userdata('municipio') ?>"><i
-                                        data-feather="list"></i><span>PRESUPUESTO EGRESOS</span></a></li>
+                            <li><a class="nav-link menu-title link-nav" href="<?php echo base_url() ?>administrador/animales"><i></i><span class="fa-solid fa-cow"></span><span style="margin-left: 14px;">ANIMLES</span></a></li>
 
                             <!-- <li><a class="nav-link menu-title link-nav"
                                                 href="<?php echo base_url() ?>Funcionario/Tesoreria/Ingresos"><i
