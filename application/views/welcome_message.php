@@ -84,7 +84,7 @@
     }
 </style>
 <div class="page-body">
- 
+
     <header>
         <!-- TOP HEADER -->
 
@@ -106,16 +106,24 @@
 
                         <div class="header-search text-center">
                             <form>
-                                <select class="input"
+                                <select class="input" onchange="handleOptionChange(this)"
                                     style="background-color: rgba(255, 255, 255, 0);color: #efefef;font-weight: 900;">
                                     <option value="0">Categoria</option>
-                                    <option id="viewOptionReses">Reses</option>
+                                    <option id="viewOptionReses"  value="<?php echo base_url() ?>Cliente/Animales/Reses">Reses</option>
                                     <option id="viewOptionChivos">Chivos</option>
                                     <option id="viewOptionAves">Aves</option>
                                     <option id="viewOptionCerdos">Cerdos</option>
                                 </select>
 
                             </form>
+                            <script>
+                                function handleOptionChange(selectElement) {
+                                    var url = selectElement.value;
+                                    if (url) {
+                                        window.location.href = url;
+                                    }
+                                }
+                            </script>
                         </div>
                     </div>
                     <!-- /SEARCH BAR -->
@@ -174,7 +182,8 @@
                             </div>
                             <div class="shop-body">
                                 <h3>Reses</h3>
-                                <a href="#" class="cta-btn">Ver ahora <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="<?php echo base_url() ?>Cliente/Animales/Reses" class="cta-btn">Ver ahora <i
+                                        class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -450,7 +459,7 @@
 
     <!-- HOT DEAL SECTION -->
     <div id="hot-deal" class="section">
-       
+
     </div>
     <!-- /container -->
 
@@ -754,7 +763,7 @@
     <!-- /SECTION -->
 
     <!-- NEWSLETTER -->
- 
+
     <!-- /NEWSLETTER -->
 
 

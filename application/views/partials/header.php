@@ -114,7 +114,7 @@
                                 style="width: 75px;" class="white-filter">
                         </a>
                     </li>
-                    <li><a href="https://web.whatsapp.com/send?phone=2214350830&text=sd"><i
+                    <li><a id="whapPhone" href="https://web.whatsapp.com/send?phone=2214350830&text=sd"><i
                                 class="fa fa-phone bx-sm"></i>Whatsapp</a></li>
                     <li><a href="mailto:ranchoortega77@gmail.com?Subject=Mas%20informacion"><i
                                 class="fa fa-envelope-o bx-sm"></i>Gmail</a></li>
@@ -127,6 +127,25 @@
                         </div>
                     </li>
                 </ul>
+                <script>
+                    function detectDeviceType() {
+                        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+                        // Detectar si el dispositivo es móvil
+                        const isMobile = /android|iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+
+                        // Actualizar el enlace de WhatsApp en función del dispositivo
+                        const whatsappLink = isMobile
+                            ? 'https://wa.me/2214350830?text=sd'
+                            : 'https://web.whatsapp.com/send?phone=2214350830&text=sd';
+
+                        // Actualizar el href del enlace
+                        document.getElementById('whapPhone').href = whatsappLink;
+                    }
+
+                    // Llamar a la función para actualizar el enlace
+                    detectDeviceType();
+                </script>
             </div>
         </div>
         <div hidden>
@@ -199,15 +218,15 @@
             });
 
             var userLink = document.getElementById('userLink');
-    var logoutButton = document.getElementById('logoutButton');
-    
-    userLink.addEventListener('click', function(event) {
-        event.preventDefault(); // Previene el comportamiento predeterminado del enlace
-        if (logoutButton.style.display === 'none') {
-            logoutButton.style.display = 'block';
-        } else {
-            logoutButton.style.display = 'none';
-        }
-    });
+            var logoutButton = document.getElementById('logoutButton');
+
+            userLink.addEventListener('click', function (event) {
+                event.preventDefault(); // Previene el comportamiento predeterminado del enlace
+                if (logoutButton.style.display === 'none') {
+                    logoutButton.style.display = 'block';
+                } else {
+                    logoutButton.style.display = 'none';
+                }
+            });
 
         </script>

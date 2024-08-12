@@ -903,7 +903,7 @@ hot-deal
   position: relative;
   margin: 15px 0px;
   -webkit-box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
-  box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #E4E7ED;
+  box-shadow: 0px 0px 0px 0px #E4E7ED, 0px 0px 0px 1px #c0c6d3;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }

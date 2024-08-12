@@ -1,5 +1,13 @@
 </div>
 </div>
+<nav aria-label="Page navigation example" style="display: flex;	justify-content: space-evenly;" >
+		<ul class="pagination justify-content-center" id = "pagesNav">
+		<li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Antes</a></li>
+    <li class="page-item" value="1"><a class="page-link" href="#">1</a></li>
+		
+			
+		</ul>
+	</nav>
 
 <div id="newsletter" class="section">
   <!-- container -->
