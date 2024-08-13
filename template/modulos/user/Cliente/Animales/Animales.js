@@ -13,6 +13,13 @@ class Animales {
         this.verification = false;
         this.data = "";
 
+        this.typeDis =   $('#whapsapweb').val()?$('#whapsapweb').val():$('#whapPhone2').val();
+        this.webValida =   $('#whapsapweb').val()?true:false;
+        
+        console.log(this.typeDis);
+        
+        
+
         // Configura el manejador de eventos para los clics en la paginación
         this.paginationContainer.on('click', 'li.page-item', (event) => {
             this.handlePageClick(event);
@@ -52,7 +59,7 @@ class Animales {
                         </div>
                     </div>
                     <div class="add-to-cart">
-                        <button class="add-to-cart-btn"><i class="fa fa-phone"></i>Contactanos</button>
+                        <button class="add-to-cart-btn"><i class="fa fa-phone"></i><a href="${this.createUrl(data.phone, data.raza, data.descripcion)}"  target="_blank">Contactanos</a></button>
                     </div>
                 </div>`);
             contenedor.append(nuevoElemento);
@@ -96,5 +103,12 @@ class Animales {
             // Aquí deberías actualizar la visualización con los datos de la página seleccionada.
             this.generalItems();
         }
+    }
+
+    createUrl(phone, raza, descripcion){
+        let mensaje = encodeURIComponent(`Raza: ${raza} Descripción: ${descripcion}`);
+        console.log(this.webValida?`${this.typeDis}send?phone=+52${phone}&text=${mensaje}`:`${this.typeDis}${phone}?text=${mensaje}`);
+    
+        return this.webValida?`${this.typeDis}send?phone=+52${phone}&text=${mensaje}`:`${this.typeDis}${phone}?text=${mensaje}`
     }
 }

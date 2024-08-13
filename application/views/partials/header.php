@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-
+   
 
     <?php foreach ($estiloscss as $estilo): ?>
         <link rel="stylesheet" href="<?php echo base_url() . $estilo; ?>">
@@ -89,6 +89,7 @@
     </style>
 
     <link rel="icon" href="<?php echo base_url('template/recursos/logos/logo.svg'); ?>" type="image/x-icon">
+    
 
 </head>
 
@@ -107,6 +108,8 @@
     <div class="page-wrapper compact-wrapper" id="pageWrapper">
         <div id="top-header">
             <div class="container">
+                <input type="text" id="whapsapweb" hidden>
+                <input type="text" id="whapPhone2"hidden>
                 <ul class="header-links pull-left">
                     <li>
                         <a href="#" class="logo">
@@ -136,11 +139,21 @@
 
                         // Actualizar el enlace de WhatsApp en función del dispositivo
                         const whatsappLink = isMobile
-                            ? 'https://wa.me/2214350830?text=sd'
-                            : 'https://web.whatsapp.com/send?phone=2214350830&text=sd';
+                            ? 'https://wa.me/+522431083861?text=sd'
+                            : 'https://web.whatsapp.com/send?phone=+522431083861&text=sd';
 
+                            const whatsappLink2 = isMobile
+                            ? ''
+                            : 'https://web.whatsapp.com/';
+                            const whatsappLink3 = isMobile
+                            ? 'https://wa.me/'
+                            : '';
+
+                        
                         // Actualizar el href del enlace
                         document.getElementById('whapPhone').href = whatsappLink;
+                        document.getElementById('whapsapweb').value = whatsappLink2;
+                        document.getElementById('whapPhone2').value = whatsappLink3;
                     }
 
                     // Llamar a la función para actualizar el enlace

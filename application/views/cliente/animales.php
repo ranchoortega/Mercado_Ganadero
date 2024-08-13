@@ -20,6 +20,10 @@
 
 	<!-- SECTION -->
 	<div class="section" style="  background-color: #e7e7e7; ">
+		<div id="divcob">
+		
+		</div>
+		
 		<!-- container -->
 		<div class="container">
 			<!-- row -->
@@ -36,10 +40,10 @@
 
 					<!-- store products -->
 					<div class="row" id="cardAnimales">
-						
+
 						<!-- product -->
-						
-					
+
+
 						<!-- /product -->
 					</div>
 					<!-- /store products -->
