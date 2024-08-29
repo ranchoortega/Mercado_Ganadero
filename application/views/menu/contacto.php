@@ -93,8 +93,8 @@
 								Numero telefonico
 							</label>
 							<div class="caption">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-									incididunt ut labore et dolore magna aliqua.</p>
+								<p> 243 116 1597</p>
+								<p> 221 435 08 30</p>
 							</div>
 						</div>
 						<div class="input-radio">
@@ -104,8 +104,7 @@
 								Referencia de la ubicacion.
 							</label>
 							<div class="caption">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-									incididunt ut labore et dolore magna aliqua.</p>
+								<p>Atras de comision de luz y llendose por el ojito de agua</p>
 							</div>
 						</div>
 						<div class="input-radio">
@@ -115,8 +114,7 @@
 								Horarios
 							</label>
 							<div class="caption">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-									incididunt ut labore et dolore magna aliqua.</p>
+								<p>Las 24 horas</p>
 							</div>
 						</div>
 					</div>

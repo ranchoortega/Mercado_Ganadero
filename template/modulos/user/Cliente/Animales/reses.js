@@ -7,7 +7,7 @@ $(document).ready(async function () {
     const { res, data } = await reses.getAnimales();
 
     if (res.ok) {
-        $("#mensajeerror").hide();
+    
         console.log(data);
         reses.data = data;
 

@@ -110,9 +110,9 @@
                                     style="background-color: rgba(255, 255, 255, 0);color: #efefef;font-weight: 900;">
                                     <option value="0">Categoria</option>
                                     <option id="viewOptionReses"  value="<?php echo base_url() ?>Cliente/Animales/Reses">Reses</option>
-                                    <option id="viewOptionChivos">Chivos</option>
-                                    <option id="viewOptionAves">Aves</option>
-                                    <option id="viewOptionCerdos">Cerdos</option>
+                                    <option id="viewOptionChivos" value="<?php echo base_url() ?>Cliente/Animales/Chivos">Chivos</option>
+                                    <option id="viewOptionAves" value="<?php echo base_url() ?>Cliente/Animales/Aves">Aves</option>
+                                    <option id="viewOptionCerdos" value="<?php echo base_url() ?>Cliente/Animales/Cerdos">Cerdos</option>
                                 </select>
 
                             </form>
@@ -219,7 +219,7 @@
                             </div>
                             <div class="shop-body">
                                 <h3>Cerdos</h3>
-                                <a href="#" class="cta-btn">Ver ahora <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="<?php echo base_url() ?>Cliente/Animales/Cerdos" class="cta-btn">Ver ahora <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>

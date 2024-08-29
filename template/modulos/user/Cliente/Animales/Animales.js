@@ -83,7 +83,7 @@ class Animales {
                     let next = this.currentPage
                     this.currentPage += 1;
                     this.pages += 9;
-                    const paginaElemento = $('<li></li>').addClass('page-item').attr('value', next+1).html(`<a class="page-link">${this.currentPage}</a>`);
+                    const paginaElemento = $('<li></li>').addClass('page-item').attr('value', next+1).html(`<a href="#" class="page-link">${this.currentPage}</a>`);
                     this.paginationContainer.append(paginaElemento);
                 }
             }
