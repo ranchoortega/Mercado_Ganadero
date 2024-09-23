@@ -24,6 +24,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
 
    
 
@@ -123,7 +124,7 @@
                                 class="fa fa-envelope-o bx-sm"></i>Gmail</a></li>
                     <li>
                         <div class="menu-toggle">
-                            <a href="#">
+                            <a id="menuIcon" href="#">
                                 <i class="fa fa-bars bx-sm"></i>
                                 <span>Menu</span>
                             </a>
@@ -183,8 +184,7 @@
                     <ul class="main-nav nav navbar-nav">
                         <li><a href="<?php echo base_url() ?>Welcome">Inicio</a></li>
                         <li id="liContactos"><a href="<?php echo base_url() ?>Cliente/Contacto">Contacto</a></li>
-                        <li id="liproveedores"><a href="<?php echo base_url() ?>Cliente/Provedores">Proveedores</a></li>
-                        <li id="liNosotros"><a href="#">Nosotros</a></li>
+                        <li id="liproveedores"><a href="<?php echo base_url() ?>Cliente/Provedores">Publicar</a></li>
                         <li id="liLogin"><a href="<?php echo base_url() ?>Login">Login</a></li>
                         <li id="liUser" style="display: none;">
                             <a href="#" id="userLink">Usuario</a>

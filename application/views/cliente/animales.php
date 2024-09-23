@@ -19,11 +19,11 @@
 	</div>
 
 	<!-- SECTION -->
-	<div class="section" style="  background-color: #e7e7e7; ">
+	<div class="section" style="  background-color: rgba(243, 244, 246); ">
 		<div id="divcob">
-		
+
 		</div>
-		
+
 		<!-- container -->
 		<div class="container">
 			<!-- row -->
@@ -34,11 +34,27 @@
 
 				<!-- STORE -->
 				<div id="store" class="col-md-9">
-					<!-- store top filter -->
+					<div class="store-filter clearfix">
+						<div class="store-sort">
+							<label>
+								Categoria:
+								<select class="input-select">
+									<option value="0">Cerdos</option>
+									<option value="1">Cerdas</option>
+									<option value="3">Lechones</option>
+								</select>
+							</label>
 
-					<!-- /store top filter -->
-
-					<!-- store products -->
+							<label>
+								Show:
+								<select class="input-select">
+									<option value="0">20</option>
+									<option value="1">50</option>
+								</select>
+							</label>
+						</div>
+						
+					</div>
 					<div class="row" id="cardAnimales">
 
 						<!-- product -->

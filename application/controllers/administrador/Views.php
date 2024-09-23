@@ -9,9 +9,7 @@ class Views extends CI_Controller
 		parent::__construct();
 		
 		
-		if (!$this->session->userdata('token')) {
-			header('Location: ' . base_url());
-		}
+		
 	}
 
 	public function index()

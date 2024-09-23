@@ -88,7 +88,7 @@
         }
     </style>
 
-    <link rel="icon" href="<?php echo base_url('template/recursos/logos/logo.svg'); ?>" type="image/x-icon">
+    <link rel="icon" href="<?php echo base_url('template/recursos/img/logo.png'); ?>" type="image/x-icon">
 
 </head>
 
@@ -120,7 +120,7 @@
                                 class="fa fa-envelope-o bx-sm"></i>Gmail</a></li>
                     <li>
                         <div class="menu-toggle">
-                            <a href="#">
+                            <a id="menuIcon" href="#">
                                 <i class="fa fa-bars bx-sm"></i>
                                 <span>Menu</span>
                             </a>

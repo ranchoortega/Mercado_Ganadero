@@ -106,13 +106,18 @@
 
                         <div class="header-search text-center">
                             <form>
+                                
                                 <select class="input" onchange="handleOptionChange(this)"
                                     style="background-color: rgba(255, 255, 255, 0);color: #efefef;font-weight: 900;">
                                     <option value="0">Categoria</option>
-                                    <option id="viewOptionReses"  value="<?php echo base_url() ?>Cliente/Animales/Reses">Reses</option>
-                                    <option id="viewOptionChivos" value="<?php echo base_url() ?>Cliente/Animales/Chivos">Chivos</option>
-                                    <option id="viewOptionAves" value="<?php echo base_url() ?>Cliente/Animales/Aves">Aves</option>
-                                    <option id="viewOptionCerdos" value="<?php echo base_url() ?>Cliente/Animales/Cerdos">Cerdos</option>
+                                    <option id="viewOptionReses" value="<?php echo base_url() ?>Cliente/Animales/Reses">
+                                        Reses</option>
+                                    <option id="viewOptionChivos"
+                                        value="<?php echo base_url() ?>Cliente/Animales/Chivos">Chivos</option>
+                                    <option id="viewOptionAves" value="<?php echo base_url() ?>Cliente/Animales/Aves">
+                                        Aves</option>
+                                    <option id="viewOptionCerdos"
+                                        value="<?php echo base_url() ?>Cliente/Animales/Cerdos">Cerdos</option>
                                 </select>
 
                             </form>
@@ -150,9 +155,9 @@
                 <!-- NAV -->
                 <ul class="main-nav nav navbar-nav">
                     <li class="active"><a href="#">Inicio</a></li>
-                    <li><a href="<?php echo base_url() ?>Cliente/Provedores">Provedores</a></li>
+                    <li><a href="<?php echo base_url() ?>Cliente/Provedores">Publicar</a></li>
                     <li><a href="<?php echo base_url() ?>Cliente/Contacto">Contacto</a></li>
-                    <li><a href="#">Nosotros</a></li>
+                    
 
 
 
@@ -171,9 +176,26 @@
         <!-- SECTION -->
         <div class="section">
             <!-- container -->
+             
             <div class="container">
                 <!-- row -->
+              
                 <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="section-title">
+                            <h3 class="title">Animales </h3>
+                            <!--
+                                <div class="section-nav">
+                                    <ul class="section-tab-nav tab-nav">
+                                        <li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
+                                        <li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
+                                        <li><a data-toggle="tab" href="#tab1">Cameras</a></li>
+                                        <li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+                                    </ul>
+                                </div>-->
+                        </div>
+                    </div>
                     <!-- shop -->
                     <div class="col-md-4 col-xs-6" id="viewDivReses">
                         <div class="shop">
@@ -219,7 +241,8 @@
                             </div>
                             <div class="shop-body">
                                 <h3>Cerdos</h3>
-                                <a href="<?php echo base_url() ?>Cliente/Animales/Cerdos" class="cta-btn">Ver ahora <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="<?php echo base_url() ?>Cliente/Animales/Cerdos" class="cta-btn">Ver ahora <i
+                                        class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -472,7 +495,11 @@
         <!-- container -->
         <div class="container">
             <!-- row -->
+           
             <div class="row">
+
+           
+                
                 <div class="col-md-4 col-xs-6">
                     <div class="section-title">
                         <h4 class="title">Top selling</h4>
