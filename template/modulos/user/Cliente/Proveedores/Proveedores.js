@@ -9,55 +9,17 @@ class Proveedores {
         this.location = { latitude: 0, longitude: 0 };
         this.verificationLocation = false;
 
+        this.ubicacionData = "";
+        this.guardarLocation = false;
+
+        this.municipio = "";
+        this.estado = "";
+        this.pais = "";
+
 
     }
-    async getLocation() {
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    const latitude = position.coords.latitude;
-                    const longitude = position.coords.longitude;
-
-                    this.reverseGeocode(latitude, longitude, (address) => {
-                        if (address) {
-                            const addressText = `${address.road || ''}, ${address.city || ''}, ${address.state || ''}, ${address.country || ''}`;
-                            $('#location').val(addressText);
-                            this.location = { latitude: latitude, longitude: longitude };
-                            return true;
-                        } else {
-                            $(`.${idMensaje}`).html(mensaje);
-                            $('#location').val("No se pudo obtener la dirección");
-                            this.location = { latitude: 0, longitude: 0 };
-                            return false;
-                        }
-                    });
-                },
-                (error) => {
-                    $(`.${idMensaje}`).html(`Error: ${error.message}`);
-                }
-            );
-        } else {
-            $(`.${idMensaje}`).html("Geolocalización no soportada por el navegador.");
-            return false;
-        }
-    }
-
-    reverseGeocode(lat, lng, callback) {
-        const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&addressdetails=1`;
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                if (data && data.address) {
-                    callback(data.address);
-                } else {
-                    callback(null);
-                }
-            })
-            .catch(error => {
-                console.error('Error en la geocodificación inversa:', error);
-                callback(null);
-            });
-    }
+   
+  
 
     async upload(file, id_descripcion) {
         const form = new FormData();
@@ -87,7 +49,7 @@ class Proveedores {
         }
     }
     validarLocation(idMensaje,mensaje){
-        if(!this.verificationLocation){
+        if(!this.guardarLocation){
             $(`.${idMensaje}`).html(mensaje);
             return false;
         }else{
@@ -120,17 +82,79 @@ class Proveedores {
 
         data ? window.location.href = `${base_url}administrador/Views` : window.location.href = `${base_url}`;
     }
-    async setAnimal(raza, edad, genero, descripcion, precio) {
+    async setAnimal(raza, edad, genero, descripcion, precio, desparasitado, anuncio, peso, tipo) {
         const form = new FormData();
-        form.append("id_usuario",  this.id_usuario);
+        form.append("id_usuario",  4);
         form.append("raza", raza);
         form.append("edad", edad);
         form.append("genero", genero);
         form.append("descripcion", descripcion);
         form.append("precio", precio);
-
+        form.append("desparasitado", desparasitado);
+        form.append("anuncio", anuncio);
+        form.append("peso", peso);
+        form.append("tipo", tipo);
 
         return sendData(form, "C_Animales/setDescripcio")
+    }
+
+    agregarOMoverMarcador(latlng) {
+        let marker;
+        if (marker) {
+            marker.setLatLng(latlng);
+        } else {
+            marker = L.marker(latlng, { draggable: true }).addTo(map)
+                .bindPopup("Puedes moverme").openPopup();
+
+            // Evento que se dispara cuando el marcador es arrastrado
+            marker.on('dragend', (e) => { // Cambiado a función de flecha
+                const nuevasCoordenadas = e.target.getLatLng();
+    
+                // Llama a la función para obtener la dirección usando geocodificación inversa
+                this.obtenerDireccion(nuevasCoordenadas.lat, nuevasCoordenadas.lng);
+            });
+        }
+    }
+
+
+    obtenerDireccion(lat, lng) {
+        const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}&addressdetails=1`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // Imprime toda la respuesta de Nominatim
+
+                if (data && data.address) {
+                    // Asegúrate de verificar si los campos existen antes de usarlos
+                    const { state, county, city, town, village, country, country_code } = data.address;
+
+                    // Almacena los valores relevantes
+                    const municipio = county || city || town || village || 'N/A';
+                    const estado = state || 'N/A';
+                    const pais = country || 'N/A';  // A veces country puede no estar bien definido
+
+                    // Muestra la dirección obtenida
+                    alert(`Estado: ${estado}, Municipio: ${municipio}, País: ${pais}`);
+
+                    // Guarda los datos en formato JSON
+                    this.ubicacionData = {
+                        municipio: municipio,
+                        estado: estado,
+                        pais: pais,
+                        latitud: lat,
+                        longitud: lng
+                    };
+
+                    console.log("Datos de ubicación guardados:", this.ubicacionData); // Muestra el JSON en consola
+                } else {
+                    alert('No se encontró una dirección para esta ubicación.');
+                }
+            })
+            .catch(error => {
+                console.error('Error obteniendo la dirección:', error);
+                alert('Hubo un problema al obtener la dirección.');
+            });
     }
 
 

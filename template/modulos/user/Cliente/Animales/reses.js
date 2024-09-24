@@ -2,15 +2,20 @@ const reses = new Animales("Reses");
 
 $(document).ready(async function () {
 
-    console.log("fffffffffffffffffffffffffffffffffffffffff");
 
     const { res, data } = await reses.getAnimales();
+    const { res:RE1, data:DATA1 } = await reses.numberAnimals();
+    reses.totalPage = DATA1.total;
+    
+    
+
+    
 
     if (res.ok) {
     
-        console.log(data);
+       
         reses.data = data;
-
+        reses.totalPages = DATA1.total;
         reses.generalItems()
     }
     else {

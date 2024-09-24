@@ -1,99 +1,98 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa con Leaflet y Geocodificación Inversa</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <style>
-        #map {
-            height: 500px;
-            width: 100%;
-        }
-        #address {
-            margin-top: 20px;
-            font-size: 16px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa con marcador y geocodificación inversa</title>
+  
+  <!-- Incluyendo Leaflet desde CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-    <h1>Ubicación en el Mapa</h1>
-    <div id="map"></div>
-    <div id="address">Dirección: <span id="addressText">Cargando...</span></div>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-        // Función para obtener la dirección usando Nominatim
-        function reverseGeocode(lat, lng, callback) {
-            const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&addressdetails=1`;
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    if (data && data.address) {
-                        callback(data.address);
-                    } else {
-                        callback(null);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error en la geocodificación inversa:', error);
-                    callback(null);
-                });
-        }
+  <h3>Ubicación actual en el mapa (puedes mover el marcador):</h3>
+  <div id="map"></div>
+  <button id="localizar">Mostrar mi ubicación</button>
 
-        // Inicializa el mapa
-        const map = L.map('map').setView([19.045631976278223, -98.223490110166], 15);
+  <script>
+    // Inicializa el mapa centrado en Londres
+    const map = L.map('map').setView([51.505, -0.09], 13);
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
+    // Capa de OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
 
-        // Crea un marcador inicial
-        const marker = L.marker([19.045631976278223, -98.223490110166]).addTo(map)
-            .bindPopup('Ubicación actual')
-            .openPopup();
+    let marker; // Variable para el marcador
 
-        // Actualiza la dirección cuando se recibe la ubicación
-        reverseGeocode(19.045631976278223, -98.223490110166, function(address) {
-            if (address) {
-                const addressText = `${address.road || ''}, ${address.city || ''}, ${address.state || ''}, ${address.country || ''}`;
-                document.getElementById('addressText').textContent = addressText;
-            } else {
-                document.getElementById('addressText').textContent = 'No se pudo obtener la dirección';
-            }
+    // Función para agregar o mover el marcador con opción de arrastre
+    function agregarOMoverMarcador(latlng) {
+      if (marker) {
+        marker.setLatLng(latlng);
+      } else {
+        marker = L.marker(latlng, { draggable: true }).addTo(map)
+          .bindPopup("Puedes moverme").openPopup();
+        
+        // Evento que se dispara cuando el marcador es arrastrado
+        marker.on('dragend', function (e) {
+          const nuevasCoordenadas = e.target.getLatLng();
+          
+          // Llama a la función para obtener la dirección usando geocodificación inversa
+          obtenerDireccion(nuevasCoordenadas.lat, nuevasCoordenadas.lng);
         });
+      }
+    }
 
-        // Opcional: Seguimiento en tiempo real
-        if (navigator.geolocation) {
-            navigator.geolocation.watchPosition(
-                function(position) {
-                    const latitude = position.coords.latitude;
-                    const longitude = position.coords.longitude;
-                    
-                    marker.setLatLng([latitude, longitude]);
-                    map.setView([latitude, longitude], 15);
-                    
-                    reverseGeocode(latitude, longitude, function(address) {
-                        if (address) {
-                            const addressText = `${address.road || ''}, ${address.city || ''}, ${address.state || ''}, ${address.country || ''}`;
-                            document.getElementById('addressText').textContent = addressText;
-                        } else {
-                            document.getElementById('addressText').textContent = 'No se pudo obtener la dirección';
-                        }
-                    });
-                },
-                function(error) {
-                    console.error('Error de geolocalización:', error);
-                },
-                {
-                    enableHighAccuracy: true,
-                    timeout: 10000,
-                    maximumAge: 0
-                }
-            );
-        } else {
-            document.getElementById('addressText').textContent = 'Geolocalización no soportada por este navegador.';
-        }
-    </script>
+    // Función para hacer la geocodificación inversa usando Nominatim
+    function obtenerDireccion(lat, lng) {
+      const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}&addressdetails=1`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          if (data && data.address) {
+            const { state, county, city, town, village } = data.address;
+
+            // Muestra la dirección obtenida
+            alert(`Estado: ${state || 'N/A'}, Municipio: ${county || city || town || village || 'N/A'}`);
+          } else {
+            alert('No se encontró una dirección para esta ubicación.');
+          }
+        })
+        .catch(error => {
+          console.error('Error obteniendo la dirección:', error);
+          alert('Hubo un problema al obtener la dirección.');
+        });
+    }
+
+    // Evento para mostrar la ubicación del usuario
+    document.getElementById('localizar').addEventListener('click', () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const userLocation = [position.coords.latitude, position.coords.longitude];
+
+          // Centra el mapa en la ubicación del usuario
+          map.setView(userLocation, 13);
+
+          // Agrega o mueve el marcador a la nueva ubicación
+          agregarOMoverMarcador(userLocation);
+
+        }, () => {
+          alert('Error obteniendo la ubicación.');
+        });
+      } else {
+        alert('Tu navegador no soporta geolocalización.');
+      }
+    });
+  </script>
+
 </body>
 </html>

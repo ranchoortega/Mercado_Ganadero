@@ -36,6 +36,24 @@
 						<div class="section-title">
 							<h3 class="title">Informacion del animal</h3>
 						</div>
+						<div class="form-group">
+							<select class="form-select input" aria-label="Default select example" id="anuncio">
+								<option value="" selected>Tipo de anuncio</option>
+								<option value="lote">Lote</option>
+								<option value="ejemplar">Ejemplar</option>
+							</select>
+						</div>
+						<p class="text-danger msgpanuncio"></p>
+						<div class="form-group">
+							<select class="form-select input" aria-label="Default select example" id="tipo">
+								<option value="" selected>Tipo de animal</option>
+								<option value="Reses">Reses</option>
+								<option value="Aves">Aves</option>
+								<option value="Cerdos">Cerdos</option>
+								<option value="Chivos">Chivos</option>
+							</select>
+						</div>
+						<p class="text-danger msgtipo"></p>
 
 
 						<div class="form-group">
@@ -49,6 +67,11 @@
 								maxlength="3">
 						</div>
 						<p class="text-danger msgpedad"></p>
+						<div class="form-group">
+							<input class="input" type="number" name="first-name" placeholder="Peso" id="peso"
+								maxlength="3">
+						</div>
+						<p class="text-danger msgpeso"></p>
 
 
 						<div class="form-group">
@@ -84,13 +107,17 @@
 							<input class="form-control input" type="file" id="newfile">
 						</div>
 						<p class="text-danger msgfile"></p>
-						<div class="form-group" style=" margin-top: 20px; display: flex;    justify-content: space-around;">
-					<a id="btnFile" class="primary-btn order-submit">Enviar</a>
-				</div>
+						<div class="form-group"
+							style=" margin-top: 20px; display: flex;    justify-content: space-around;">
+							<a id="btnFile" class="primary-btn order-submit">Enviar</a>
+						</div>
 					</div>
 
 
 				</div>
+
+				<!-- Button trigger modal -->
+
 				<div class="col-md-6 order-details divLoginAndCreate">
 					<!-- Billing Details -->
 					<div class="billing-details divCrear">
@@ -145,8 +172,8 @@
 								value="Ubicación">
 
 
-							<button type="submit" class="btn btn-primary mb-3 btnLocation"
-								style=" height: 100%; width:25%">Buscar</button>
+							<button type="button" class="btn btn-primary input btnLocation" data-toggle="modal"
+								data-target="#exampleModalCenter" style="width: 50%;">Buscar</button>
 
 
 						</div>
@@ -220,6 +247,45 @@
 			<!-- /row -->
 		</div>
 		<!-- /container -->
+	</div>
+
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Si la ubicación está mal (puedes mover el
+						marcador)</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div id="map" style="height: 400px;"></div> <!-- Define una altura adecuada para el mapa -->
+					<button id="localizar" class="btn btn-info mt-3">Mostrar mi ubicación</button>
+
+					<script>
+
+		
+						// Inicializa el mapa centrado en Londres
+						const map = L.map('map').setView([19.0414, -98.2063], 13);
+
+
+						// Capa de OpenStreetMap
+
+
+
+					</script>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-primary guardarLocation">Guardar cambios</button>
+				</div>
+			</div>
+		</div>
 	</div>
 
 

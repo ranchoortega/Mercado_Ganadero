@@ -3,7 +3,7 @@
 <nav aria-label="Page navigation example" style="display: flex;	justify-content: space-evenly;">
   <ul class="pagination justify-content-center" id="pagesNav">
 
-    <li class="page-item" value="1"><a class="page-link" href="#">1</a></li>
+
 
 
   </ul>
@@ -53,26 +53,22 @@
       <div class="row">
         <div class="col-md-3 col-xs-6">
           <div class="footer">
-            <h3 class="footer-title">DESARROLLADORA</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-              ut.</p>
-            <ul class="footer-links">
-              <li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-              <li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-              <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+            <h3 class="footer-title">DESARROLLADORA ORBITEC</h3>
+            <p>Soluciones para tu mundo cercano</p>
+            <ul class="footer-links" style="text-align: left">
+
+              <li><a href="#"><i class="fa fa-phone"></i>+52-221-435-08-30</a></li>
+              <li><a href="#"><i class="fa fa-envelope-o"></i>jonathanalexanderramirezortega@email.com</a></li>
             </ul>
           </div>
         </div>
 
         <div class="col-md-3 col-xs-6">
           <div class="footer">
-            <h3 class="footer-title">Service</h3>
-            <ul class="footer-links">
-              <li><a href="#">My Account</a></li>
-              <li><a href="#">View Cart</a></li>
-              <li><a href="#">Wishlist</a></li>
-              <li><a href="#">Track My Order</a></li>
-              <li><a href="#">Help</a></li>
+            <h3 class="footer-title">SERVICIOS</h3>
+            <ul class="footer-links" style="text-align: left">
+              <li><a href="#">APP WEB</a></li>
+              <li><a href="#">APP ANDORID</a></li>
             </ul>
           </div>
         </div>
@@ -103,7 +99,7 @@
     </div>
     <!-- /container -->
   </div>
-  
+
   <!-- /bottom footer -->
 </footer>
 <script>
