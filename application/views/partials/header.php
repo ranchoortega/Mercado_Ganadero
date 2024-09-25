@@ -24,10 +24,10 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-   
+
 
     <?php foreach ($estiloscss as $estilo): ?>
         <link rel="stylesheet" href="<?php echo base_url() . $estilo; ?>">
@@ -91,7 +91,7 @@
     </style>
 
     <link rel="icon" href="<?php echo base_url('template/recursos/logos/logo.svg'); ?>" type="image/x-icon">
-    
+
 
 </head>
 
@@ -111,7 +111,7 @@
         <div id="top-header">
             <div class="container">
                 <input type="text" id="whapsapweb" hidden>
-                <input type="text" id="whapPhone2"hidden>
+                <input type="text" id="whapPhone2" hidden>
                 <ul class="header-links pull-left">
                     <li>
                         <a href="#" class="logo">
@@ -144,14 +144,14 @@
                             ? 'https://wa.me/+522431083861?text=sd'
                             : 'https://web.whatsapp.com/send?phone=+522431083861&text=sd';
 
-                            const whatsappLink2 = isMobile
+                        const whatsappLink2 = isMobile
                             ? ''
                             : 'https://web.whatsapp.com/';
-                            const whatsappLink3 = isMobile
+                        const whatsappLink3 = isMobile
                             ? 'https://wa.me/'
                             : '';
 
-                        
+
                         // Actualizar el href del enlace
                         document.getElementById('whapPhone').href = whatsappLink;
                         document.getElementById('whapsapweb').value = whatsappLink2;
@@ -194,6 +194,19 @@
                             </ul>
 
                         </li>
+
+                        <li id="liTipoAnimales">
+                            <a style="color: red;" id="userLink">Animales</a>
+                            <ul id="a" class="main-nav nav navbar-nav"
+                                style="display: none;     width: 100%;  position: fixed;   z-index: 1;   flex-direction: column;">
+                                <li><a href="<?php echo base_url() ?>Cliente/Animales/Reses">Reses</a></li>
+                                <li><a href="#">Chivos</a></li>
+                                <li><a href="#">Aves</a></li>
+                                <li><a href="<?php echo base_url() ?>Cliente/Animales/Cerdos">Cerdos</a></li>
+                            </ul>
+
+                        </li>
+
 
 
 
@@ -240,6 +253,18 @@
                     logoutButton.style.display = 'block';
                 } else {
                     logoutButton.style.display = 'none';
+                }
+            });
+
+            var liTipoAnimales = document.getElementById('liTipoAnimales');
+            var a = document.getElementById('a');
+
+            liTipoAnimales.addEventListener('click', function (event) {
+                
+                if (a.style.display === 'none') {
+                    a.style.display = 'block';
+                } else {
+                    a.style.display = 'none';
                 }
             });
 

@@ -16,14 +16,26 @@ class Login extends CI_Controller
     public function index()
     {
         $datos = array();
-		$datos['estiloscss'] = plantilla_head();
+		$datos['estiloscss'] = plantilla_head(
+			array(
+				"template/assets/cssInicio/bootstrap.min.css",
+			
+				"template/assets/cssInicio/style.css",
+			)
+		);
 		$datos['estilosjs'] = plantilla_footer(
-            
-            array( "template/modulos/user/general.js",
-            "template/modulos/user/Login/Login.js",
-            "template/modulos/user/Login/LoginMain.js"
-            )
-        );
+			array(
+				"template/assets/js2/jquery.min.js",
+				"template/assets/js2/bootstrap.min.js",
+	
+				"template/modulos/user/Login/Login.js",
+				"template/modulos/user/Login/LoginMain.js",
+				"template/modulos/user/cliente/Proveedores/Proveedores.js",
+				"template/modulos/user/cliente/Proveedores/proveedoresMain.js",
+				
+
+			)
+		);
 		$this->load->view('generales/head', $datos);
 		$this->load->view('administracion');
 		$this->load->view('generales/footer');

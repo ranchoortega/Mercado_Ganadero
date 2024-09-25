@@ -37,6 +37,9 @@
 		}
 	</style>
 	<link rel="icon" href="template/recursos/logos/logo.svg" type="image/x-icon">
+	
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 </head>
 
