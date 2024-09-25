@@ -13,7 +13,7 @@ class Animales {
 
 
 		this.totalPage = 0;
-     
+
 
 
 
@@ -61,8 +61,29 @@ class Animales {
                         </div>
                     </div>
                     <div class="product-body">
-                        <p class="product-category">${elemento.edad} años</p>
-                        <h3 class="product-name"><a href="#">${elemento.raza}</a></h3>
+					
+                  
+                        <h2 class="product-name"><a href="#">${elemento.raza}</a></h3>
+						<div class="row">
+							<div class="col-4">
+							<div class="product-body">
+								<i class="fa-solid fa-calendar-days"></i>
+								<a class="product-category">${elemento.edad} meses</a>
+							</div>
+							</div>
+							<div class="col-4">
+							<div class="product-body">
+								<i class="fa-solid fa-venus-mars"></i>
+								<a class="product-category">${elemento.genero}</a>
+							</div>
+							</div>
+							<div class="col-4">
+							<div class="product-body">
+								<i class="fa-solid fa-venus-mars"></i>
+								<a class="product-category">${elemento.anuncio}</a>
+							</div>
+							</div>
+						</div>
                         <h4 class="product-price">$${elemento.precio}</h4>
                         <div class="product-btns">
                             <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
@@ -77,7 +98,7 @@ class Animales {
 
 		if (!this.verification) {
 			this.generarPages();
-			const siguienteElemento = $('<li></li>').addClass('page-item').attr('value', this.page+1).html(`<a class="page-link">Siguiente</a>`);
+			const siguienteElemento = $('<li></li>').addClass('page-item').attr('value', this.page + 1).html(`<a class="page-link">Siguiente</a>`);
 			this.paginationContainer.append(siguienteElemento);
 			this.verification = true;
 		}
@@ -87,8 +108,8 @@ class Animales {
 	async generarPages() {
 		try {
 			let resultado = this.totalPage / 9;
-            console.log(this.totalPage);
-            
+			console.log(this.totalPage);
+
 
 			// Redondear hacia arriba
 			let resultadoRedondeado = Math.ceil(resultado);
@@ -109,24 +130,27 @@ class Animales {
 
 
 	async handlePageClick(event) {
-        const $target = $(event.currentTarget);
-        this.page = parseInt($target.attr('value'));
-        console.log(this.page);
-    
-        if (!isNaN(this.page)) {
-            try {
-                const { res, data } = await this.getAnimales(); // Espera la respuesta de getAnimales
-                this.data = data; // Asigna los datos obtenidos
-                console.log(this.data);
-                
-                // Actualiza la visualización con los datos de la página seleccionada.
-                this.generalItems();
-            } catch (error) {
-                console.error('Error al obtener animales:', error);
-            }
-        }
-    }
-    
+		const $target = $(event.currentTarget);
+		this.page = parseInt($target.attr('value'));
+		console.log(this.page);
+
+		if (!isNaN(this.page)) {
+			try {
+				const {
+					res,
+					data
+				} = await this.getAnimales(); // Espera la respuesta de getAnimales
+				this.data = data; // Asigna los datos obtenidos
+				console.log(this.data);
+
+				// Actualiza la visualización con los datos de la página seleccionada.
+				this.generalItems();
+			} catch (error) {
+				console.error('Error al obtener animales:', error);
+			}
+		}
+	}
+
 	createUrl(phone, raza, descripcion) {
 		let mensaje = encodeURIComponent(`Raza: ${raza} Descripción: ${descripcion}`);
 

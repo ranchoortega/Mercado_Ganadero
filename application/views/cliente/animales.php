@@ -33,41 +33,116 @@
 				<!-- /ASIDE -->
 
 				<!-- STORE -->
-				<div id="store" class="col-md-9">
-					<div class="store-filter clearfix">
-						<div class="store-sort">
-							<label>
-								Categoria:
-								<select class="input-select">
-									<option value="0">Cerdos</option>
-									<option value="1">Cerdas</option>
-									<option value="3">Lechones</option>
-								</select>
-							</label>
+				<section class="col-md-12" style="display: flex;">
+					<aside class="col-md-2">
+						<h4>Filtros</h4>
+						<div class="accordion" id="accordionExample">
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										Ubicacion
+									</button>
+								</h2>
+								<div id="collapseOne" class="accordion-collapse collapse show"
+									data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<ul>
+											<li>
+												<a href="">Mexico</a>
+											</li>
+											<li>
+												<a href="">Argentina</a>
 
-							<label>
-								Show:
-								<select class="input-select">
-									<option value="0">20</option>
-									<option value="1">50</option>
-								</select>
-							</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										Raza
+									</button>
+								</h2>
+								<div id="collapseTwo" class="accordion-collapse collapse"
+									data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<ul>
+											<li><a href="">Charol</a></li>
+											<li><a href="">Pardo</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapseThree" aria-expanded="false"
+										aria-controls="collapseThree">
+										Tipo
+									</button>
+								</h2>
+								<div id="collapseThree" class="accordion-collapse collapse"
+									data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<ul>
+											<li><a href="">Lote</a></li>
+											<li><a href="">Ejemplar</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
 						</div>
-						
+					</aside>
+					<div class="col-md-9">
+
+
+						<div class="col-md-12">
+							<div class="store-filter clearfix">
+								<div class="store-sort">
+									<label>
+										Ordenar:
+										<select class="input-select">
+											<option value="0">Precio mas bajo</option>
+											<option value="1">Precio mas caro</option>
+
+										</select>
+									</label>
+
+
+								</div>
+
+							</div>
+							<div class="row" id="cardAnimales">
+
+								<!-- product -->
+
+
+								<!-- /product -->
+							</div>
+							<nav aria-label="Page navigation example"
+								style="display: flex;	justify-content: space-evenly;">
+								<ul class="pagination justify-content-center" id="pagesNav">
+
+
+
+
+								</ul>
+							</nav>
+						</div>
+
+						<!-- /store products -->
+
+						<!-- store bottom filter -->
+
+
 					</div>
-					<div class="row" id="cardAnimales">
-
-						<!-- product -->
 
 
-						<!-- /product -->
-					</div>
-					<!-- /store products -->
+				</section>
 
-					<!-- store bottom filter -->
-
-					<!-- /store bottom filter -->
-				</div>
 				<!-- /STORE -->
 			</div>
 			<!-- /row -->

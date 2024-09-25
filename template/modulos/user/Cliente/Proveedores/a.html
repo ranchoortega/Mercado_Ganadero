@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa con Leaflet</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <style>
-        #map {
-            height: 500px;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Vertical</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Ubicación en el Mapa</h1>
-    <div id="map"></div>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-        const map = L.map('map').setView([19.045631976278223, -98.223490110166], 15);
+  <!-- Navbar vertical -->
+  <nav class="d-flex flex-column bg-light p-3" style="height: 100vh; width: 200px;">
+    <a href="#" class="nav-link">Inicio</a>
+    <a href="#" class="nav-link">Servicios</a>
+    <a href="#" class="nav-link">Precios</a>
+    <a href="#" class="nav-link">Contacto</a>
+  </nav>
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
+  <!-- Contenido principal -->
+  <div class="content p-3">
+    <h1>Contenido principal</h1>
+    <p>Este es el contenido de la página.</p>
+  </div>
 
-        L.marker([19.045631976278223, -98.223490110166]).addTo(map)
-            .bindPopup('Ubicación actual')
-            .openPopup();
-    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -42,7 +42,7 @@ class Animales extends CI_Controller
 
 		$this->load->view('partials/header', $datos);
 		$this->load->view('cliente/animales');
-		$this->load->view('partials/footerAnimal');
+		$this->load->view('partials/footer');
 	}
 	public function Chivos()
 	{

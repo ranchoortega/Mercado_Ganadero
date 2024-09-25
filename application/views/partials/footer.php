@@ -1,5 +1,6 @@
 </div>
 </div>
+
 <div id="newsletter" class="section">
 	<!-- container -->
 	<div class="container">
@@ -35,6 +36,10 @@
 	</div>
 	<!-- /container -->
 </div>
+<div style="width: 100%; height: auto; display: flex; justify-content: center;">
+    <img src="https://www.suganado.com/wp-content/uploads/2020/06/suganado_01.png" alt="" style="max-width: 100%; height: auto; object-fit: cover;">
+</div>
+
 <footer id="footer" style="
 	margin-left: 0px;">
 	<!-- top footer -->

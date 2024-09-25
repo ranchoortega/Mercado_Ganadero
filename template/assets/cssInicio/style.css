@@ -452,7 +452,7 @@ hot-deal
   z-index: 9999;
   /* padding-top: 10px; */
   /* padding-bottom: 10px; */
-  background-color: #1E1F29;
+  background-color: #23190F;
 }
 
 .header-links li {
@@ -794,7 +794,7 @@ hot-deal
   z-index: -1;
   /* Establecer un tamaÃ±o fijo para la imagen */
    /* Cambia este valor segÃºn tu preferencia */
-  height: 200px; /* Cambia este valor segÃºn tu preferencia */
+  height: 106px; /* Cambia este valor segÃºn tu preferencia */
 }
 
 .shop .shop-img>img {
@@ -1966,7 +1966,7 @@ hot-deal
 
 #newsletter.section {
   border-top: 2px solid #E4E7ED;
-  border-bottom: 3px solid #D10024;
+ 
   margin-top: 30px;
 }
 
@@ -2050,12 +2050,12 @@ hot-deal
 ===========================================================*/
 
 #footer {
-  background: #15161D;
+  background: #23190F;
   color: #B9BABC;
 }
 
 #bottom-footer {
-  background: #1E1F29;
+  background: #23190F;
 }
 
 .footer {

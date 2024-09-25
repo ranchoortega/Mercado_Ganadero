@@ -1,13 +1,6 @@
 </div>
 </div>
-<nav aria-label="Page navigation example" style="display: flex;	justify-content: space-evenly;">
-  <ul class="pagination justify-content-center" id="pagesNav">
 
-
-
-
-  </ul>
-</nav>
 
 <div id="newsletter" class="section">
   <!-- container -->
