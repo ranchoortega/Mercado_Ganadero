@@ -32,7 +32,54 @@
     <?php foreach ($estiloscss as $estilo): ?>
         <link rel="stylesheet" href="<?php echo base_url() . $estilo; ?>">
     <?php endforeach ?>
+
     <style>
+        .category-menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .category-button {
+        
+    
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .category-button:focus {
+            outline: 2px solid black;
+            /* Contorno negro al hacer clic */
+        }
+
+        .category-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            background-color: black;
+            /* Color de fondo negro */
+            color: white;
+            border: 1px solid #ddd;
+            width: 200px;
+            top: 40px;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .category-list li {
+            padding: 10px;
+        }
+
+        .category-list li:hover {
+            background-color: #333;
+            cursor: pointer;
+        }
+
+        .category-list[hidden] {
+            display: none;
+        }
+
         #WindowLoad {
             position: fixed;
             top: 0px;
@@ -110,28 +157,38 @@
     <div class="page-wrapper compact-wrapper" id="pageWrapper">
         <div id="top-header">
             <div class="container">
+                <div class="col-md-12">
+                    <ul class="header-links pull-left col-md-6">
+                        <li>
+                            <a href="#" class="logo">
+                                <img src="<?php echo base_url('template/recursos/img/logo.png'); ?>" alt=""
+                                    style="width: 75px;" class="white-filter">
+                            </a>
+                        </li>
+
+
+
+                    </ul>
+                    <ul class="header-links col-md-6"
+                        style="    display: flex;  height: 75px; align-items: center; justify-content: flex-end">
+
+
+
+                        <li><a href="https://web.whatsapp.com/send?phone=2214350830&text=sd"><i
+                                    class="fa fa-dollar-sign bx-sm"></i>Vender</a></li>
+                        <li>
+                            <div class="menu-toggle">
+                                <a id="menuIcon" href="#">
+                                    <i class="fa fa-bars bx-sm"></i>
+                                    <span>Menu</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
                 <input type="text" id="whapsapweb" hidden>
                 <input type="text" id="whapPhone2" hidden>
-                <ul class="header-links pull-left">
-                    <li>
-                        <a href="#" class="logo">
-                            <img src="<?php echo base_url('template/recursos/img/logo.png'); ?>" alt=""
-                                style="width: 75px;" class="white-filter">
-                        </a>
-                    </li>
-                    <li><a id="whapPhone" href="https://web.whatsapp.com/send?phone=2214350830&text=sd"><i
-                                class="fa fa-phone bx-sm"></i>Whatsapp</a></li>
-                    <li><a href="mailto:ranchoortega77@gmail.com?Subject=Mas%20informacion"><i
-                                class="fa fa-envelope-o bx-sm"></i>Gmail</a></li>
-                    <li>
-                        <div class="menu-toggle">
-                            <a id="menuIcon" href="#">
-                                <i class="fa fa-bars bx-sm"></i>
-                                <span>Menu</span>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
+
                 <script>
                     function detectDeviceType() {
                         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -182,11 +239,50 @@
                 <div id="responsive-nav">
                     <input id="puto" type="text" value="<?php echo base_url() ?>" hidden>
                     <!-- NAV -->
-                    <ul class="main-nav nav navbar-nav">
+                    <ul class="main-nav nav navbar-nav col-md-6">
                         <li><a href="<?php echo base_url() ?>Welcome">Inicio</a></li>
                         <li id="liContactos"><a href="<?php echo base_url() ?>Cliente/Contacto">Contacto</a></li>
                         <li id="liproveedores"><a href="<?php echo base_url() ?>Cliente/Provedores">Publicar</a></li>
-                        <li id="liLogin"><a href="<?php echo base_url() ?>Login">Login</a></li>
+
+
+                        <li id="liTipoAnimales"style="display: grid; align-items: center;">
+                            <div class="category-menu">
+                            <a class="category-button" style="color: red;" id="userLink">Animales</a>
+                               
+                                <ul class="category-list" hidden>
+                                    <li>Vehículos</li>
+                                    <li>Supermercado</li>
+                                    <li>Tecnología</li>
+                                    <li>Electrodomésticos</li>
+                                    <li>Hogar y Muebles</li>
+                                    <li>Moda</li>
+                                    <li>Deportes y Fitness</li>
+                                    <!-- Agrega más categorías si lo deseas -->
+                                </ul>
+                            </div>
+
+
+
+
+
+
+
+                    
+
+                        </li>
+
+
+
+
+
+
+
+
+                    </ul>
+
+                    <ul class="main-nav nav navbar-nav col-md-6 navarlogin">
+                        <li id="liLogin"><a href="<?php echo base_url() ?>Login"><i
+                                    class="fa fa-right-to-bracket bx-sm"></i>Iniciar sesion o crear cuenta</a></li>
                         <li id="liUser" style="display: none;">
                             <a href="#" id="userLink">Usuario</a>
                             <ul id="logoutButton" style="display: none;">
@@ -194,24 +290,6 @@
                             </ul>
 
                         </li>
-
-                        <li id="liTipoAnimales">
-                            <a style="color: red;" id="userLink">Animales</a>
-                            <ul id="a" class="main-nav nav navbar-nav"
-                                style="display: none;     width: 100%;  position: fixed;   z-index: 1;   flex-direction: column;">
-                                <li><a href="<?php echo base_url() ?>Cliente/Animales/Reses">Reses</a></li>
-                                <li><a href="#">Chivos</a></li>
-                                <li><a href="#">Aves</a></li>
-                                <li><a href="<?php echo base_url() ?>Cliente/Animales/Cerdos">Cerdos</a></li>
-                            </ul>
-
-                        </li>
-
-
-
-
-
-
                     </ul>
                     <!-- /NAV -->
                 </div>
@@ -220,6 +298,10 @@
             <!-- /container -->
         </nav>
         <script>
+              document.querySelector('.category-button').addEventListener('click', function() {
+      const list = document.querySelector('.category-list');
+      list.hidden = !list.hidden; // Alterna la visibilidad de la lista
+    });
 
             document.addEventListener('DOMContentLoaded', function () {
                 var userInput = document.querySelector('.user');
@@ -260,7 +342,7 @@
             var a = document.getElementById('a');
 
             liTipoAnimales.addEventListener('click', function (event) {
-                
+
                 if (a.style.display === 'none') {
                     a.style.display = 'block';
                 } else {

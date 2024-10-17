@@ -1,14 +1,16 @@
-
-
-
-
 <section>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xl-5"><img class="bg-img-cover bg-center"
-                    src="<?php echo base_url('template/recursos/img/inicio.jpg'); ?>" alt="looginpage"></div>
-            <div class="col-xl-7 p-0">
-                <div class="login-card">
+
+            <div class="col-xl-12 p-0">
+                <div class="" style=" background-color: rgba($primary-color, 0.1);
+  height: 50;
+  display: flex;    
+  align-items: center;    
+  justify-content: center;
+  min-height: 50;   
+  margin: 0 auto;   
+  padding: 30px 12px;">
                     <div class="col-md-6 order-details theme-form login-form" id="form-user">
                         <!-- Billing Details -->
                         <div class="billing-details divCrear">
@@ -131,40 +133,43 @@
 
                     </div>
                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLongTitle">Si la ubicación está mal (puedes mover el
-						marcador)</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<div id="map" style="height: 400px;"></div> <!-- Define una altura adecuada para el mapa -->
-					<button id="localizar" class="btn btn-info mt-3">Mostrar mi ubicación</button>
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Si la ubicación está mal (puedes
+                                        mover el
+                                        marcador)</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="map" style="height: 400px;"></div>
+                                    <!-- Define una altura adecuada para el mapa -->
+                                    <button id="localizar" class="btn btn-info mt-3">Mostrar mi ubicación</button>
 
-					<script>
-
-		
-						// Inicializa el mapa centrado en Londres
-						const map = L.map('map').setView([19.0414, -98.2063], 13);
+                                    <script>
 
 
-						// Capa de OpenStreetMap
+                                        // Inicializa el mapa centrado en Londres
+                                        const map = L.map('map').setView([19.0414, -98.2063], 13);
+
+
+                                        // Capa de OpenStreetMap
 
 
 
-					</script>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-					<button type="button" class="btn btn-primary guardarLocation">Guardar cambios</button>
-				</div>
-			</div>
-		</div>
-	</div>
+                                    </script>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-primary guardarLocation">Guardar
+                                        cambios</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

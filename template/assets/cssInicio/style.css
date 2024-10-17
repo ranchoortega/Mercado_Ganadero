@@ -2198,12 +2198,24 @@ hot-deal
 .viewCliente {
   padding-top: 66px;
 }
+.navarlogin {
+ 
+  height: 100%;
+  display: grid;
+
+  justify-content: end;
+  align-items: end;
+}
+
 
 /* Estilo para pantallas con ancho menor o igual a 990px */
 @media (max-width: 990px) {
   #breadcrumb {
       padding-top: 88px;
   }
+  .navarlogin {
+    justify-content: unset; /* Quita la propiedad justify-content: end; */
+}
 }
 @media (max-width: 990px) {
   .viewCliente {
@@ -2262,6 +2274,9 @@ hot-deal
   .section-tab-nav li {
     margin-top: 10px;
   }
+  #liTipoAnimales{
+    height: 52px;
+  }
   
 }
 
@@ -2276,5 +2291,22 @@ hot-deal
   .store-pagination {
     float: none;
     margin-top: 10px;
+  }
+}
+
+
+.responsive-text {
+  font-size: 6vw; /* Tamaño adaptativo en función del ancho de la ventana */
+}
+
+@media (min-width: 768px) {
+  .responsive-text {
+      font-size: 3.5vw; /* Ajuste en pantallas medianas (tablets) */
+  }
+}
+
+@media (min-width: 1200px) {
+  .responsive-text {
+      font-size: 2.5vw; /* Ajuste en pantallas grandes (escritorio) */
   }
 }

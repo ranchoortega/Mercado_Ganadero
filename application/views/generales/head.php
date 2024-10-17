@@ -35,6 +35,7 @@
 			opacity: 0.65;
 			background: #999;
 		}
+		
 	</style>
 	<link rel="icon" href="template/recursos/logos/logo.svg" type="image/x-icon">
 	

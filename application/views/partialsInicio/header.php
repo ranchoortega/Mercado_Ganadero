@@ -107,25 +107,34 @@
     <div class="page-wrapper compact-wrapper" id="pageWrapper">
         <div id="top-header">
             <div class="container">
-                <ul class="header-links pull-left">
-                    <li>
-                        <a href="#" class="logo">
-                            <img src="<?php echo base_url('template/recursos/img/logo.png'); ?>" alt=""
-                                style="width: 75px;" class="white-filter">
-                        </a>
-                    </li>
-                    <li><a href="mailto:ranchoortega77@gmail.com?Subject=Mas%20informacion"><i class="fa fa-right-to-bracket bx-sm"></i>Sesion</a></li>
-                    <li><a href="https://web.whatsapp.com/send?phone=2214350830&text=sd"><i class="fa fa-dollar-sign bx-sm"></i>Vender</a></li>
-                    
-                    <li>
-                        <div class="menu-toggle">
-                            <a href="#">
-                                <i class="fa fa-bars bx-sm"></i>
-                                <span>Menu</span>
+            <div class="col-md-12">
+                    <ul class="header-links pull-left col-md-6">
+                        <li>
+                            <a href="#" class="logo">
+                                <img src="<?php echo base_url('template/recursos/img/logo.png'); ?>" alt=""
+                                    style="width: 75px;" class="white-filter">
                             </a>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+
+
+
+                    </ul>
+                    <ul class="header-links col-md-6" style="    display: flex;  height: 75px; align-items: center; justify-content: flex-end">
+
+
+
+                        <li><a href="https://web.whatsapp.com/send?phone=2214350830&text=sd"><i
+                                    class="fa fa-dollar-sign bx-sm"></i>Vender</a></li>
+                        <li>
+                            <div class="menu-toggle">
+                                <a id="menuIcon" href="#">
+                                    <i class="fa fa-bars bx-sm"></i>
+                                    <span>Menu</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div hidden>

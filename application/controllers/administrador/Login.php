@@ -38,7 +38,7 @@ class Login extends CI_Controller
 		);
 		$this->load->view('generales/head', $datos);
 		$this->load->view('administracion');
-		$this->load->view('generales/footer');
+		$this->load->view('partials/footer');
     }
 
    
