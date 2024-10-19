@@ -28,6 +28,8 @@ class Animales {
     }
 
     async getAnimales() {
+        console.log(this.tipo);
+        
         try {
             return sendDataGet(`C_Animales/getAnimales/${this.tipo}`);
         } catch (e) {

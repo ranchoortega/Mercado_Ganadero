@@ -11,7 +11,7 @@
     #header {
         position: relative;
         width: 100%;
-        height: 100vh;
+        height: 33vh;
         /* 100% de la altura de la ventana del navegador */
         overflow: hidden;
         /* Oculta el contenido que sobresalga */
@@ -82,6 +82,25 @@
         z-index: 3;
         /* Asegura que el botón esté encima del video */
     }
+    .header-search .input {
+    background-color: rgba(255, 255, 255, 0);
+    color: #efefef;
+    font-weight: 900;
+    border-radius: 18px;
+    padding: 10px 20px; /* Ajusta el relleno para hacer los botones más pequeños */
+    max-width: 150px; /* Fija un ancho máximo para los botones */
+    text-align: center; /* Centra el texto dentro de los botones */
+    margin: 0 10px; /* Añade un espacio entre los botones */
+    white-space: nowrap; /* Evita que el texto dentro de los botones se parta en varias líneas */
+    border: 2px solid white; /* Añade un borde para mayor visibilidad */
+}
+
+/* Ajustes para la distribución de los botones */
+.header-search form {
+    display: flex;
+    justify-content: center; /* Centra los botones en el contenedor */
+    gap: 10px; /* Espacio entre los botones */
+}
 </style>
 <div class="page-body">
 
@@ -99,34 +118,23 @@
                     <!-- SEARCH BAR -->
                     <div class="col-md-12">
                         <div style=" display: flex; justify-content: space-evenly;">
-                            <h1 dir="auto"  class="responsive-text" style="color: #ffffff; --lineHeightDesktop: 1.3; --fontSizeDesktop: 80px;position: relative;   z-index: 3;"> Granja Ortega</h1>
+                            <h1 dir="auto"  class="responsive-text" style="color: #ffffff; --lineHeightDesktop: 1.3; --fontSizeDesktop: 80px;position: relative;   z-index: 3;"> Mi Ganado Online</h1>
                         </div>
 
                         <div class="header-search text-center">
-                            <form>
-                                
-                                <select class="input" onchange="handleOptionChange(this)"
-                                    style="background-color: rgba(255, 255, 255, 0);color: #efefef;font-weight: 900;">
-                                    <option value="0">Categoria</option>
-                                    <option id="viewOptionReses" value="<?php echo base_url() ?>Cliente/Animales/Reses">
-                                        Reses</option>
-                                    <option id="viewOptionChivos"
-                                        value="<?php echo base_url() ?>Cliente/Animales/Chivos">Chivos</option>
-                                    <option id="viewOptionAves" value="<?php echo base_url() ?>Cliente/Animales/Aves">
-                                        Aves</option>
-                                    <option id="viewOptionCerdos"
-                                        value="<?php echo base_url() ?>Cliente/Animales/Cerdos">Cerdos</option>
-                                </select>
+                            <form style="display:flex;">
+                                <button class="input"  >
+                                    <a href="" style="color: #ffffff">Vender</a>
+
+                                </button>
+                                <button class="input" >
+                                    <a href="" style="color: #ffffff">Registrate</a>
+
+                                </button>
+                               
 
                             </form>
-                            <script>
-                                function handleOptionChange(selectElement) {
-                                    var url = selectElement.value;
-                                    if (url) {
-                                        window.location.href = url;
-                                    }
-                                }
-                            </script>
+                        
                         </div>
                     </div>
                     <!-- /SEARCH BAR -->

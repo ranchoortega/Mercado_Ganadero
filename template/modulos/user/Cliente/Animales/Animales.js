@@ -1,6 +1,8 @@
 class Animales {
 	constructor(tipo) {
 		this.tipo = tipo;
+		console.log(this.tipo);
+		
 		this.paginationContainer = $('#pagesNav'); // Utiliza jQuery aquí
 
 

@@ -101,7 +101,7 @@
 </footer>
 <script>
 	var base_url = "<?php echo base_url(); ?>";
-	const urlServer = 'http://localhost/backend_granja/api/';
+	const urlServer = 'http://localhost/backen_granja/api/';
 
 </script>
 <?php foreach ($estilosjs as $estilo): ?>
