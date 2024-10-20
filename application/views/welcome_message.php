@@ -225,7 +225,7 @@
                             </div>
                             <div class="shop-body">
                                 <h3>Chivos</h3>
-                                <a href="#" class="cta-btn">Ver ahora <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="<?php echo base_url() ?>Cliente/Animales/CHivos" class="cta-btn">Ver ahora <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -236,7 +236,7 @@
                             </div>
                             <div class="shop-body">
                                 <h3>Aves</h3>
-                                <a href="#" class="cta-btn">Ver ahora <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="<?php echo base_url() ?>Cliente/Animales/Aves" class="cta-btn">Ver ahora <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>

@@ -4,10 +4,12 @@ if (!function_exists('plantilla_head')) {
     function plantilla_head($archivos=null) {
 
     	$resultado = array(
-			"template/assets/css/fontawesome.css",
 			"template/assets/css/icofont.css",
-			"template/assets/css/themify.css",
-			"template/assets/css/flag-icon.css",
+			"template/assets/css/icofont.min.css",
+
+			"template/assets/css/fontawesome.css",
+
+		
 			"template/assets/css/feather-icon.css",
 			"template/assets/css/animate.css",
 			"template/assets/css/chartist.css",

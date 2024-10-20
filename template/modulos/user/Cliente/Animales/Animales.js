@@ -2,7 +2,7 @@ class Animales {
 	constructor(tipo) {
 		this.tipo = tipo;
 		console.log(this.tipo);
-		
+
 		this.paginationContainer = $('#pagesNav'); // Utiliza jQuery aquí
 
 
@@ -18,16 +18,16 @@ class Animales {
 
 
 
-
-
-
-
-
-
 		// Configura el manejador de eventos para los clics en la paginación
 		this.paginationContainer.on('click', 'li.page-item', (event) => {
 			this.handlePageClick(event);
 		});
+
+		this.divElement = document.getElementById("icon" + this.tipo);
+
+		if (this.divElement) {
+			this.divElement.style.borderBottom = "2px solid #e70000";
+		}
 	}
 
 	async getAnimales() {

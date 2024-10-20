@@ -240,44 +240,8 @@
                     <input id="puto" type="text" value="<?php echo base_url() ?>" hidden>
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav col-md-6">
-                        <li><a href="<?php echo base_url() ?>Welcome">Inicio</a></li>
-                        <li id="liContactos"><a href="<?php echo base_url() ?>Cliente/Contacto">Contacto</a></li>
-                        <li id="liproveedores"><a href="<?php echo base_url() ?>Cliente/Provedores">Publicar</a></li>
-
-
-                        <li id="liTipoAnimales"style="display: grid; align-items: center;">
-                            <div class="category-menu">
-                            <a class="category-button" style="color: red;" id="userLink">Animales</a>
-                               
-                                <ul class="category-list" hidden>
-                                    <li>Vehículos</li>
-                                    <li>Supermercado</li>
-                                    <li>Tecnología</li>
-                                    <li>Electrodomésticos</li>
-                                    <li>Hogar y Muebles</li>
-                                    <li>Moda</li>
-                                    <li>Deportes y Fitness</li>
-                                    <!-- Agrega más categorías si lo deseas -->
-                                </ul>
-                            </div>
-
-
-
-
-
-
-
-                    
-
-                        </li>
-
-
-
-
-
-
-
-
+                        <li><a href="<?php echo base_url() ?>Welcome"><i class="fa-solid fa-circle-info bx-sm"></i>Ayuda</a></li>
+                       
                     </ul>
 
                     <ul class="main-nav nav navbar-nav col-md-6 navarlogin">
@@ -338,16 +302,6 @@
                 }
             });
 
-            var liTipoAnimales = document.getElementById('liTipoAnimales');
-            var a = document.getElementById('a');
-
-            liTipoAnimales.addEventListener('click', function (event) {
-
-                if (a.style.display === 'none') {
-                    a.style.display = 'block';
-                } else {
-                    a.style.display = 'none';
-                }
-            });
+          
 
         </script>

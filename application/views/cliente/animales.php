@@ -1,3 +1,31 @@
+<style>
+	.breadcrumb-item {
+		flex: 1;
+		/* Todos los elementos se repartirán de manera uniforme */
+		text-align: center;
+		padding: 10px;
+		white-space: nowrap;
+		/* Evita que el texto se corte en varias líneas */
+	}
+
+	.breadcrumb-item a {
+		text-decoration: none;
+		color: inherit;
+	}
+	.breadcrumb-item::before {
+    content: none !important; /* Asegura que se aplique este estilo sobre cualquier otro */
+    padding-right: 0 !important;
+}
+
+
+	/* Opcionalmente, puedes ajustar la fuente o el espaciado en pantallas más pequeñas */
+	@media (max-width: 576px) {
+		.breadcrumb-item {
+			padding: 5px;
+			/* Reduce el espaciado en pantallas muy pequeñas */
+		}
+	}
+</style>
 <div class="page-body">
 
 	<div id="breadcrumb" class="section">
@@ -5,18 +33,29 @@
 		<div class="container">
 			<!-- row -->
 			<div class="row">
-				<div class="col-md-12">
-
-					<ul class="breadcrumb-tree">
-						<li><a href="<?php echo base_url() ?>Welcome">Inicio</a></li>
-						<li class="active">Reses</li>
-					</ul>
+				<div class="col-md-12 d-flex justify-content-between flex-nowrap">
+					<div class="breadcrumb-item">
+						<a href="<?php echo base_url() ?>Welcome"><i class="icofont-home icofont-2x"></i></a>
+					</div>
+					<div class="breadcrumb-item" id="iconReses">
+						<a href="<?php echo base_url() ?>Cliente/Animales/Reses"><i class="icofont-cow icofont-2x"></i></a>
+					</div>
+					<div class="breadcrumb-item" id="iconChivos">
+						<a href="<?php echo base_url() ?>Cliente/Animales/Chivos"><i class="icofont-giraffe-head-1 icofont-2x"></i></a>
+					</div>
+					<div class="breadcrumb-item" id="iconCerdos">
+						<a href="<?php echo base_url() ?>Cliente/Animales/Cerdos"><i class="icofont-pig-face icofont-2x"></i></a>
+					</div>
+					<div class="breadcrumb-item" id="iconAves">
+						<a href="<?php echo base_url() ?>Cliente/Animales/Aves"><i class="icofont-rooster icofont-2x"></i></a>
+					</div>
 				</div>
 			</div>
 			<!-- /row -->
 		</div>
 		<!-- /container -->
 	</div>
+
 
 	<!-- SECTION -->
 	<div class="section" style="  background-color: rgba(243, 244, 246); ">
@@ -138,7 +177,7 @@
 				<!-- /ASIDE -->
 
 				<!-- STORE -->
-		
+
 
 				<!-- /STORE -->
 			</div>
