@@ -151,29 +151,41 @@
         <!-- /MAIN HEADER -->
     </header>
     <!-- /HEADER -->
+    <nav id="navigation" >
+            <!-- container -->
+            <div class="container">
+                <!-- responsive-nav -->
+                <div id="responsive-nav">
+                    <input id="puto" type="text" value="<?php echo base_url() ?>" hidden>
+                    <!-- NAV -->
+                   
 
-    <!-- NAVIGATION -->
-    <nav id="navigation">
-        <!-- container -->
-        <div class="container">
-            <!-- responsive-nav -->
-            <div id="responsive-nav">
-                <!-- NAV -->
-                <ul class="main-nav nav navbar-nav">
-                    <li class="active"><a href="#">Inicio</a></li>
-                    <li><a href="<?php echo base_url() ?>Cliente/Provedores">Publicar</a></li>
-                    <li><a href="<?php echo base_url() ?>Cliente/Contacto">Contacto</a></li>
-                    
+                    <ul class="main-nav nav navbar-nav col-md-6">
+                        <li id="liLogin"><a href="<?php echo base_url() ?>Login"><i
+                                    class="fa fa-right-to-bracket bx-sm"></i>Iniciar sesion o crear cuenta</a></li>
+                        <li id="liUser" style="display: none;">
+                            <a href="#" id="userLink">Usuario</a>
+                            <ul id="logoutButton" style="display: none;">
+                                <li><a href="#" id="btn-cerrar-sesion">Cerrar Sesión</a></li>
+                            </ul>
 
-
-
-                </ul>
-                <!-- /NAV -->
+                        </li>
+                        <li><a href="<?php echo base_url() ?>Cliente/Provedores"><i
+                        class="fa fa-dollar-sign bx-sm"></i>Vender</a></li></a></li>
+                    </ul>
+                    <ul class="main-nav nav navbar-nav col-md-6 navarlogin" >
+               
+                        <li><a href="<?php echo base_url() ?>Welcome"><i class="fa-solid fa-circle-info bx-sm"></i>Ayuda</a></li>
+                       
+                    </ul>
+                    <!-- /NAV -->
+                </div>
+                <!-- /responsive-nav -->
             </div>
-            <!-- /responsive-nav -->
-        </div>
-        <!-- /container -->
-    </nav>
+            <!-- /container -->
+        </nav>
+    <!-- NAVIGATION -->
+
     <!-- /NAVIGATION -->
 
     <section id="s">

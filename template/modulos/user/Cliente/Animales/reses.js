@@ -7,12 +7,14 @@ $(document).ready(async function () {
     const { res:RE1, data:DATA1 } = await reses.numberAnimals();
     reses.totalPage = DATA1.total;
     
-    
+    let i = false;
 
     
 
-    if (res.ok) {
+    if (i) {
     
+        console.log(i);
+        
        
         reses.data = data;
         reses.totalPages = DATA1.total;

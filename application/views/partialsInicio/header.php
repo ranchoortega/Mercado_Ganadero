@@ -137,6 +137,7 @@
                 </div>
             </div>
         </div>
+
         <div hidden>
             <div class="main-header-right row m-0" style="border-bottom: 0.4px #EBEBEB solid;">
 
