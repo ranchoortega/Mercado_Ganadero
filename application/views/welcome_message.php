@@ -118,7 +118,7 @@
                     <!-- SEARCH BAR -->
                     <div class="col-md-12">
                         <div style=" display: flex; justify-content: space-evenly;">
-                            <h1 dir="auto"  class="responsive-text" style="color: #ffffff; --lineHeightDesktop: 1.3; --fontSizeDesktop: 80px;position: relative;   z-index: 3;"> Mi Ganado Online</h1>
+                            <h1 dir="auto"  class="responsive-text" style="color: #ffffff; --lineHeightDesktop: 1.3; --fontSizeDesktop: 80px;position: relative;   z-index: 3;">Tu Mercado Ganadero</h1>
                         </div>
 
                         <div class="header-search text-center">

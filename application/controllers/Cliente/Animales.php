@@ -11,8 +11,13 @@ class Animales extends CI_Controller
 
 	public function Reses()
 	{
+
 	
-		$datos = array();
+		$titulo = "Venta de Ganado Bovino / Reses"; // Aquí pones el título que desees
+
+        // Crear el array de datos
+        $datos = array();
+        $datos['titulo'] = $titulo; // Incluir el título en los datos
 		$datos['estiloscss'] = plantilla_head(
 			array(
 				"template/assets/cssInicio/bootstrap.min.css",
