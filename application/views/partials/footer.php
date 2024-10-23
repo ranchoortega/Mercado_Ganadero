@@ -56,6 +56,8 @@
 						
 							<li><a href="#"><i class="fa fa-phone"></i>+52-221-435-08-30</a></li>
 							<li><a href="#"><i class="fa fa-envelope-o"></i>jonathanalexanderramirezortega@email.com</a></li>
+							<li><a href="<?php echo base_url('Leyes/Terminos/terminos'); ?>">Términos de Uso</a></li>
+							<li><a href="<?php echo base_url('Leyes/Terminos/politica'); ?>">Política de Privacidad</a></li>
 						</ul>
 					</div>
 				</div>
