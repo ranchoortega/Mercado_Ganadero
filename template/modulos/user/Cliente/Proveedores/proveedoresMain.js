@@ -1,11 +1,10 @@
 const proveedores = new Proveedores();
-$(document).ready(() => {
+$(document).ready(async () => {
 
 	$('#liproveedores').hide();
 
 
 
-	console.log(proveedores.id_usuario);
 	if (proveedores.id_usuario != "") {
 
 		$('.divLoginAndCreate').hide();
@@ -14,6 +13,20 @@ $(document).ready(() => {
 	} else {
 		$('.divCrear').hide();
 	}
+
+	const {
+		res,
+		data
+	} = await proveedores.getEstados();
+	console.log("eeeeeeeeeeeee");
+	console.log(data);
+
+	data.forEach(function (estado) {
+		$('#mimunicipio').append(`<option value="${estado.id}">${estado.estado}</option>`);
+
+	});
+
+
 
 
 
@@ -30,7 +43,7 @@ $('#exampleModalCenter').on('shown.bs.modal', function () {
 		attribution: '© OpenStreetMap contributors'
 	}).addTo(map);
 
-	 // Variable para el marcador
+	// Variable para el marcador
 
 	// Función para agregar o mover el marcador con opción de arrastre
 
@@ -44,16 +57,16 @@ $('#exampleModalCenter').on('shown.bs.modal', function () {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition((position) => {
 				const userLocation = [position.coords.latitude, position.coords.longitude];
-                proveedores.obtenerDireccion(position.coords.latitude, position.coords.longitude)
+				proveedores.obtenerDireccion(position.coords.latitude, position.coords.longitude)
 
-                console.log(proveedores.ubicacionData);
-                
+				console.log(proveedores.ubicacionData);
+
 				// Centra el mapa en la ubicación del usuario
 				map.setView(userLocation, 13);
 
 				// Agrega o mueve el marcador a la nueva ubicación
 				proveedores.agregarOMoverMarcador(userLocation);
-                
+
 
 			}, () => {
 				alert('Error obteniendo la ubicación.');
@@ -151,10 +164,7 @@ $('#btnFile').on('click', async () => {
 });
 
 
-$('.btnLocation').on('click', async () => {
 
-
-});
 $('.btnViewCreate').on('click', () => {
 	$('.divCrear').show();
 	$(".divLogin").hide();

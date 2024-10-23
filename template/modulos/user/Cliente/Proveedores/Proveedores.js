@@ -4,7 +4,7 @@ class Proveedores {
 
 
 		this.id_proveedor = "";
-	
+
 		this.verificationLocation = false;
 
 		this.ubicacionData = "";
@@ -65,7 +65,7 @@ class Proveedores {
 		form.append("location", JSON.stringify(this.ubicacionData));
 		form.append("pais", this.pais);
 		form.append("estado", this.estado);
-		form.append("municipio", this.municipio );
+		form.append("municipio", this.municipio);
 
 		return sendData(form, "login/setUsers")
 	}
@@ -164,6 +164,15 @@ class Proveedores {
 				console.error('Error obteniendo la dirección:', error);
 				alert('Hubo un problema al obtener la dirección.');
 			});
+	}
+	 getEstados() {
+		
+
+		try {
+			return sendDataGet(`ubicacion/U_Ubicacion/getEstados`);
+		} catch (e) {
+			console.log(e);
+		}
 	}
 
 

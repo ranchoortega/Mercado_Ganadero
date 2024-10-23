@@ -262,10 +262,7 @@
             <!-- /container -->
         </nav>
         <script>
-              document.querySelector('.category-button').addEventListener('click', function() {
-      const list = document.querySelector('.category-list');
-      list.hidden = !list.hidden; // Alterna la visibilidad de la lista
-    });
+  
 
             document.addEventListener('DOMContentLoaded', function () {
                 var userInput = document.querySelector('.user');

@@ -1,4 +1,9 @@
 <style>
+    .js-example-basic-multiple {
+    z-index: 10000; /* Asegúrate de que el select tenga un z-index alto */
+    position: relative; /* Necesario para que el z-index funcione */
+}
+
     .breadcrumb-item {
         flex: 1;
         /* Todos los elementos se repartirán de manera uniforme */
@@ -67,13 +72,7 @@
         <div class="row">
 
             <div class="col-xl-12 p-0">
-                <div class="" style=" background-color: rgba($primary-color, 0.1);
-  height: 50;
-  display: flex;    
-  align-items: center;    
-  justify-content: center;
-  min-height: 50;   
-  margin: 0 auto;   
+                <div class="" style=" background-color: rgba($primary-color, 0.1); height: 50;  display: flex;   align-items: center;      justify-content: center;  min-height: 50;     margin: 0 auto;   
   padding: 30px 12px;">
                     <div class="col-md-6 order-details theme-form login-form" id="form-user">
                         <!-- Billing Details -->
@@ -135,16 +134,7 @@
 
                             </div>
 
-                            <div class="input-group flex-nowrap ">
-                               
-                                <select class="js-example-basic-multiple col-sm-12" id="identificacion_tipo_obra">
-                                    <option value="NUEVA">NUEVA</option>
-                                    <option value="AMPLIACIÓN">AMPLIACIÓN</option>
-                                    <option value="REHABILITACIÓN">REHABILITACIÓN</option>
-                                    <option value="PROCESO">PROCESO</option>
-                                    <option value="EQUIPAMIENTO">EQUIPAMIENTO</option>
-                                </select>
-                            </div>
+
                             <p class="text-danger msglocation"></p>
                             <div class="form-group"
                                 style=" margin-top: -12PX; display: flex;    justify-content: space-around;">
@@ -207,7 +197,7 @@
 
 
                     </div>
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    <div class="modal fade" id="exampleModalCenter" tabindex="" role="dialog"
                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
@@ -220,22 +210,40 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <div id="map" style="height: 400px;"></div>
+                                    <div id="map" style="height: 200px;"></div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="mb-4">
+                                                <button id="localizar" class="btn btn-info mt-3">Mostrar mi
+                                                    ubicación</button>
+                                                <script>
+                                                    // Inicializa el mapa centrado en Londres
+                                                    const map = L.map('map').setView([19.0414, -98.2063], 13);
+
+                                                </script>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-4">
+                                                <label class="form-label">Selecciona tu estado</label>
+
+                                                <select class="js-example-basic-multiple col-sm-12" id="mimunicipio" >
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-4">
+                                                <label class="form-label">Municipio</label>
+                                                <input class="form-control" type="number" id="contratos_importe">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                     <!-- Define una altura adecuada para el mapa -->
-                                    <button id="localizar" class="btn btn-info mt-3">Mostrar mi ubicación</button>
 
-                                    <script>
-
-
-                                        // Inicializa el mapa centrado en Londres
-                                        const map = L.map('map').setView([19.0414, -98.2063], 13);
-
-
-                                        // Capa de OpenStreetMap
-
-
-
-                                    </script>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
