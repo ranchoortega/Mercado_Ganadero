@@ -10,9 +10,12 @@ class Login {
 		this.ubicacionData = "";
 		this.guardarLocation = false;
 
+		this.aguardado = false;
+
 		this.municipio = "";
 		this.estado = "";
 		this.pais = "";
+		this.idEstado = "";
 
 
     }
@@ -42,7 +45,7 @@ class Login {
 
     }
     validarCampo(valorCampo, idMensaje, mensaje) {
-		if (valorCampo === '') {
+		if (valorCampo === '' || valorCampo === null || valorCampo === "null" || valorCampo === false) {
 			$(`.${idMensaje}`).html(mensaje);
 			return false;
 		} else {
@@ -60,7 +63,7 @@ class Login {
 		}
 	}
 	validarLocation(idMensaje, mensaje) {
-		if (!this.guardarLocation) {
+		if (!this.aguardado) {
 			$(`.${idMensaje}`).html(mensaje);
 			return false;
 		} else {
@@ -76,9 +79,8 @@ class Login {
 		form.append("name", name);
 		form.append("phone", phone);
 		form.append("location", JSON.stringify(this.ubicacionData));
-		form.append("pais", this.pais);
-		form.append("estado", this.estado);
-		form.append("municipio", this.municipio);
+		form.append("idEstado", this.idEstado);
+	
 
 		return sendData(form, "login/setUsers")
 	}

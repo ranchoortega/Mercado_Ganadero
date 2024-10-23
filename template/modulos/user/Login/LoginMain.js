@@ -19,7 +19,7 @@ $(document).ready(async () => {
 	} = await login.getEstados();
 	console.log("eeeeeeeeeeeee");
 	console.log(data);
-
+	$('#mimunicipio').append(`<option value="null">Selecciona un estado</option>`);
 	data.forEach(function (estado) {
 		$('#mimunicipio').append(`<option value="${estado.id}">${estado.estado}</option>`);
 
@@ -37,6 +37,7 @@ $('#mimunicipio').change(async function() {
 	const{res,data}= await login.getEstado_Municipio(valorSeleccionado);
 	$('#estado-municipio').empty();
 
+	
 	data.forEach(function (estado) {
 		$('#estado-municipio').append(`<option value="${estado.id}">${estado.municipio}</option>`);
 
@@ -82,13 +83,19 @@ $('#exampleModalCenter').on('shown.bs.modal', function () {
 
 				// Agrega o mueve el marcador a la nueva ubicación
 				login.agregarOMoverMarcador(userLocation);
+				login.guardarLocation = true;
+
 
 
 			}, () => {
-				alert('Error obteniendo la ubicación.');
+				alert('Error obteniendo la ubicación. Solo agrege el Estado y su municipio');
+				login.guardarLocation = true;
+
 			});
 		} else {
-			alert('Tu navegador no soporta geolocalización.');
+			alert('Tu navegador no soporta geolocalización. Solo agrege el Estado y su municipio');
+			login.guardarLocation = true;
+
 		}
 	});
 
@@ -192,7 +199,24 @@ $('.btnViewLogin').on('click', () => {
 
 });
 $('.guardarLocation').on('click', () => {
-	login.guardarLocation = true;
+	let estado = $('#mimunicipio').val();
+	let municipio = $('#estado-municipio').val();
+	console.log(estado);
+	console.log(municipio);
+	
+	validarEstado = login.validarCampo(estado, 'msgpmimunicipio', 'Seleccione un estado.');
+	validarMunicipio = login.validarCampo(municipio, 'msgpestado-municipio', 'Seleccione un municipio.');
+	validarLocation = login.validarCampo(login.guardarLocation, 'msgpbtnlocation', 'Has clic en el boton, por favor');
+
+console.log(login.guardarLocation);
+
+
+
+	if (validarLocation && validarEstado && validarMunicipio) {
+		login.idEstado = municipio;
+		login.aguardado = true;
+		
+	}
 
 });
 

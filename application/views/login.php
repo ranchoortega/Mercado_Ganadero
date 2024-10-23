@@ -220,6 +220,8 @@
                                             <div class="mb-4">
                                                 <button id="localizar" class="btn btn-info mt-3">Mostrar mi
                                                     ubicación</button>
+                                                <p class="text-danger msgpbtnlocation"></p>
+
                                                 <script>
                                                     // Inicializa el mapa centrado en Londres
                                                     const map = L.map('map').setView([19.0414, -98.2063], 13);
@@ -235,12 +237,16 @@
                                                 <select class="js-example-basic-multiple col-sm-12" id="mimunicipio" >
 
                                                 </select>
+                                                <p class="text-danger msgpmimunicipio"></p>
+
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="mb-4">
-                                                <label class="form-label">Municipio</label>
+                                                <label class="form-label">Primero seleccione un Estado</label>
                                                 <select class="js-example-basic-multiple col-sm-12" id="estado-municipio" ></select>
+                                                <p class="text-danger msgpestado-municipio"></p>
+
                                             </div>
                                         </div>
 
