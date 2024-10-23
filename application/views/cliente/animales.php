@@ -18,6 +18,22 @@
 		/* Asegura que se aplique este estilo sobre cualquier otro */
 		padding-right: 0 !important;
 	}
+	.select2-container--default .select2-selection--single {
+    border: none;      /* Elimina el borde */
+    outline: none;     /* Elimina el contorno */
+    background-color: transparent;  /* Fondo transparente */
+    box-shadow: none;  /* Evita cualquier sombra de borde */
+}
+
+.select2-container--default .select2-selection--single:focus {
+    outline: none;     /* Asegura que no haya contorno al enfocar */
+    box-shadow: none;  /* Evita cualquier sombra al enfocar */
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    display: none;     /* Elimina la flecha desplegable si lo deseas */
+}
+
 
 
 	/* Opcionalmente, puedes ajustar la fuente o el espaciado en pantallas más pequeñas */
@@ -87,15 +103,10 @@
 									<div id="collapseOne" class="accordion-collapse collapse"
 										data-bs-parent="#accordionExample">
 										<div class="accordion-body">
-											<ul>
-												<li>
-													<a href="">Mexico</a>
-												</li>
-												<li>
-													<a href="">Argentina</a>
+										<select class="js-example-basic-multiple col-sm-12" id="mimunicipio" >
+											<option value="s">sa</option>
 
-												</li>
-											</ul>
+</select>
 										</div>
 									</div>
 								</div>

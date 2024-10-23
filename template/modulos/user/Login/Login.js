@@ -174,5 +174,13 @@ class Login {
 			console.log(e);
 		}
 	}
+	getEstado_Municipio(idEstado){
+		try {
+			return sendDataGet(`ubicacion/U_Ubicacion/getMunicipiosEstados?estado=${idEstado}`);
+		} catch (e) {
+			console.log(e);
+		}
+
+	}
 
 }

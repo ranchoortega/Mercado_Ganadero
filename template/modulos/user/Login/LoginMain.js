@@ -2,9 +2,7 @@ const login = new Login();
 $(document).ready(async () => {
 
 
-
 	$('#liproveedores').hide();
-
 
 
 	if (login.id_usuario != "") {
@@ -15,7 +13,6 @@ $(document).ready(async () => {
 	} else {
 		$('.divCrear').hide();
 	}
-
 	const {
 		res,
 		data
@@ -31,11 +28,28 @@ $(document).ready(async () => {
 
 
 
-
-
-
-
 });
+$('#mimunicipio').change(async function() {
+	// Obtener el valor seleccionado
+	let valorSeleccionado = $(this).val();
+	
+
+	const{res,data}= await login.getEstado_Municipio(valorSeleccionado);
+	$('#estado-municipio').empty();
+
+	data.forEach(function (estado) {
+		$('#estado-municipio').append(`<option value="${estado.id}">${estado.municipio}</option>`);
+
+	});
+
+	
+});
+
+
+
+
+
+
 $('#exampleModalCenter').on('shown.bs.modal', function () {
 	setTimeout(function () {
 		map.invalidateSize(); // Redibuja el mapa cuando el modal se muestra
