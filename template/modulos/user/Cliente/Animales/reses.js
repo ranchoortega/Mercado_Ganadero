@@ -5,13 +5,15 @@ $(document).ready(async function () {
 
     const { res, data } = await reses.getAnimales();
     const { res:RE1, data:DATA1 } = await reses.numberAnimals();
+    console.log(DATA1);
+    
     reses.totalPage = DATA1.total;
     
     let i = false;
 
     
 
-    if (i) {
+    if (DATA1 != "0") {
     
         console.log(i);
         

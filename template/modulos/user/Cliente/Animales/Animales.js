@@ -100,7 +100,8 @@ class Animales {
 
 		if (!this.verification) {
 			this.generarPages();
-			const siguienteElemento = $('<li></li>').addClass('page-item').attr('value', this.page + 1).html(`<a class="page-link">Siguiente</a>`);
+			const siguienteElemento = this.page == 0 ? '' : $('<li></li>').addClass('page-item').attr('value', this.page + 1).html(`<a class="page-link">Siguiente</a>`)
+			
 			this.paginationContainer.append(siguienteElemento);
 			this.verification = true;
 		}
