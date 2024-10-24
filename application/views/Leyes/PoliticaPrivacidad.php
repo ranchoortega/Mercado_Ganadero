@@ -1,77 +1,126 @@
 <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-        body {
-            font-family: 'Roboto', sans-serif
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
+     .breadcrumb-item {
+        flex: 1;
+        /* Todos los elementos se repartirán de manera uniforme */
+            text-align: center;
+            padding: 10px;
+            white-space: nowrap;
+            /* Evita que el texto se corte en varias líneas */
         }
 
-        .page-body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 20px;
+        .breadcrumb-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .breadcrumb-item::before {
+            content: none !important;
+            /* Asegura que se aplique este estilo sobre cualquier otro */
+            padding-right: 0 !important;
+        }
+
+
+        /* Opcionalmente, puedes ajustar la fuente o el espaciado en pantallas más pequeñas */
+        @media (max-width: 576px) {
+            .breadcrumb-item {
+                padding: 5px;
+                /* Reduce el espaciado en pantallas muy pequeñas */
+            }
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
             text-align: center;
         }
 
-        .page-body h1 {
-            padding-top: 100px;
+        .container h1 {
+            padding-top: 50px;
             color: #333;
             font-size: 32px;
             margin-bottom: 20px;
+            text-align: center;
         }
 
-        .page-body ol {
-            text-align: left;
-            max-width: 800px; 
+        .container ol {
             text-align: justify;
         }
 
-        .page-body ol h2 {
+        .container ol h2 {
             font-size: 22px;
             margin-bottom: 10px;
         }
 
-        .page-body ol li {
+        .container ol li {
             margin-bottom: 20px;
         }
+
     </style>
 
 <section class="page-body">
+
+    <div id="breadcrumb" class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-between flex-nowrap">
+                        <div class="breadcrumb-item">
+                            <a href="<?php echo base_url() ?>Welcome"><i class="icofont-home icofont-2x"></i></a>
+                        </div>
+                        <div class="breadcrumb-item" id="iconReses">
+                            <a href="<?php echo base_url() ?>Cliente/Animales/Reses"><i
+                                    class="icofont-cow icofont-2x"></i></a>
+                        </div>
+                        <div class="breadcrumb-item" id="iconChivos">
+                            <a href="<?php echo base_url() ?>Cliente/Animales/Chivos"><i
+                                    class="icofont-giraffe-head-1 icofont-2x"></i></a>
+                        </div>
+                        <div class="breadcrumb-item" id="iconCerdos">
+                            <a href="<?php echo base_url() ?>Cliente/Animales/Cerdos"><i
+                                    class="icofont-pig-face icofont-2x"></i></a>
+                        </div>
+                        <div class="breadcrumb-item" id="iconAves">
+                            <a href="<?php echo base_url() ?>Cliente/Animales/Aves"><i
+                                    class="icofont-rooster icofont-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+
+
+        <div class="container">
         
     <h1>Política de Privacidad</h1>
         <ol>
             <li>
                 <h2>Información Recopilada</h2>
                 Al utilizar nuestra Aplicación, podemos recopilar los siguientes tipos de información:
-                    <ul>
-                        <li><strong>Información personal:</strong> como nombre, correo electrónico, número de teléfono, dirección y otros datos proporcionados durante el registro.</li>
-                        <li><strong>Información sobre el ganado:</strong> incluyendo imágenes, descripciones, precios y otras especificaciones que subas a la plataforma.</li>
-                        <li><strong>Datos de uso:</strong> como dirección IP, tipo de dispositivo, versión del sistema operativo, tiempos de acceso y actividad en la Aplicación.</li>
-                    </ul>
+                    <li>Información personal:como nombre, correo electrónico, número de teléfono, dirección y otros datos proporcionados durante el registro.</li>
+                    <li>Información sobre el ganado: incluyendo imágenes, descripciones, precios y otras especificaciones que subas a la plataforma.</li>
+                    <li>Datos de uso: como dirección IP, tipo de dispositivo, versión del sistema operativo, tiempos de acceso y actividad en la Aplicación.</li>
+
             </li>
             <li>
                 <h2>Uso de la Información</h2>
                 La información recopilada será utilizada para:
-                    <ul>
                         <li>Proveer y mejorar los servicios de la Aplicación.</li>
                         <li>Facilitar el contacto entre los usuarios interesados en el ganado publicado.</li>
                         <li>Responder a consultas y proporcionar soporte técnico.</li>
                         <li>Enviar notificaciones importantes sobre el servicio.</li>
                         <li>Cumplir con obligaciones legales.</li>
-                    </ul>  
             </li>
             <li>
                 <h2>Compartir Información</h2>
                 No compartimos tu información personal con terceros, excepto en los siguientes casos:
-                    <ul>
                         <li>Con tu consentimiento explícito.</li>
                         <li>Para cumplir con obligaciones legales o responder a procesos judiciales.</li>
                         <li>Con proveedores de servicios que nos asisten en el funcionamiento de la Aplicación, siempre bajo acuerdos de confidencialidad.</li>
-                    </ul>
             </li>
             <li>
                 <h2>Seguridad de la Información</h2>
@@ -90,6 +139,6 @@
                 Si tienes alguna pregunta o inquietud sobre estos términos o nuestra política de privacidad, puedes contactarnos en: [balderasliliana294@gmail.com].
             </li>
         </ol>
-
+        </div>
 </section>
 

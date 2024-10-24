@@ -26,7 +26,7 @@ class Terminos extends CI_Controller
             )
         );
 
-        $this->load->view('partialsInicio/header', $datos);
+        $this->load->view('partials/header', $datos);
         $this->load->view('Leyes/TerminosCondiciones');  
         $this->load->view('partials/footer');
     }
@@ -49,7 +49,7 @@ class Terminos extends CI_Controller
             )
         );
 
-        $this->load->view('partialsInicio/header', $datos);
+        $this->load->view('partials/header', $datos);
         $this->load->view('Leyes/PoliticaPrivacidad');  
         $this->load->view('partials/footer');
     }
