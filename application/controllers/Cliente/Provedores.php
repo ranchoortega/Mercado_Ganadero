@@ -30,8 +30,6 @@ class Provedores extends CI_Controller
 				"template/assets/js2/nouislider.min.js",
 				"template/assets/js2/jquery.zoom.min.js",
 				"template/assets/js2/main.js",
-				"template/modulos/user/Login/Login.js",
-				"template/modulos/user/Login/LoginMain.js",
 				"template/modulos/user/cliente/Proveedores/Proveedores.js",
 				"template/modulos/user/cliente/Proveedores/proveedoresMain.js",
 				
