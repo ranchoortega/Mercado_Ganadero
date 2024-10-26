@@ -56,8 +56,7 @@
 						
 							<li><a href="#"><i class="fa fa-phone"></i>+52-221-435-08-30</a></li>
 							<li><a href="#"><i class="fa fa-envelope-o"></i>jonathanalexanderramirezortega@email.com</a></li>
-							<li><a href="<?php echo base_url('Leyes/Terminos/terminos'); ?>">Términos de Uso</a></li>
-							<li><a href="<?php echo base_url('Leyes/Terminos/politica'); ?>">Política de Privacidad</a></li>
+							
 						</ul>
 					</div>
 				</div>
@@ -88,8 +87,8 @@
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &copy;
 						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template
-						is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-							target="_blank">Colorlib</a>
+						is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a style="color:#ffffff" href="<?php echo base_url('Leyes/Terminos/terminos'); ?>"
+							target="_blank">Términos de Uso</a> | <a style="color:#ffffff" href="<?php echo base_url('Leyes/Terminos/politica'); ?>">Política de Privacidad</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</span>
 				</div>

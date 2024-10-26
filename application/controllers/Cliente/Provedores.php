@@ -11,7 +11,12 @@ class Provedores extends CI_Controller
 	public function index()
 	{
 
-		$datos = array();
+		$titulo = "Vender Ganado: Bovinos, Caprinos y Porcinos"; // Aquí pones el título que desees
+
+        // Crear el array de datos
+        $datos = array();
+        $datos['titulo'] = $titulo; // Incluir el título en los datos
+	
 		$datos['estiloscss'] = plantilla_head(
 			array(
 				"template/assets/cssInicio/bootstrap.min.css",
@@ -39,7 +44,7 @@ class Provedores extends CI_Controller
 
 
 		$this->load->view('partials/header', $datos);
-		$this->load->view('menu/provedores');
+		$this->load->view('cliente/vender');
 		$this->load->view('partials/footer');
 	}
 
