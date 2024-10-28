@@ -1,6 +1,6 @@
 class Login {
-    constructor() {
-        this.id_usuario = $('.user').val();
+	constructor() {
+		this.id_usuario = $('.user').val();
 
 
 		this.id_proveedor = "";
@@ -18,33 +18,10 @@ class Login {
 		this.idEstado = "";
 
 
-    }
-
-    async iniciarSesion(usuario, password) {
-        try {
-            const form = new FormData();
-            form.append('usuario', usuario);
-            form.append('pass', password)
-            const res = await fetch(`${urlServer}Login/IniciarSesion`, {
-                method: 'POST',
-                body: form
-            });
-            const data = await res.json();
-            return { res, data }
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    async guardarSesion(dataUsuario) {
-        const form = new FormData();
-
-        form.append('idUsuario', dataUsuario.id_usuario);
-        form.append('token', dataUsuario.token || ""); // Si no hay token, se envía una cadena vacía
+	}
 
 
-    }
-    validarCampo(valorCampo, idMensaje, mensaje) {
+	validarCampo(valorCampo, idMensaje, mensaje) {
 		if (valorCampo === '' || valorCampo === null || valorCampo === "null" || valorCampo === false) {
 			$(`.${idMensaje}`).html(mensaje);
 			return false;
@@ -80,26 +57,11 @@ class Login {
 		form.append("phone", phone);
 		form.append("location", JSON.stringify(this.ubicacionData));
 		form.append("idEstado", this.idEstado);
-	
+
 
 		return sendData(form, "login/setUsers")
 	}
-	
-	async setAnimal(raza, edad, genero, descripcion, precio, desparasitado, anuncio, peso, tipo) {
-		const form = new FormData();
-		form.append("id_usuario", 4);
-		form.append("raza", raza);
-		form.append("edad", edad);
-		form.append("genero", genero);
-		form.append("descripcion", descripcion);
-		form.append("precio", precio);
-		form.append("desparasitado", desparasitado);
-		form.append("anuncio", anuncio);
-		form.append("peso", peso);
-		form.append("tipo", tipo);
 
-		return sendData(form, "C_Animales/setDescripcio")
-	}
 
 	agregarOMoverMarcador(latlng) {
 		let marker;
@@ -167,8 +129,8 @@ class Login {
 				alert('Hubo un problema al obtener la dirección.');
 			});
 	}
-	 getEstados() {
-		
+	getEstados() {
+
 
 		try {
 			return sendDataGet(`ubicacion/U_Ubicacion/getEstados`);
@@ -176,7 +138,7 @@ class Login {
 			console.log(e);
 		}
 	}
-	getEstado_Municipio(idEstado){
+	getEstado_Municipio(idEstado) {
 		try {
 			return sendDataGet(`ubicacion/U_Ubicacion/getMunicipiosEstados?estado=${idEstado}`);
 		} catch (e) {
@@ -184,5 +146,41 @@ class Login {
 		}
 
 	}
+	async iniciarSesion(usuario, password) {
+		try {
+			const form = new FormData();
+			form.append('usuario', usuario);
+			form.append('pass', password)
+			const res = await fetch(`${urlServer}Login/IniciarSesion`, {
+				method: 'POST',
+				body: form
+			});
+			const data = await res.json();
+			return {
+				res,
+				data
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	}
+
+	async guardarSesion(dataUsuario) {
+		const form = new FormData();
+
+		form.append('idUsuario', dataUsuario.id_usuario);
+		form.append('token', dataUsuario.token || ""); // Si no hay token, se envía una cadena vacía
+		const res = await fetch(`${base_url}Login/SaveSesion`,{
+            method:'POST',
+            body:form
+        });
+        const data = await res.json();
+
+        
+        window.location.href=`${base_url}`;
+
+
+	}
+	
 
 }

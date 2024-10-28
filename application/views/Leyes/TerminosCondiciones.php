@@ -33,7 +33,7 @@
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f4f4f4;
-            text-align: center;
+          
         }
 
         .container h1 {

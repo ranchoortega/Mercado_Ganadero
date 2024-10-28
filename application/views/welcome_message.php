@@ -164,7 +164,7 @@
                         <li id="liLogin"><a href="<?php echo base_url() ?>Login"><i
                                     class="fa fa-right-to-bracket bx-sm"></i>Iniciar sesion o crear cuenta</a></li>
                         <li id="liUser" style="display: none;">
-                            <a href="#" id="userLink">Usuario</a>
+                        <a href="#" id="userLink"><i class="fa fa-user bx-sm"></i>Mi perfil</a>
                             <ul id="logoutButton" style="display: none;">
                                 <li><a href="#" id="btn-cerrar-sesion">Cerrar Sesión</a></li>
                             </ul>

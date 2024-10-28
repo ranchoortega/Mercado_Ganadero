@@ -292,6 +292,8 @@ document.getElementById('btnLogin').addEventListener('click', async () => {
         return false;
     }
 
+	console.log(data);
+	
     login.guardarSesion(data);
 });
 document.addEventListener("keydown", async (e) => {

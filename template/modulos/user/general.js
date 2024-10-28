@@ -1,5 +1,27 @@
  let token = $('.jwt').val();
 
+ document.addEventListener('DOMContentLoaded', function () {
+	var userInput = document.querySelector('.user');
+	var liLogin = document.getElementById('liLogin');
+	var liUser = document.getElementById('liUser');
+
+	// Función para actualizar la visibilidad de los elementos
+	function updateVisibility() {
+		if (userInput.value.trim() !== "") {
+			liLogin.style.display = 'none';
+			liUser.style.display = 'block';
+		} else {
+			liUser.style.display = 'none';
+			liLogin.style.display = 'block';
+		}
+	}
+
+	// Inicializa el estado al cargar la página
+	updateVisibility();
+
+	// Actualiza el estado cuando el valor del input cambie
+	userInput.addEventListener('input', updateVisibility);
+});
 
  $('#menuIcon').on('click', function(event) {
 	event.preventDefault(); // Evita el comportamiento predeterminado del enlace

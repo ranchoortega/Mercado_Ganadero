@@ -1,15 +1,11 @@
 class Welcome {
     constructor(){
+        this.token = $('.jwt').val();
+        this.idusuario = $('.user').val();
+        console.log(this.idusuario);
+        
         
     }
     
-    async getInicio() {
-        try {
-            return sendDataGet(`C_Inicio/getPaginas`)
-
-
-        } catch (e) {
-            console.log("hh");
-        }
-    }
+   
 }

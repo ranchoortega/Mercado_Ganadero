@@ -49,9 +49,8 @@ $config['sess_time_to_update'] = 300; // Intervalo para actualizar el tiempo de 
 $config['sess_regenerate_destroy'] = FALSE; // No destruir la sesión antigua al regenerar el ID de sesión
 
 
-
 $config['cookie_prefix']	= '';
-$config['cookie_domain']	= '';
+$config['cookie_domain']	= 'localhost';
 $config['cookie_path']		= '/';
 $config['cookie_secure']	= FALSE;
 $config['cookie_httponly'] 	= FALSE;
