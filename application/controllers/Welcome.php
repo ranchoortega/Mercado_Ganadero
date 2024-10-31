@@ -19,7 +19,7 @@ class Welcome extends CI_Controller
 
         $datos['estiloscss'] = plantilla_head(
             array(
-                "template/assets/cssInicio/bootstrap.min.css",
+           
                 "template/assets/cssInicio/slick.css",
                 "template/assets/cssInicio/slick-theme.css",
                 "template/assets/cssInicio/nouislider.min.css",
@@ -30,14 +30,16 @@ class Welcome extends CI_Controller
 
         $datos['estilosjs'] = plantilla_footer(
             array(
-                "template/modulos/user/Welcome.js",
-                "template/modulos/user/welcomeMain.js",
-                "template/assets/js2/jquery.min.js",
-                "template/assets/js2/bootstrap.min.js",
+                
                 "template/assets/js2/slick.min.js",
                 "template/assets/js2/nouislider.min.js",
                 "template/assets/js2/jquery.zoom.min.js",
-                "template/assets/js2/main.js",
+                 "template/assets/js2/main.js",
+      
+
+               
+                "template/modulos/user/Welcome.js",
+                "template/modulos/user/welcomeMain.js",
             )
         );
 

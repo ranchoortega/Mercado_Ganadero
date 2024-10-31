@@ -9,7 +9,7 @@ class Welcome {
 
     async getAnimalesNuevos() {
         try {
-            const response = await sendDataGet(`C_Animales/getAnimalesRecomendados?usuario=${this.idusuario}`);
+            const response = await sendDataGet(`C_Animales/getAnimalesRecomendados`);
             console.log("Datos obtenidos (Recomendados):", response);
 
             if (response && response.data && response.data.data && Array.isArray(response.data.data)) {
