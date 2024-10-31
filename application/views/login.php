@@ -1,12 +1,14 @@
 <style>
     .js-example-basic-multiple {
-    z-index: 10000; /* Asegúrate de que el select tenga un z-index alto */
-    position: relative; /* Necesario para que el z-index funcione */
-}
+        z-index: 10000;
+        /* Asegúrate de que el select tenga un z-index alto */
+        position: relative;
+        /* Necesario para que el z-index funcione */
+    }
 
-#top-header{
-    z-index: 3;
-}
+    #top-header {
+        z-index: 3;
+    }
 
     .breadcrumb-item {
         flex: 1;
@@ -201,8 +203,8 @@
 
 
                     </div>
-                    <div class="modal fade" id="exampleModalCenter" tabindex="" role="dialog"
-                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+                    <div class="modal fade" id="exampleModalCenter" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -234,7 +236,7 @@
                                             <div class="mb-4">
                                                 <label class="form-label">Selecciona tu estado</label>
 
-                                                <select class="js-example-basic-multiple col-sm-12" id="mimunicipio" >
+                                                <select class="js-example-basic-multiple col-sm-12" id="mimunicipio">
 
                                                 </select>
                                                 <p class="text-danger msgpmimunicipio"></p>
@@ -244,7 +246,8 @@
                                         <div class="col-md-6">
                                             <div class="mb-4">
                                                 <label class="form-label">Primero seleccione un Estado</label>
-                                                <select class="js-example-basic-multiple col-sm-12" id="estado-municipio" ></select>
+                                                <select class="js-example-basic-multiple col-sm-12"
+                                                    id="estado-municipio"></select>
                                                 <p class="text-danger msgpestado-municipio"></p>
 
                                             </div>

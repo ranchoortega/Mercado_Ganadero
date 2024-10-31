@@ -210,7 +210,7 @@
 
 
                         // Actualizar el href del enlace
-                        document.getElementById('whapPhone').href = whatsappLink;
+                        document.getElementById('whapPhone').value = whatsappLink;
                         document.getElementById('whapsapweb').value = whatsappLink2;
                         document.getElementById('whapPhone2').value = whatsappLink3;
                     }

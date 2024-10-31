@@ -28,6 +28,15 @@ class Animales {
 		if (this.divElement) {
 			this.divElement.style.borderBottom = "2px solid #e70000";
 		}
+
+		
+
+
+
+	
+		
+
+	
 	}
 
 	async getAnimales() {
@@ -36,16 +45,12 @@ class Animales {
 		} catch (e) {
 			console.log(e);
 		}
+
+
+		
 	}
 
-	async numberAnimals() {
-		try {
 
-			return sendDataGet(`C_Animales/getNumber?tipo=${this.tipo}`);
-		} catch (error) {
-			console.log(e);
-		}
-	}
 
 	async generalItems() {
 		const contenedor = $('#cardAnimales'); // Utiliza jQuery aquí
@@ -101,7 +106,7 @@ class Animales {
 		if (!this.verification) {
 			this.generarPages();
 			const siguienteElemento = this.page == 0 ? '' : $('<li></li>').addClass('page-item').attr('value', this.page + 1).html(`<a class="page-link">Siguiente</a>`)
-			
+
 			this.paginationContainer.append(siguienteElemento);
 			this.verification = true;
 		}

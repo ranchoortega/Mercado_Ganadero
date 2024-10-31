@@ -20,6 +20,8 @@ class Animales extends CI_Controller
         $datos['titulo'] = $titulo; // Incluir el título en los datos
 		$datos['estiloscss'] = plantilla_head(
 			array(
+				"template/assets/css/select2.css",
+
 				"template/assets/cssInicio/bootstrap.min.css",
 				"template/assets/cssInicio/slick.css",
 				"template/assets/cssInicio/slick-theme.css",
@@ -30,14 +32,17 @@ class Animales extends CI_Controller
 		);
 		$datos['estilosjs'] = plantilla_footer(
 			array(
+		
+				
 				"template/modulos/user/cliente/Animales/Animales.js",
 				"template/modulos/user/cliente/Animales/reses.js",
-				"template/assets/js2/jquery.min.js",
-				"template/assets/js2/bootstrap.min.js",
+
 				"template/assets/js2/slick.min.js",
 				"template/assets/js2/nouislider.min.js",
 				"template/assets/js2/jquery.zoom.min.js",
 				"template/assets/js2/main.js",
+				"template/assets/js/select2/select2.full.min.js",
+				"template/assets/js/select2/select2-custom.js",
 				
 			
 				
@@ -70,14 +75,14 @@ class Animales extends CI_Controller
 
 				"template/modulos/user/cliente/Animales/Animales.js",
 				"template/modulos/user/cliente/Animales/chivos.js",
-				"template/assets/js/select2/select2.full.min.js",
-				"template/assets/js/select2/select2-custom.js",
+			
 				"template/assets/js2/bootstrap.min.js",
 				"template/assets/js2/slick.min.js",
 				"template/assets/js2/nouislider.min.js",
 				"template/assets/js2/jquery.zoom.min.js",
 				"template/assets/js2/main.js",
-				
+					"template/assets/js/select2/select2.full.min.js",
+				"template/assets/js/select2/select2-custom.js",
 			
 				
 			)
@@ -95,6 +100,8 @@ class Animales extends CI_Controller
 		$datos = array();
 		$datos['estiloscss'] = plantilla_head(
 			array(
+				"template/assets/css/select2.css",
+
 				"template/assets/cssInicio/bootstrap.min.css",
 				"template/assets/cssInicio/slick.css",
 				"template/assets/cssInicio/slick-theme.css",
@@ -107,13 +114,15 @@ class Animales extends CI_Controller
 			array(
 				"template/modulos/user/cliente/Animales/Animales.js",
 				"template/modulos/user/cliente/Animales/cerdos.js",
+				
 				"template/assets/js2/jquery.min.js",
 				"template/assets/js2/bootstrap.min.js",
 				"template/assets/js2/slick.min.js",
 				"template/assets/js2/nouislider.min.js",
 				"template/assets/js2/jquery.zoom.min.js",
 				"template/assets/js2/main.js",
-				
+				"template/assets/js/select2/select2.full.min.js",
+				"template/assets/js/select2/select2-custom.js",
 			
 				
 			)
@@ -131,6 +140,8 @@ class Animales extends CI_Controller
 		$datos = array();
 		$datos['estiloscss'] = plantilla_head(
 			array(
+				"template/assets/css/select2.css",
+
 				"template/assets/cssInicio/bootstrap.min.css",
 				"template/assets/cssInicio/slick.css",
 				"template/assets/cssInicio/slick-theme.css",
@@ -143,13 +154,15 @@ class Animales extends CI_Controller
 			array(
 				"template/modulos/user/cliente/Animales/Animales.js",
 				"template/modulos/user/cliente/Animales/aves.js",
+		
 				"template/assets/js2/jquery.min.js",
 				"template/assets/js2/bootstrap.min.js",
 				"template/assets/js2/slick.min.js",
 				"template/assets/js2/nouislider.min.js",
 				"template/assets/js2/jquery.zoom.min.js",
 				"template/assets/js2/main.js",
-				
+				"template/assets/js/select2/select2.full.min.js",
+				"template/assets/js/select2/select2-custom.js",
 			
 				
 			)

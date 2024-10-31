@@ -16,7 +16,7 @@ $(document).ready(async () => {
 	const {
 		res,
 		data
-	} = await login.getEstados();
+	} = await getEstados();
 	console.log("eeeeeeeeeeeee");
 	console.log(data);
 	$('#mimunicipio').append(`<option value="null">Selecciona un estado</option>`);
@@ -34,7 +34,7 @@ $('#mimunicipio').change(async function() {
 	let valorSeleccionado = $(this).val();
 	
 
-	const{res,data}= await login.getEstado_Municipio(valorSeleccionado);
+	const{res,data}= await getEstado_Municipio(valorSeleccionado);
 	$('#estado-municipio').empty();
 
 	
