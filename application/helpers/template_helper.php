@@ -16,6 +16,7 @@ if (!function_exists('plantilla_head')) {
 			"template/assets/css/date-picker.css",
 			"template/assets/css/prism.css",
 			"template/assets/css/vector-map.css",
+			"template/assets/cssInicio/bootstrap.min.css",
 			"template/assets/css/bootstrap.css",
 			"template/assets/css/datatables.css",
 			"template/assets/css/style.css",

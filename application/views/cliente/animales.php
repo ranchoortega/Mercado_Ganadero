@@ -18,21 +18,29 @@
 		/* Asegura que se aplique este estilo sobre cualquier otro */
 		padding-right: 0 !important;
 	}
+
 	.select2-container--default .select2-selection--single {
-    border: none;      /* Elimina el borde */
-    outline: none;     /* Elimina el contorno */
-    background-color: transparent;  /* Fondo transparente */
-    box-shadow: none;  /* Evita cualquier sombra de borde */
-}
+		border: none;
+		/* Elimina el borde */
+		outline: none;
+		/* Elimina el contorno */
+		background-color: transparent;
+		/* Fondo transparente */
+		box-shadow: none;
+		/* Evita cualquier sombra de borde */
+	}
 
-.select2-container--default .select2-selection--single:focus {
-    outline: none;     /* Asegura que no haya contorno al enfocar */
-    box-shadow: none;  /* Evita cualquier sombra al enfocar */
-}
+	.select2-container--default .select2-selection--single:focus {
+		outline: none;
+		/* Asegura que no haya contorno al enfocar */
+		box-shadow: none;
+		/* Evita cualquier sombra al enfocar */
+	}
 
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-    display: none;     /* Elimina la flecha desplegable si lo deseas */
-}
+	.select2-container--default .select2-selection--single .select2-selection__arrow {
+		display: none;
+		/* Elimina la flecha desplegable si lo deseas */
+	}
 
 
 
@@ -87,26 +95,27 @@
 		<div class="container">
 			<!-- row -->
 			<div class="row">
-				<div class="col-md-2 order-details">
+				<div class="col-md-2">
 					<div class="billing-details">
 						<aside>
 							<h4>Filtros</h4>
 							<div class="accordion" id="accordionExample">
 								<div class="accordion-item">
 									<h2 class="accordion-header">
-										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-											data-bs-target="#collapseOne" aria-expanded="false"
-											aria-controls="collapseOne">
-											Ubicacion
+										<button class="accordion-button collapsed" type="button"
+											data-bs-toggle="collapse" data-bs-target="#collapseOne"
+											aria-expanded="false" aria-controls="collapseOne">
+											Ubicacion por estados
 										</button>
 									</h2>
 									<div id="collapseOne" class="accordion-collapse collapse"
 										data-bs-parent="#accordionExample">
-										<div class="accordion-body">
-										<select class="js-example-basic-multiple col-sm-12" id="mimunicipio" >
-											<option value="s">sa</option>
+										<div class="">
+											<select class="js-example-basic-multiple col-sm-12" id="mimunicipio" multiple>
+												
 
-</select>
+											</select>
+										
 										</div>
 									</div>
 								</div>
@@ -115,37 +124,22 @@
 										<button class="accordion-button collapsed" type="button"
 											data-bs-toggle="collapse" data-bs-target="#collapseTwo"
 											aria-expanded="false" aria-controls="collapseTwo">
-											Raza
+											Ubicacion por municipios
 										</button>
 									</h2>
 									<div id="collapseTwo" class="accordion-collapse collapse"
 										data-bs-parent="#accordionExample">
-										<div class="accordion-body">
-											<ul>
-												<li><a href="">Charol</a></li>
-												<li><a href="">Pardo</a></li>
-											</ul>
+										<div class="">
+											<select class="js-example-basic-multiple col-sm-12" id="unestado">
+												
+
+											</select>
+											<select class="js-example-basic-multiple col-sm-12"
+											id="estado-municipio" multiple ></select>
 										</div>
 									</div>
 								</div>
-								<div class="accordion-item">
-									<h2 class="accordion-header">
-										<button class="accordion-button collapsed" type="button"
-											data-bs-toggle="collapse" data-bs-target="#collapseThree"
-											aria-expanded="false" aria-controls="collapseThree">
-											Tipo
-										</button>
-									</h2>
-									<div id="collapseThree" class="accordion-collapse collapse"
-										data-bs-parent="#accordionExample">
-										<div class="accordion-body">
-											<ul>
-												<li><a href="">Lote</a></li>
-												<li><a href="">Ejemplar</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
+							
 							</div>
 						</aside>
 
@@ -153,25 +147,11 @@
 				</div>
 				<div class="col-md-10 order-details">
 					<div class="billing-details">
-						<div class="store-filter clearfix">
-							<div class="store-sort">
-								<label>
-									Ordenar:
-									<select class="input-select">
-										<option value="0">Precio mas bajo</option>
-										<option value="1">Precio mas caro</option>
-
-									</select>
-								</label>
-
-
-							</div>
-
-						</div>
+					
 						<div class="row" id="cardAnimales">
 
 							<div id="divcob">
-							
+
 							</div>
 
 							<!-- product -->

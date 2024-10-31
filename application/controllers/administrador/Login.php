@@ -21,7 +21,7 @@ class Login extends CI_Controller
 
 
 				"template/assets/css/select2.css",
-				"template/assets/cssInicio/bootstrap.min.css",
+	
 				"template/assets/cssInicio/style.css",
 
 			)

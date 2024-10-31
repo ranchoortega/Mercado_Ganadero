@@ -100,14 +100,6 @@
  }
 
 
-
-
-
-
-
-
-
-
  var getGeneral = async (datos, ruta) => {
  	try {
  		const response = await fetch(base_url + ruta, {
@@ -125,22 +117,7 @@
  	}
  }
 
- var eliminarCampo = async (datos) => {
- 	try {
- 		const response = await fetch(base_url + "Administrador/Informacion/Oficios/SolicitudSuficiencia/eliminarCampo", {
- 			method: 'POST',
- 			body: datos,
- 		});
- 		const data = await response.json();
- 		if (data) {
- 			return data;
- 		} else {
- 			return false;
- 		}
- 	} catch (e) {
- 		console.log(e);
- 	}
- }
+
 
  var mensaje = function (icon, titulo, texto) {
  	Swal.fire({
@@ -178,21 +155,7 @@
  	})
  }
 
- var setEvidencia = async (datos) => {
- 	try {
- 		const response = await fetch('https://documentos.seguimientovotacionespuebla.com/Checklist/setEvidenciaPlataformas', {
- 			method: 'POST', // or 'PUT'
- 			body: datos, // data can be `string` or {object}!
- 		});
- 		const data = await response.text();
- 		if (data) {
- 			return data;
- 		}
- 	} catch (e) {
- 		console.log(e);
- 	}
- }
-
+ 
  $(document).on('click', '#btn-cerrar-sesion', function () {
  	Swal.fire({
  		title: "CERRAR SESIÓN",
@@ -208,79 +171,7 @@
  	})
  });
 
- var generarTabla = function (contenedor, urlpeticion, datos, columnas, columnalongitud) {
- 	var tabla = $('.' + contenedor).DataTable({
- 		language: {
- 			"processing": "Procesando...",
- 			"lengthMenu": "Mostrar _MENU_ registros",
- 			"zeroRecords": "No se encontraron resultados",
- 			"emptyTable": "Ningún dato disponible en esta tabla",
- 			"info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
- 			"infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
- 			"infoFiltered": "(filtrado de un total de _MAX_ registros)",
- 			"search": "Buscar:",
- 			"infoThousands": ",",
- 			"loadingRecords": "Cargando...",
- 			"paginate": {
- 				"first": "Primero",
- 				"last": "Último",
- 				"next": "Siguiente",
- 				"previous": "Anterior"
- 			},
- 			"aria": {
- 				"sortAscending": ": Activar para ordenar la columna de manera ascendente",
- 				"sortDescending": ": Activar para ordenar la columna de manera descendente"
- 			}
- 		},
- 		lengthMenu: [
- 			[10, 25, 50, -1],
- 			[10, 25, 50, "All"]
- 		],
- 		fixedColumns: {
- 			leftColumns: 1
- 		},
- 		//dom: 'lBtip',
- 		buttons: [{
- 				text: 'Copiar',
- 				extend: 'copyHtml5',
- 				exportOptions: {
- 					columns: [0, ':visible']
- 				}
- 			},
- 			{
- 				text: 'PDF',
- 				extend: 'pdfHtml5',
- 				exportOptions: {
- 					columns: ':visible'
- 				}
- 			},
- 			{
- 				text: 'Imprimir',
- 				extend: 'print',
- 				exportOptions: {
- 					columns: ':visible'
- 				}
- 			},
- 			{
- 				text: 'Excel',
- 				extend: 'csv',
- 				exportOptions: {
- 					columns: [0, ':visible']
- 				}
- 			}
- 		],
- 		"ajax": {
- 			url: base_url + urlpeticion,
- 			type: "POST",
- 			data: datos,
- 			dataType: 'json'
- 		},
- 		"columns": columnas,
- 		"columnDefs": columnalongitud
- 	});
 
- 	return tabla;
- }
  var generarTabla2 = function (contenedor, urlpeticion, datos, columnas, columnalongitud, token) {
  	var tabla = $('.' + contenedor).DataTable({
  		language: {
@@ -383,3 +274,30 @@
  		}
  	});
  }
+
+  var getEstados = async function () {
+
+
+	try {
+		return sendDataGet(`ubicacion/U_Ubicacion/getEstados`);
+	} catch (e) {
+		console.log(e);
+	}
+}
+
+var getEstado_Municipio = async function(idEstado) {
+	try {
+		return sendDataGet(`ubicacion/U_Ubicacion/getMunicipiosEstados?estado=${idEstado}`);
+	} catch (e) {
+		console.log(e);
+	}
+
+}
+var  numberAnimals = async function (tipo)  {
+	try {
+
+		return sendDataGet(`C_Animales/getNumber?tipo=${tipo}`);
+	} catch (error) {
+		console.log(e);
+	}
+}

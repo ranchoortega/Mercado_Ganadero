@@ -221,7 +221,7 @@
                                 <img src=" <?php echo base_url('template/recursos/img/bovinosImg.jpeg'); ?>" alt="">
                             </div>
                             <div class="shop-body">
-                                <h3>Reses</h3>
+                                <h3>Bovinos</h3>
                                 <a href="<?php echo base_url() ?>Cliente/Animales/Reses" class="cta-btn">Ver ahora <i
                                         class="fa fa-arrow-circle-right"></i></a>
                             </div>
@@ -236,7 +236,7 @@
                                 <img src=" <?php echo base_url('template/recursos/img/caprinosImg.jpg'); ?>" alt="">
                             </div>
                             <div class="shop-body">
-                                <h3>Chivos</h3>
+                                <h3>Caprinos</h3>
                                 <a href="<?php echo base_url() ?>Cliente/Animales/CHivos" class="cta-btn">Ver ahora <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -258,7 +258,7 @@
                                 <img src=" <?php echo base_url('template/recursos/img/porcino.jpg'); ?>" alt="">
                             </div>
                             <div class="shop-body">
-                                <h3>Cerdos</h3>
+                                <h3>Porcinos</h3>
                                 <a href="<?php echo base_url() ?>Cliente/Animales/Cerdos" class="cta-btn">Ver ahora <i
                                         class="fa fa-arrow-circle-right"></i></a>
                             </div>
