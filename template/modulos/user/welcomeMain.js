@@ -1,9 +1,5 @@
-const welcome = new Welcome();
-
-
-$(document).ready(async function () {
-
-   
-
-
+$(document).ready(function() {
+    const welcome = new Welcome();
+    welcome.getAnimalesNuevos();
+    welcome.getAnimalesRecientes();
 });
