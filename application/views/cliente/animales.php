@@ -110,11 +110,17 @@
 									</h2>
 									<div id="collapseOne" class="accordion-collapse collapse"
 										data-bs-parent="#accordionExample">
-										<div class="">
+										<div class="accordion-body">
+											<!--
 											<select class="js-example-basic-multiple col-sm-12" id="mimunicipio" multiple>
 												
 
 											</select>
+-->
+
+											<input class ="" type="radio"  name="ubicacion" value="1">Por Estado
+											<p><input class ="" type="radio" name="ubicacion" value="2">Por Municipio</p>
+											
 										
 										</div>
 									</div>

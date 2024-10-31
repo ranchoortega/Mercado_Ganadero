@@ -66,11 +66,12 @@ $(document).ready(async function () {
 	} = await getEstados();
 	console.log("eeeeeeeeeeeee");
 	console.log(data);
-	$('#mimunicipio').append(`<option value="null">Todos los estados</option>`);
+	$('#mimunicipio').append(`<option value="0">Todos los estados</option>`);
 	dataEstado.forEach(function (estado) {
 		$('#mimunicipio').append(`<option value="${estado.id}">${estado.estado}</option>`);
 
 	});
+    $("#mimunicipio").val(["0"]).trigger('change');
 
 	$('#unestado').append(`<option value="null">Todos los estados</option>`);
 	dataEstado.forEach(function (estado) {
