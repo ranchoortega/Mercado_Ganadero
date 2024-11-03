@@ -1,26 +1,33 @@
+
+<style>
+	.breadcrumb-item {
+		flex: 1;
+		/* Todos los elementos se repartirán de manera uniforme */
+		text-align: center;
+		padding: 10px;
+		white-space: nowrap;
+		/* Evita que el texto se corte en varias líneas */
+	}
+
+	.breadcrumb-item a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.breadcrumb-item::before {
+		content: none !important;
+		/* Asegura que se aplique este estilo sobre cualquier otro */
+		padding-right: 0 !important;
+	}
+</style>
+
 <div class="page-body">
 
 
 	<!-- /NAVIGATION -->
 
 	<!-- BREADCRUMB -->
-	<div id="breadcrumb" class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<div class="col-md-12">
-
-					<ul class="breadcrumb-tree">
-						<li><a href="<?php echo base_url() ?>Welcome">Inicio</a></li>
-						<li class="active">Proveedores</li>
-					</ul>
-				</div>
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
+	
 	<!-- /BREADCRUMB -->
 
 	<!-- SECTION -->

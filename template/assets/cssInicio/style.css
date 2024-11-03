@@ -489,6 +489,7 @@ hot-deal
   background-color: #805b5b;
 }
 
+
 .header-logo {
   float: left;
 }
@@ -2190,7 +2191,7 @@ hot-deal
 ===========================================================*/
 /* Padding por defecto (para pantallas mayores a 990px) */
 #breadcrumb {
-  padding-top: 11px;
+  padding-top: 88px;
 }
 .menu-toggle{
   display: none;
@@ -2208,15 +2209,8 @@ hot-deal
 }
 
 
-/* Estilo para pantallas con ancho menor o igual a 990px */
-@media (max-width: 990px) {
-  #breadcrumb {
-      padding-top: 88px;
-  }
-  .navarlogin {
-    justify-content: unset; /* Quita la propiedad justify-content: end; */
-}
-}
+
+
 @media (max-width: 990px) {
   .viewCliente {
       padding-top: 0px;

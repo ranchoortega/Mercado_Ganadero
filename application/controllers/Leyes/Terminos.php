@@ -14,14 +14,12 @@ class Terminos extends CI_Controller
         $datos = array();
         $datos['estiloscss'] = plantilla_head(
             array(
-                "template/assets/cssInicio/bootstrap.min.css",
-                "template/assets/cssInicio/style.css",
+ 
             )
         );
         $datos['estilosjs'] = plantilla_footer(
             array(
-                "template/assets/js2/jquery.min.js",
-                "template/assets/js2/bootstrap.min.js",
+    
                 "template/assets/js2/main.js",
             )
         );
@@ -37,14 +35,12 @@ class Terminos extends CI_Controller
         $datos = array();
         $datos['estiloscss'] = plantilla_head(
             array(
-                "template/assets/cssInicio/bootstrap.min.css",
-                "template/assets/cssInicio/style.css",
+
             )
         );
         $datos['estilosjs'] = plantilla_footer(
             array(
-                "template/assets/js2/jquery.min.js",
-                "template/assets/js2/bootstrap.min.js",
+         
                 "template/assets/js2/main.js",
             )
         );

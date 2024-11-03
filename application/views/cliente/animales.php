@@ -54,37 +54,7 @@
 </style>
 <div class="page-body">
 
-	<div id="breadcrumb" class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<div class="col-md-12 d-flex justify-content-between flex-nowrap">
-					<div class="breadcrumb-item">
-						<a href="<?php echo base_url() ?>Welcome"><i class="icofont-home icofont-2x"></i></a>
-					</div>
-					<div class="breadcrumb-item" id="iconReses">
-						<a href="<?php echo base_url() ?>Cliente/Animales/Reses"><i
-								class="icofont-cow icofont-2x"></i></a>
-					</div>
-					<div class="breadcrumb-item" id="iconChivos">
-						<a href="<?php echo base_url() ?>Cliente/Animales/Chivos"><i
-								class="icofont-giraffe-head-1 icofont-2x"></i></a>
-					</div>
-					<div class="breadcrumb-item" id="iconCerdos">
-						<a href="<?php echo base_url() ?>Cliente/Animales/Cerdos"><i
-								class="icofont-pig-face icofont-2x"></i></a>
-					</div>
-					<div class="breadcrumb-item" id="iconAves">
-						<a href="<?php echo base_url() ?>Cliente/Animales/Aves"><i
-								class="icofont-rooster icofont-2x"></i></a>
-					</div>
-				</div>
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
+
 
 
 	<!-- SECTION -->

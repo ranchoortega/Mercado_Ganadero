@@ -153,7 +153,8 @@
             .item2 {
                 order: 2;
             }
-            .item3{
+
+            .item3 {
                 order: 3;
             }
 
@@ -178,83 +179,6 @@
 
     <!-- Loader ends-->
     <div class="page-wrapper compact-wrapper" id="pageWrapper">
-        <div id="top-header">
-            <div class="container">
-                <div class="col-md-12">
-                    <ul class="header-links pull-left col-md-6">
-                        <li>
-                            <a href="#" class="logo">
-                                <img src="<?php echo base_url('template/recursos/img/logo.png'); ?>" alt=""
-                                    style="width: 75px;" class="white-filter">
-                            </a>
-                        </li>
-
-
-
-                    </ul>
-                    <ul class="header-links col-md-6"
-                        style="    display: flex;  height: 75px; align-items: center; justify-content: flex-end">
-
-
-
-                        <li><a href="https://web.whatsapp.com/send?phone=2214350830&text=sd"><i
-                                    class="fa fa-dollar-sign bx-sm"></i>Vender</a></li>
-                        <li>
-                            <div class="menu-toggle">
-                                <a id="menuIcon" href="#">
-                                    <i class="fa fa-bars bx-sm"></i>
-                                    <span>Menu</span>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <input type="text" id="whapsapweb" hidden>
-                <input type="text" id="whapPhone2" hidden>
-
-                <script>
-                    function detectDeviceType() {
-                        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-                        // Detectar si el dispositivo es móvil
-                        const isMobile = /android|iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-
-                        // Actualizar el enlace de WhatsApp en función del dispositivo
-                        const whatsappLink = isMobile
-                            ? 'https://wa.me/+522431083861?text=sd'
-                            : 'https://web.whatsapp.com/send?phone=+522431083861&text=sd';
-
-                        const whatsappLink2 = isMobile
-                            ? ''
-                            : 'https://web.whatsapp.com/';
-                        const whatsappLink3 = isMobile
-                            ? 'https://wa.me/'
-                            : '';
-
-
-                        // Actualizar el href del enlace
-                        document.getElementById('whapPhone').value = whatsappLink;
-                        document.getElementById('whapsapweb').value = whatsappLink2;
-                        document.getElementById('whapPhone2').value = whatsappLink3;
-                    }
-
-                    // Llamar a la función para actualizar el enlace
-                    detectDeviceType();
-                </script>
-            </div>
-        </div>
-        <div hidden>
-            <div class="main-header-right row m-0" style="border-bottom: 0.4px #EBEBEB solid;">
-
-                <div class="nav-right col pull-right right-menu p-0">
-                    <ul class="nav-menus">
-                        <input type="hidden" class="jwt" value="<?= $this->session->userdata('token') ?>">
-                        <input type="hidden" class="user" value="<?= $this->session->userdata('usuario') ?>">
-                    </ul>
-                </div>
-
-            </div>
-        </div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="#"><img src="<?php echo base_url('template/recursos/img/logo.png'); ?>"
@@ -301,3 +225,46 @@
                 </div>
             </div>
         </nav>
+        <div id="breadcrumb" class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-between flex-nowrap">
+                        <div class="breadcrumb-item">
+                            <a href="<?php echo base_url() ?>Welcome"><i class="icofont-home icofont-2x"></i></a>
+                        </div>
+                        <div class="breadcrumb-item" id="iconReses">
+                            <a href="<?php echo base_url() ?>Cliente/Animales/Reses"><i
+                                    class="icofont-cow icofont-2x"></i></a>
+                        </div>
+                        <div class="breadcrumb-item" id="iconChivos">
+                            <a href="<?php echo base_url() ?>Cliente/Animales/Chivos"><i
+                                    class="icofont-giraffe-head-1 icofont-2x"></i></a>
+                        </div>
+                        <div class="breadcrumb-item" id="iconCerdos">
+                            <a href="<?php echo base_url() ?>Cliente/Animales/Cerdos"><i
+                                    class="icofont-pig-face icofont-2x"></i></a>
+                        </div>
+                        <div class="breadcrumb-item" id="iconAves">
+                            <a href="<?php echo base_url() ?>Cliente/Animales/Aves"><i
+                                    class="icofont-rooster icofont-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <div hidden>
+            <div class="main-header-right row m-0" style="border-bottom: 0.4px #EBEBEB solid;">
+
+                <div class="nav-right col pull-right right-menu p-0">
+                    <ul class="nav-menus">
+                        <input type="hidden" class="jwt" value="<?= $this->session->userdata('token') ?>">
+                        <input type="hidden" class="user" value="<?= $this->session->userdata('usuario') ?>">
+                    </ul>
+                </div>
+
+            </div>
+        </div>
