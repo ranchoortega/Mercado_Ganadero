@@ -23,10 +23,7 @@ class Animales extends CI_Controller
 				"template/assets/css/select2.css",
 
 				
-				"template/assets/cssInicio/slick.css",
-				"template/assets/cssInicio/slick-theme.css",
-				"template/assets/cssInicio/nouislider.min.css",
-				"template/assets/cssInicio/font-awesome.min.css",
+			
 			
 			)
 		);
@@ -37,9 +34,7 @@ class Animales extends CI_Controller
 				"template/modulos/user/cliente/Animales/Animales.js",
 				"template/modulos/user/cliente/Animales/reses.js",
 
-				"template/assets/js2/slick.min.js",
-				"template/assets/js2/nouislider.min.js",
-				"template/assets/js2/jquery.zoom.min.js",
+			
 				"template/assets/js2/main.js",
 				"template/assets/js/select2/select2.full.min.js",
 				"template/assets/js/select2/select2-custom.js",

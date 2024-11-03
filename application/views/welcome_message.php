@@ -300,12 +300,19 @@
         <div class="container">
             <!-- row -->
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 order-details">
                     <div class="section-title">
                         <h4 class="title">Agregados Recientemente</h4>
                     </div>
+                    <div class="billing-details">
+                      <div id="animalesRecientes" class="row"></div>  
+                    </div>
 
-                    <div id="animalesRecientes" class="products-widget-slick">
+                    
+
+
+
+
                     </div>
                 </div>
             </div>

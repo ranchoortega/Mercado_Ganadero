@@ -22,17 +22,20 @@ class Login extends CI_Controller
 
 				"template/assets/css/select2.css",
 	
+			
 
 			)
 		);
 		$datos['estilosjs'] = plantilla_footer(
 			array(
-				"template/assets/js/select2/select2.full.min.js",
-				"template/assets/js/select2/select2-custom.js",
+				
 
 				"template/modulos/user/Login/Login.js",
 				"template/modulos/user/Login/LoginMain.js",
+		
 				"template/assets/js2/main.js",
+				"template/assets/js/select2/select2.full.min.js",
+				"template/assets/js/select2/select2-custom.js",
 
 
 

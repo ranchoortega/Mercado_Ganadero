@@ -52,6 +52,12 @@ $('#mimunicipio').change(async function() {
 
 
 $('#exampleModalCenter').on('shown.bs.modal', function () {
+	$('#mimunicipio').select2({
+        dropdownParent: $('#exampleModalCenter')
+    });
+	$('#estado-municipio').select2({
+        dropdownParent: $('#exampleModalCenter')
+    });
 	setTimeout(function () {
 		map.invalidateSize(); // Redibuja el mapa cuando el modal se muestra
 	}, 300); // 300 ms de retraso para asegurarse de que el modal esté completamente visible

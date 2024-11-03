@@ -1,11 +1,4 @@
 <style>
-    .js-example-basic-multiple {
-        z-index: 10000;
-        /* Asegúrate de que el select tenga un z-index alto */
-        position: relative;
-        /* Necesario para que el z-index funcione */
-    }
-
     #top-header {
         z-index: 3;
     }
@@ -43,7 +36,7 @@
 
 <section class="page-body">
 
-    
+
     <div class="container-fluid">
         <div class="row">
 
@@ -58,21 +51,22 @@
                             </div>
                             <div class="input-group flex-nowrap ">
 
-                                <span class="input-group-text bx bxs-user bx-sm" id="addon-wrapping"></span>
+                                <span class="input-group-text bx bxs-user bx-xs" id="addon-wrapping"></span>
                                 <input type="text" class="input" placeholder="Usuario" aria-describedby="addon-wrapping"
                                     id="user">
                             </div>
                             <p class="text-danger msguser"></p>
                             <div class="input-group flex-nowrap ">
 
-                                <span class="input-group-text bx bx-low-vision bx-sm" id="addon-wrapping"></span>
+
+                                <span class="input-group-text bx bx-low-vision bx-xs" id="addon-wrapping"></span>
                                 <input type="password" class="input" placeholder="Contraseña"
                                     aria-describedby="addon-wrapping" id="password" minlength="4" maxlength="8">
                             </div>
                             <p class="text-danger msgpassword"></p>
                             <div class="input-group flex-nowrap ">
 
-                                <span class="input-group-text bx bxs-user-detail bx-sm" id="addon-wrapping"></span>
+                                <span class="input-group-text bx bxs-user-detail bx-xs" id="addon-wrapping"></span>
                                 <input type="text" class="input" placeholder="Nombre" aria-describedby="addon-wrapping"
                                     id="name">
                             </div>
@@ -80,7 +74,7 @@
 
                             <div class="input-group flex-nowrap ">
 
-                                <span class="input-group-text bx bxs-phone-call bx-sm" id="addon-wrapping"></span>
+                                <span class="input-group-text bx bxs-phone-call bx-xs" id="addon-wrapping"></span>
                                 <input class="input" type="tel" pattern="\d{10}" maxlength="10" name="tel"
                                     placeholder="Teléfono" id="phone" aria-describedby="addon-wrapping">
                             </div>
@@ -96,7 +90,7 @@
 
                             <div class="input-group flex-nowrap ">
 
-                                <span class="input-group-text bx bx-current-location bx-sm" id="addon-wrapping"></span>
+                                <span class="input-group-text bx bx-current-location bx-xs" id="addon-wrapping"></span>
 
 
                                 <label for="staticEmail2" class="visually-hidden">Email</label>
@@ -104,8 +98,8 @@
                                     value="Ubicación">
 
 
-                                <button type="button" class="btn btn-primary input btnLocation" data-toggle="modal"
-                                    data-target="#exampleModalCenter" style="width: 50%; z-index: 0;">Buscar</button>
+                                <button type="button" class="btn btn-primary btnLocation" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModalCenter" style="width: 50%;">Buscar</button>
 
 
                             </div>
@@ -119,7 +113,7 @@
 
                             </div>
                             <div class="form-group"
-                                style=" margin-top: -12px; display: flex;    justify-content: space-around;">
+                                style=" margin-top: 5px; display: flex;    justify-content: space-around;">
 
                                 <a class="btnViewLogin">¿Ya tienes cuenta? Haz clic aqui</a>
 
@@ -139,14 +133,14 @@
                             </div>
                             <div class="input-group flex-nowrap ">
 
-                                <span class="input-group-text bx bxs-user bx-sm" id="addon-wrapping"></span>
+                                <span class="input-group-text bx bxs-user bx-xs" id="addon-wrapping"></span>
                                 <input type="text" class="input" placeholder="Usuario" aria-describedby="addon-wrapping"
                                     id="usuario">
                             </div>
                             <p class="text-danger msgploginname"></p>
                             <div class="input-group flex-nowrap ">
 
-                                <span class="input-group-text bx bxs-user bx-sm" id="addon-wrapping"></span>
+                                <span class="input-group-text bx bxs-user bx-xs" id="addon-wrapping"></span>
                                 <input type="password" class="input" placeholder="Contraseña"
                                     aria-describedby="addon-wrapping" id="contrasena" minlength="4" maxlength="8">
                             </div>
@@ -158,7 +152,7 @@
 
                             </div>
                             <div class="form-group"
-                                style=" margin-top: -12px; display: flex;    justify-content: space-around;">
+                                style=" margin-top: 5px; display: flex;    justify-content: space-around;">
 
                                 <a class="btnViewCreate">¿No tienes cuenta? Haz clic aqui</a>
 
@@ -181,9 +175,9 @@
                                     <h5 class="modal-title" id="exampleModalLongTitle">Si la ubicación está mal (puedes
                                         mover el
                                         marcador)</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <div id="map" style="height: 200px;"></div>
@@ -202,6 +196,7 @@
 
                                             </div>
                                         </div>
+                                        
                                         <div class="col-md-6">
                                             <div class="mb-4">
                                                 <label class="form-label">Selecciona tu estado</label>
@@ -229,9 +224,11 @@
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cerrar</button>
                                     <button type="button" class="btn btn-primary guardarLocation">Guardar
                                         cambios</button>
+
                                 </div>
                             </div>
                         </div>
