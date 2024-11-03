@@ -22,7 +22,6 @@ class Login extends CI_Controller
 
 				"template/assets/css/select2.css",
 	
-				"template/assets/cssInicio/style.css",
 
 			)
 		);
@@ -33,7 +32,6 @@ class Login extends CI_Controller
 
 				"template/modulos/user/Login/Login.js",
 				"template/modulos/user/Login/LoginMain.js",
-				"template/assets/js2/bootstrap.min.js",
 				"template/assets/js2/main.js",
 
 

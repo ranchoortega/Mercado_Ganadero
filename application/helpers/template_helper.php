@@ -13,15 +13,12 @@ if (!function_exists('plantilla_head')) {
 			"template/assets/css/feather-icon.css",
 			"template/assets/css/animate.css",
 			"template/assets/css/chartist.css",
-			"template/assets/css/date-picker.css",
-			"template/assets/css/prism.css",
-			"template/assets/css/vector-map.css",
-			"template/assets/cssInicio/bootstrap.min.css",
-			"template/assets/css/bootstrap.css",
-			"template/assets/css/datatables.css",
-			"template/assets/css/style.css",
-			"template/assets/css/color-1.css",
-			"template/assets/css/responsive.css"
+		
+			"template/assets/bootstrap/css/bootstrap.css",
+		
+			
+			"template/assets/cssInicio/style.css",
+
 		);
 
     	if ($archivos != null) {
@@ -38,7 +35,7 @@ if (!function_exists('plantilla_footer')) {
     function plantilla_footer($archivos=null) {
     	$resultado = array(
 			"assets/vendor/jquery/jquery.min.js",
-			"assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+//			"assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
 			"assets/vendor/jquery-easing/jquery.easing.min.js",
 // 			"assets/js/sb-admin-2.min.js",
 // 			"assets/vendor/datatables/dataTables.bootstrap4.min.js",
@@ -52,7 +49,7 @@ if (!function_exists('plantilla_footer')) {
 			"template/assets/js/sidebar-menu.js",
 			"template/assets/js/config.js",
 // 			"template/assets/js/bootstrap/popper.min.js",
-			"template/assets/js/bootstrap/bootstrap.min.js",
+			"template/assets/bootstrap/js/bootstrap.js",
 // 		
 			"template/assets/js/datatable/datatables/jquery.dataTables.min.js",
 			"template/assets/js/datatable/datatable-extension/jszip.min.js",

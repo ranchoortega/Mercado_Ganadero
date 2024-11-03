@@ -22,12 +22,12 @@ class Animales extends CI_Controller
 			array(
 				"template/assets/css/select2.css",
 
-				"template/assets/cssInicio/bootstrap.min.css",
+				
 				"template/assets/cssInicio/slick.css",
 				"template/assets/cssInicio/slick-theme.css",
 				"template/assets/cssInicio/nouislider.min.css",
 				"template/assets/cssInicio/font-awesome.min.css",
-				"template/assets/cssInicio/style.css",
+			
 			)
 		);
 		$datos['estilosjs'] = plantilla_footer(
@@ -66,12 +66,12 @@ class Animales extends CI_Controller
 			array(
 				"template/assets/css/select2.css",
 
-				"template/assets/cssInicio/bootstrap.min.css",
+				
 				"template/assets/cssInicio/slick.css",
 				"template/assets/cssInicio/slick-theme.css",
 				"template/assets/cssInicio/nouislider.min.css",
 				"template/assets/cssInicio/font-awesome.min.css",
-				"template/assets/cssInicio/style.css",
+			
 			)
 		);
 		$datos['estilosjs'] = plantilla_footer(
@@ -109,12 +109,12 @@ class Animales extends CI_Controller
 			array(
 				"template/assets/css/select2.css",
 
-				"template/assets/cssInicio/bootstrap.min.css",
+				
 				"template/assets/cssInicio/slick.css",
 				"template/assets/cssInicio/slick-theme.css",
 				"template/assets/cssInicio/nouislider.min.css",
 				"template/assets/cssInicio/font-awesome.min.css",
-				"template/assets/cssInicio/style.css",
+			
 			)
 		);
 		$datos['estilosjs'] = plantilla_footer(
@@ -153,12 +153,12 @@ class Animales extends CI_Controller
 			array(
 				"template/assets/css/select2.css",
 
-				"template/assets/cssInicio/bootstrap.min.css",
+				
 				"template/assets/cssInicio/slick.css",
 				"template/assets/cssInicio/slick-theme.css",
 				"template/assets/cssInicio/nouislider.min.css",
 				"template/assets/cssInicio/font-awesome.min.css",
-				"template/assets/cssInicio/style.css",
+			
 			)
 		);
 		$datos['estilosjs'] = plantilla_footer(

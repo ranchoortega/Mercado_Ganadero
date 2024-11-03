@@ -24,7 +24,6 @@ class Welcome extends CI_Controller
                 "template/assets/cssInicio/slick-theme.css",
                 "template/assets/cssInicio/nouislider.min.css",
                 "template/assets/cssInicio/font-awesome.min.css",
-                "template/assets/cssInicio/style.css",
             )
         );
 

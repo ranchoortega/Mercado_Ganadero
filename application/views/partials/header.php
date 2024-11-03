@@ -126,6 +126,13 @@
             margin: 20px auto;
         }
 
+        .navbar {
+            padding: 0 !important;
+
+            background-color: rgb(157, 137, 110) !important;
+        }
+
+
         @keyframes spin {
             0% {
                 transform: rotate(0deg);
@@ -134,6 +141,22 @@
             100% {
                 transform: rotate(360deg);
             }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Cambiar el orden de los elementos en pantallas más pequeñas */
+            .item1 {
+                order: 1;
+            }
+
+            .item2 {
+                order: 2;
+            }
+            .item3{
+                order: 3;
+            }
+
         }
     </style>
 
@@ -232,33 +255,49 @@
 
             </div>
         </div>
-        <nav id="navigation">
-            <!-- container -->
-            <div class="container viewCliente">
-                <!-- responsive-nav -->
-                <div id="responsive-nav">
-                    <input id="puto" type="text" value="<?php echo base_url() ?>" hidden>
-                    <!-- NAV -->
-                    <ul class="main-nav nav navbar-nav col-md-6">
-                        <li id="liLogin"><a href="<?php echo base_url() ?>Login"><i
-                                    class="fa fa-right-to-bracket bx-sm"></i>Iniciar sesion o crear cuenta</a></li>
-                        <li id="liUser" style="display: none;">
-                            <a href="#" id="userLink"><i class="fa fa-user bx-sm"></i>Mi perfil</a>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="<?php echo base_url('template/recursos/img/logo.png'); ?>"
+                        alt="" style="width: 69px;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg"
+                    aria-labelledby="navbarOffcanvasLgLabel">
 
-                        </li>
-                        <li><a href="<?php echo base_url() ?>Cliente/Provedores"><i
-                                    class="fa fa-dollar-sign bx-sm"></i>Vender</a></li></a></li>
-                    </ul>
-                    <ul class="main-nav nav navbar-nav col-md-6 navarlogin">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
-                        <li><a href="<?php echo base_url() ?>Welcome"><i
-                                    class="fa-solid fa-circle-info bx-sm"></i>Ayuda</a></li>
+                            <li class="nav-item item3">
 
-                    </ul>
-                    <!-- /NAV -->
+                                <a class="nav-link active" aria-current="page" href="<?php echo base_url() ?>Welcome"><i
+                                        class="fa-solid fa-circle-info bx-xs"></i>Ayuda</a>
+                            </li>
+                            <li class="nav-item item2">
+
+                                <a class="nav-link active" aria-current="page"
+                                    href="<?php echo base_url() ?>Cliente/Provedores"><i
+                                        class="fa fa-dollar-sign bx-xs"></i>Vender</a>
+                            </li>
+                            </li>
+                            <li id="liLogin" class="nav-item item1" style="background: rgb(157, 137, 110);">
+                                <a class="nav-link" href="<?php echo base_url() ?>Login"><i
+                                        class="fa fa-right-to-bracket bx-xs"></i>Iniciar sesion
+                                    o crear cuenta</a>
+                            </li>
+                            <li class="nav-item-1" id="liUser" style="display: none;background: rgb(157, 137, 110);">
+                                <a class="nav-link" id="userLink" href="#">Usuario</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
                 </div>
-                <!-- /responsive-nav -->
             </div>
-            <!-- /container -->
         </nav>
-      

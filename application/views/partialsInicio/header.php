@@ -77,6 +77,14 @@
             margin: 20px auto;
         }
 
+        /* Quitar el padding y el background del navbar */
+        .navbar {
+            padding: 0 !important;
+
+            background-color: rgb(157, 137, 110) !important;
+        }
+
+
         @keyframes spin {
             0% {
                 transform: rotate(0deg);
@@ -85,6 +93,22 @@
             100% {
                 transform: rotate(360deg);
             }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Cambiar el orden de los elementos en pantallas más pequeñas */
+            .item1 {
+                order: 1;
+            }
+
+            .item2 {
+                order: 2;
+            }
+            .item3{
+                order: 3;
+            }
+
         }
     </style>
 
@@ -105,38 +129,53 @@
 
     <!-- Loader ends-->
     <div class="page-wrapper compact-wrapper" id="pageWrapper">
-        <div id="top-header">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
             <div class="container">
-            <div class="col-md-12">
-                    <ul class="header-links pull-left col-md-6">
-                        <li>
-                            <a href="#" class="logo">
-                                <img src="<?php echo base_url('template/recursos/img/logo.png'); ?>" alt=""
-                                    style="width: 75px;" class="white-filter">
-                            </a>
-                        </li>
+                <a class="navbar-brand" href="#"><img src="<?php echo base_url('template/recursos/img/logo.png'); ?>"
+                        alt="" style="width: 69px;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvasLg"
+                    aria-labelledby="navbarOffcanvasLgLabel">
 
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
+                            <li class="nav-item item3">
 
-                    </ul>
-                    <ul class="header-links col-md-6" style="    display: flex;  height: 75px; align-items: center; justify-content: flex-end">
+                                <a class="nav-link active" aria-current="page"
+                                href="<?php echo base_url() ?>Welcome"><i class="fa-solid fa-circle-info bx-xs"></i>Ayuda</a>
+                            </li>
+                            <li class="nav-item item2">
 
+                                <a class="nav-link active" aria-current="page"
+                                    href="<?php echo base_url() ?>Cliente/Provedores"><i
+                                        class="fa fa-dollar-sign bx-xs"></i>Vender</a>
+                            </li>
+                            </li>
+                            <li id="liLogin" class="nav-item item1" style="background: rgb(157, 137, 110);">
+                                <a class="nav-link" href="<?php echo base_url() ?>Login"><i
+                                        class="fa fa-right-to-bracket bx-xs"></i>Iniciar sesion
+                                    o crear cuenta</a>
+                            </li>
+                            <li class="nav-item-1" id="liUser" style="display: none;background: rgb(157, 137, 110);">
+                                <a class="nav-link" id="userLink" href="#">Usuario</a>
+                            </li>
 
+                        </ul>
 
-                        <li><a href="https://web.whatsapp.com/send?phone=2214350830&text=sd"><i
-                                    class="fa fa-dollar-sign bx-sm"></i>Vender</a></li>
-                        <li>
-                            <div class="menu-toggle">
-                                <a id="menuIcon" href="#">
-                                    <i class="fa fa-bars bx-sm"></i>
-                                    <span>Menu</span>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
+                    </div>
                 </div>
             </div>
-        </div>
+        </nav>
+
 
         <div hidden>
             <div class="main-header-right row m-0" style="border-bottom: 0.4px #EBEBEB solid;">
@@ -150,4 +189,3 @@
 
             </div>
         </div>
-        
