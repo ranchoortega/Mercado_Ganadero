@@ -126,7 +126,7 @@ class Welcome {
 
     createAnimalCardNuevo(elemento, i) {
         return $(`
-            <div class="col-md-3 col-xs-6">
+            <div class="col-lg-3 col-md-6 col-12">
                 <div class="product">
                     <div class="product-img">
                         <img src="${elemento.url || 'default_image_url.jpg'}" alt="">
