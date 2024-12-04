@@ -1,16 +1,7 @@
 const reses = new Animales("Reses");
 
 $(document).ready(async function () {
-
-
-	$('input[name="ubicacion"]').change(function () {
-		if ($(this).is(':checked')) {
-			$('#exampleModalCenter').modal('show'); // Muestra el modal
-		}
-	});
-
-
-
+	// Crear tarjetas
 	const {
 		res,
 		data
@@ -23,13 +14,13 @@ $(document).ready(async function () {
 
 	reses.totalPage = DATA1.total;
 
-	let i = false;
+
 
 	let cantidad = reses.verificarCantidad(DATA1)
 
 	if (cantidad) {
 
-		console.log(i);
+
 
 
 		reses.data = data;
@@ -38,19 +29,41 @@ $(document).ready(async function () {
 	}
 
 
-	$('#exampleModalCenter').on('shown.bs.modal', async function () {
+	//Mostrar el modal y su contenido mendiante los input radio
+	$('input[name="ubicacion"]').change(function () {
+
+		//Input
 
 		if ($('input[name="ubicacion"]:checked').val() == 1) {
-			$('.municipiosection').toggle();
-			
-		}
-		else{
+			limpiarElementos('.js-example-basic-multiple');
+			$('#exampleModalLongTitle').text("Selecciona uno o varios Estados");
+			$("#unestado").attr("multiple", true);
+			$('.municipiosection').hide();
+
+		} else {
+			limpiarElementos('.js-example-basic-multiple');
+
+			$("#unestado").removeAttr("multiple");
+			$('#exampleModalLongTitle').text("Selecciona un Estado y uno o varios Municipios");
+			$('.municipiosection').show();
 
 		}
 
+		//Modal
+		if ($(this).is(':checked')) {
+			$('#exampleModalCenter').modal('show'); // Muestra el modal
+		}
+	});
 
 
 
+
+	$('#exampleModalCenter').on('shown.bs.modal', async function () {
+
+
+
+
+		//Hacer que el selct2 se sobre ponga
 		$('#unestado').select2({
 			dropdownParent: $('#exampleModalCenter')
 		});
@@ -58,50 +71,72 @@ $(document).ready(async function () {
 			dropdownParent: $('#exampleModalCenter')
 		});
 
+
+
+		//Crear el contenido del select
+
 		const {
 			res: resEstado,
 			data: dataEstado
 		} = await getEstados();
 		console.log("eeeeeeeeeeeee");
 		console.log(data);
-		$('#mimunicipio').append(`<option value="0">Todos los estados</option>`);
+
 		dataEstado.forEach(function (estado) {
 			$('#mimunicipio').append(`<option value="${estado.id}">${estado.estado}</option>`);
 
 		});
-		$("#mimunicipio").val(["0"]).trigger('change');
+		//$("#mimunicipio").val(["0"]).trigger('change');
 
-		$('#unestado').append(`<option value="null">Todos los estados</option>`);
+
 		dataEstado.forEach(function (estado) {
 			$('#unestado').append(`<option value="${estado.id}">${estado.estado}</option>`);
 
 		});
+		console.log($("#unestado").attr("multiple"));
+
+
 
 		$('#unestado').change(async function () {
-			// Obtener el valor seleccionado
-			let valorSeleccionado = $(this).val();
+			if ($("#unestado").attr("multiple") == undefined) {
+				// Obtener el valor seleccionado
+				let valorSeleccionado = $(this).val();
 
 
-			const {
-				res,
-				data
-			} = await getEstado_Municipio(valorSeleccionado);
-			console.log(data);
+				const {
+					res: resMunicipio,
+					data: dataMunicipio
+				} = await getEstado_Municipio(valorSeleccionado);
+				console.log(dataMunicipio);
 
-			$('#estado-municipio').empty();
-			$('#estado-municipio').append(`<option value="null">Todos los municipios</option>`);
+				$('#estado-municipio').empty();
+				$('#estado-municipio').append(`<option value="null">Todos los municipios</option>`);
 
 
-			data.forEach(function (estado) {
-				$('#estado-municipio').append(`<option value="${estado.id}">${estado.municipio}</option>`);
+				dataMunicipio.forEach(function (estado) {
+					$('#estado-municipio').append(`<option value="${estado.id}">${estado.municipio}</option>`);
 
-			});
+				});
+			}
 
 
 		});
+
+
 	});
 
 
 
 
 });
+
+
+
+$('.guardarLocation').on('click', async () => {
+
+	console.log(
+		$('#unestado').val()
+	);
+
+
+})

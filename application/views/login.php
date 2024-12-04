@@ -45,7 +45,7 @@
   padding: 30px 12px;">
                     <div class="col-md-6 order-details theme-form login-form" id="form-user">
                         <!-- Billing Details -->
-                        <div class="billing-details divCrear">
+                        <div class="billing-details divCrear" style="display:none;">
                             <div class="section-title">
                                 <h3 class="title">Crear cuenta</h3>
                             </div>

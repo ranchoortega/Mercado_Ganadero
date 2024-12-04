@@ -49,8 +49,6 @@ class Animales {
 
 	}
 
-
-
 	async generalItems() {
 		const contenedor = $('#cardAnimales'); // Utiliza jQuery aquí
 		contenedor.empty(); // Limpiar el contenido
